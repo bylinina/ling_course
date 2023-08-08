@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+defaults:  # The defaults key will be applied to all chapters and sub-sections
+  titlesonly: True
+chapters:
+- file: intro
+  title: 'Week 1: Intro'
