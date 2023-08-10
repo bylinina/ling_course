@@ -34,3 +34,9 @@ Here is the current week-by-week schedule:
 
 
 Let's go!
+
+
+`````{admonition} Acknowledgements
+:class: note
+I want to thank everybody who helped me shape this course [names will be added later!]. Special thanks go to the Telegram group 'ling for langtech playground'!
+`````
