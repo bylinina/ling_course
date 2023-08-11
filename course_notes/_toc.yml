@@ -8,5 +8,3 @@ defaults:  # The defaults key will be applied to all chapters and sub-sections
 chapters:
 - file: intro
   title: 'Week 1: Intro'
-- file: widget_test.ipynb
-  title: 'Widget test'

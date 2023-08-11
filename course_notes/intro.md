@@ -51,14 +51,21 @@ That's impressive but we are so used to these  that we often take this for grant
 ![](./images/hatter.png)  |  <br>![](./images/hatter2.png)
 
 
-
-
-
-
-
-
 Given the ever growing omnipresence of such tools, a solid understanding
 of both their successes and weaknesses is important. 
+
+
+`````{admonition} Homework 1
+:class: note
+
+The homework this week will consist of two blocks. One block is informational -- I want to know more about 
+
+1. What is your native language? What other languages do you speak and how fluent in them are you?
+2. Can you code? If yes, list your programming languages and how fluent in them you are.
+
+
+The term '**language technology**' describes systems that allow people to communicate to computers in natural language (English, Dutch..) rather than computer languages (Python, Prolog..), as well as systems that help do useful things with natural language. 
+`````
 
 
 
