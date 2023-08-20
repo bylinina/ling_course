@@ -383,7 +383,7 @@ Interact with a system of your choice and try to find a weakness in it -- some n
 
 You've probably seen this or something like this before:
 
-```{image} ./images/jumbled.avif
+```{image} ./images/jumbled.png
 :alt: jumbled
 :class: bg-primary mb-1
 :width: 170px
