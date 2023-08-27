@@ -25,7 +25,7 @@ Here is the current week-by-week schedule:
 |    Week        |      Topic      |
 |----------|-------------:|
 | **Week 1** |  **Intro** <br>Overview of course topics and activities. <br>Relevance of linguistic knowledge for language technology. |
-| **Week 2** |  **Transmitting and capturing language** <br>Sound, writing, gesture. <br>Phonetics, writing systems, sign languages ( + whistled languages, drum languages) |
+| **Week 2** |  **Transmitting and capturing language** <br>Sound, writing, gesture. <br>Phonetics, writing systems, sign languages ( + whistled languages, drum languages?) |
 | **Week 3** |  **Grammar** <br>Morphology and Syntax, ways of representing them. <br>Grammatical well-formedness on different linguistic levels. |
 | **Week 4** |  **Language variation** <br>What a natural language can and cannot look like. <br>Universal laws and tendencies in linguistic building blocks and how they can be put together. |
 | **Week 5** | **Meaning** <br>Semantics, Pragmatics and Discourse phenomena. <br>What meanings are and how they interact with grammar and different types of context. |
@@ -40,3 +40,15 @@ Let's go!
 :class: note
 I want to thank everybody who helped me shape this course [names will be added later!]. Special thanks go to the Telegram group 'ling for langtech playground'!
 `````
+
+`````{admonition} Presentation choice!
+:class: note, dropdown
+
+1. Jeremy Kuhn -- for the second lecture
+2. Jessica Coon on the language of Arrival -- towards the end
+3. Atoms of language
+4. ...
+`````
+
+
+

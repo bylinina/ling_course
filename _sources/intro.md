@@ -308,7 +308,11 @@ I hope I convinced you that you are likely to find linguistics useful in the fut
 
 `````{admonition} Important notion
 :class: warning
-**Linguistics** is the scientific study of language.
+**Linguistics** is the scientific study of human natural language.
+
+Human natural language, as opposed to:
+- Constructed human languages and other artificial communication systems;
+- Communication systems of other species.
 
 Linguistics is **not**:
 - Learning to speak many languages (even though it's cool!);

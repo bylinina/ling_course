@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Linguistics for Language Technology &#8212; Linguistics for Language Technology</title>
+    <title>Week 2. Transmitting and Capturing Language &#8212; Linguistics for Language Technology</title>
   
   
   
@@ -61,10 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Week 1. Introduction" href="intro.html" />
+    <link rel="prev" title="Week 1. Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -136,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -155,14 +155,15 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     Linguistics for Language Technology
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Week 1: Intro</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 2: Transmitting and Capturing Language</a></li>
 </ul>
 
     </div>
@@ -217,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/week2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +287,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -297,11 +300,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linguistics for Language Technology</h1>
+    <h1>Week 2. Transmitting and Capturing Language</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sound">Sound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gesture">Gesture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing">Writing</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -311,70 +324,92 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linguistics-for-language-technology">
-<h1>Linguistics for Language Technology<a class="headerlink" href="#linguistics-for-language-technology" title="Permalink to this heading">#</a></h1>
-<p>You are looking at course notes for a course called ‘Linguistics for Language Technology’, the 2023 (very first!) edition. This is a first-year course in the BA program ‘Information Science’ at the University of Groningen. I am <a class="reference external" href="https://bylinina.github.io/">Lisa Bylinina</a>, I designed this course and I am teaching it.</p>
-<p>Why does this course exist? Here’s the motivating paragraph from the official syllabus, because I spent some time formulating it and it’s kind of nice:</p>
-<blockquote>
-<div><p>The way information science is currently developing calls for future practitioners in the area of language technology to be truly equipped with linguistic knowledge specifically tailored to the challenges and research typical of work in Natural Language Processing (NLP). This requires relevant working knowledge of the basic concepts of linguistic theory: words, morphology, syntax, cross-linguistic variation, semantics (word meaning, sentence meaning), discourse and pragmatics.</p>
-</div></blockquote>
-<p>So, the course tries to convey two things at the same time:</p>
-<ol class="arabic simple">
-<li><p>Some basics of linguistics: fundamental notions, tools, distinctions, facts;</p></li>
-<li><p>The relevance of these basics for language technology: how the basics of linguistics can help in NLP practice, providing the language needed to look at NLP systems and data analytically.</p></li>
-</ol>
-<!---               
-```{note}
-Here is a note
-```
--->
-<p>Here is the current week-by-week schedule:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="week-2-transmitting-and-capturing-language">
+<h1>Week 2. Transmitting and Capturing Language<a class="headerlink" href="#week-2-transmitting-and-capturing-language" title="Permalink to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">TL;DR</p>
+<ul class="simple">
+<li><p>Phonetics is a field studying speech sounds. Speech sounds can be classified via the way they are pronounced (articulatory phonetics) or via the resulting acoustic signal (acoustic phonetics).</p>
+<ul>
+<li><p>Some corner cases: whistle languages, drum languages</p></li>
+<li><p>Not all languages use sounds! Sign languages</p></li>
+</ul>
+</li>
+<li><p>Language in various modalities: speech vs. sign</p></li>
+<li><p>Secondary languages: overview</p></li>
+</ul>
+</div>
+<p>Languages comes in many forms and modalities: it can be spoken, it can be signed, it can be written, even whistled and played on drums. We will go over some ways language is transmitted and captured, just to give you an idea of the landscape of language modalities, and then we will see some ways this knowledge is relevant for language technology.</p>
+<section id="sound">
+<h2>Sound<a class="headerlink" href="#sound" title="Permalink to this heading">#</a></h2>
+<p>Let’s start with speech sounds and take a peek into the areas of linguistics that deal with them. First things first, some important notions:</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notions</p>
+<ul class="simple">
+<li><p><strong>Phonetics</strong> studies speech sounds.</p>
+<ul>
+<li><p><strong>Articulatory phonetics</strong> studies how these sounds are produced in human body.</p></li>
+<li><p><strong>Acoustic phonetics</strong> studies the acoustic signal produced as a result of pronunciation.</p></li>
+</ul>
+</li>
+<li><p><strong>Phonology</strong> studies the system and patterns of how speech sounds are used in a language.</p></li>
+</ul>
+</div>
+<p>There is a huge variety of sounds each of us can produce – clearing out throat, saying <em>aaa</em>, clapping our hands, and so on. Among these sounds, a relatively small subset can be called ‘speech sounds’. Those are the sounds produced by the speakers of a language when they speak that language. There is</p>
+<p>There is quite a lot of variation between languages in that respect – some sounds that are not speech sounds in one language, can be used in another language.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://web.stanford.edu/~jurafsky/slp3/28.pdf">Source</a>, originally from OpenStax University
+Physics, CC BY 4.0</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/vocal_tract.png"><img alt="ChatGPT news titles!" class="bg-primary mb-1 align-center" src="_images/vocal_tract.png" style="width: 500px;" /></a>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Week</p></th>
-<th class="head text-right"><p>Topic</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Week 1</strong></p></td>
-<td class="text-right"><p><strong>Intro</strong> <br>Overview of course topics and activities. <br>Relevance of linguistic knowledge for language technology.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Week 2</strong></p></td>
-<td class="text-right"><p><strong>Transmitting and capturing language</strong> <br>Sound, writing, gesture. <br>Phonetics, writing systems, sign languages ( + whistled languages, drum languages?)</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Week 3</strong></p></td>
-<td class="text-right"><p><strong>Grammar</strong> <br>Morphology and Syntax, ways of representing them. <br>Grammatical well-formedness on different linguistic levels.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Week 4</strong></p></td>
-<td class="text-right"><p><strong>Language variation</strong> <br>What a natural language can and cannot look like. <br>Universal laws and tendencies in linguistic building blocks and how they can be put together.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Week 5</strong></p></td>
-<td class="text-right"><p><strong>Meaning</strong> <br>Semantics, Pragmatics and Discourse phenomena. <br>What meanings are and how they interact with grammar and different types of context.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Week 6</strong></p></td>
-<td class="text-right"><p><strong>Beyond human and natural languages</strong> <br>Super-linguistics. Artificial/invented languages and their social and scientific role.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Week 7</strong></p></td>
-<td class="text-right"><p><strong>Outro</strong> <br>Recap of the course content, Q&amp;A, exam preparation</p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="mri" src="_images/mri_1.gif" /></p></td>
+<td class="text-center"><p><img alt="fishy" src="_images/mri_2.gif" /></p></td>
+<td class="text-center"><p><img alt="mri" src="_images/mri_3.gif" /></p></td>
+<td class="text-center"><p><img alt="mri" src="_images/mri_4.gif" /></p></td>
+<td class="text-center"><p><img alt="mri" src="_images/mri_5.gif" /></p></td>
 </tr>
 </tbody>
 </table>
-<p>Let’s go!</p>
-<div class="note admonition">
-<p class="admonition-title">Acknowledgements</p>
-<p>I want to thank everybody who helped me shape this course [names will be added later!]. Special thanks go to the Telegram group ‘ling for langtech playground’!</p>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Presentation choice!</p>
-<ol class="arabic simple">
-<li><p>Jeremy Kuhn – for the second lecture</p></li>
-<li><p>Jessica Coon on the language of Arrival – towards the end</p></li>
-<li><p>Atoms of language</p></li>
-<li><p>…</p></li>
-</ol>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<ul class="simple">
+<li><p>Whistled speech</p></li>
+<li><p>Holy languages</p></li>
+<li><p>Secret languages</p></li>
+<li><p>Male/female languages</p></li>
+<li><p>Morse code</p></li>
+<li><p>Smoke signals</p></li>
+<li><p>Case studies: Lokele (Congo), Yoruba (Nigeria), Akan (Ghana), Banda-Linda (Central
+African Republic)</p></li>
+</ul>
+<p>When you speak – as opposed to sign (if you are using signed languages) or write, you make sounds by producing an airflow, typically from the lungs, which gets obstructed in various ways in the vocal tract.</p>
+<p>One way of talking about speech sounds is through where in the vocal tract the airflow gets obstructed and how. So we can classify speech sounds by <strong>place of articulation</strong>.</p>
+<p>place of articulation
+voice
+manner of articulation – stops and fricatives
+… and nasals (nasal stops)!</p>
+<p>alveolar nasal?</p>
+<p>Vowel harmony
+Stress</p>
+<p>Whistled languages are found in many parts of the world, usually within communities living in mountainous or densely vegetated landscapes, where humans often find themselves scattered in long distances from one another, being unable to hear each other when speaking or shouting. Whistling is then employed as it can travel much longer than speech and it can overcome ambient noise much more effectively.</p>
+<p>Whistled languages are not distinct from spoken languages and there is no case of a whistled language which is not based on some spoken language. Whistled speech always relies on a spoken language. It does not replace but rather accompanies spoken language and the two are used in different occasions.</p>
+<p>Whistled languages hold poorer means to convey meaning than spoken languages. The numerous acoustic formants of spoken sounds have to be mapped on the one and only formant of whistled speech. The current UCL project focuses on the whistled speech of the village of Antia, on the Greek island of Euboea. It is based on Greek, a non-tonal language.</p>
+</section>
+<section id="gesture">
+<h2>Gesture<a class="headerlink" href="#gesture" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="writing">
+<h2>Writing<a class="headerlink" href="#writing" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -408,14 +443,14 @@ Here is a note
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="right-next"
+    <a class="left-prev"
        href="intro.html"
-       title="next page">
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Week 1. Introduction</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -426,6 +461,22 @@ Here is a note
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sound">Sound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gesture">Gesture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing">Writing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
