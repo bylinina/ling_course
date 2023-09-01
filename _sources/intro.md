@@ -1,7 +1,7 @@
 # Week 1. Introduction
 
 
-`````{admonition} TL;DR
+`````{admonition} TL;DR [[slides](https://github.com/bylinina/ling_course/blob/main/slides/ling_langtech_week1.pdf)]
 :class: note
 - Language technology **is everywhere**.
 - And it's pretty impressive -- but sometimes fails.
@@ -130,7 +130,7 @@ That's all great, but the fact that all these systems are dealing with language 
 
 But here is something to think about: even though the current language technology is often impressive, it is far from perfect. As a **user**, you are in a better position if you know where the weak points of these systems are, how to identify them, how to understand the patterns behind these failures. This will give you an obvious advantage in the world where language technology is intertwined with almost everything we do and we are tempted to rely on it rather than use it critically. Don't! Or, if you do, know the risks and where and why it is likely to fail. 
 
- As a **practitioner and future expert** in the area of language technology, you needs this too -- and more. When you build and evaluate such systems, you will need to know at least the following:
+ As a **practitioner and future expert** in the area of language technology, you need this too -- and more. When you build and evaluate such systems, you will need to know at least the following:
  
  1. Ways to systematically test the system's linguistic knowledge and behaviour.  What should these tests contain and look like? How do we know what to look for?
  
@@ -365,11 +365,12 @@ In fact, it can be almost any of those things. Let's take a closer look in the f
 `````{admonition} Homework 1
 :class: note
 
-The homework this week will consist of three blocks. One block is informational -- I want to know more about you and languages you use. This part will not be graded -- you can as well opt out if you don't want to tell me. Also, you are **not** expected to be fluent in any programming languages at this point -- it's just for me to figure out whether homework assignment options that are not coding free would make sense during this course. The other two blocks are actual homework assignments. You will have a chance to work on it during the seminar session after the first lecture.
+The homework this week will consist of three blocks. One block is informational, just for me to know more about you, the languages you use and whether there's anything specific you would like to learn in this course. This part will not be graded -- you can opt out. Also, you are **not** expected to be fluent in any programming languages at this point -- it's just for me to figure out whether homework assignment options that are not coding free would make sense during this course. The other two blocks are actual homework assignments. You will have a chance to work on it during the seminar session after the first lecture.
 
 **Block 0**
-1. What is your native language? What other languages do you speak and how fluent in them are you?
+1. Which language(s) do you speak natively? What other languages do you speak and how fluent in them are you?
 2. Can you code? If yes, list your programming languages and how fluent in them you are.
+3. Is there anything particular you would like to learn about linguistics / languages?
 
 **Block 1: Fool a model**
 
