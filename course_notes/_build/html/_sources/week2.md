@@ -1,5 +1,10 @@
 # Week 2. Transmitting and Capturing Language
 
+
+To be unlocked on the 11th of September.
+
+<!--
+
 `````{admonition} TL;DR
 :class: note
 - Phonetics is a field studying speech sounds. Speech sounds can be classified via the way they are pronounced (articulatory phonetics) or via the resulting acoustic signal (acoustic phonetics). 
@@ -20,34 +25,167 @@ Let's start with speech sounds and take a peek into the areas of linguistics tha
 
 - **Phonetics** studies speech sounds.
     - **Articulatory phonetics** studies how these sounds are produced in human body.
-    - **Acoustic phonetics** studies the acoustic signal produced as a result of pronunciation. 
+    - **Acoustic phonetics** studies the acoustic signal produced as a result of pronunciation. We won't have time in this course to talk about it, unfortunately!
 - **Phonology** studies the system and patterns of how speech sounds are used in a language.
 `````
 
-There is a huge variety of sounds each of us can produce -- clearing out throat, saying _aaa_, clapping our hands, and so on. Among these sounds, a relatively small subset can be called 'speech sounds'. Those are the sounds produced by the speakers of a language when they speak that language. There is 
+There is a huge variety of sounds each of us can produce -- sneezing, saying _aaa_, clapping our hands, and so on. Among these sounds, a relatively small subset can be called 'speech sounds'. Those are the sounds produced by the speakers of a language when they speak that language. There is quite a lot of variation between languages in that respect -- some sounds that are not speech sounds in one language, are used in another language. For instance, a sound of disapproval, often represented as _tsk_ in writing, is not part of English as a speech sound (for instance, there are no words in English using this sound -- apart from the actual _tsk_, which is not your typical word; it also doesn't really combine with other English sounds), but is used a lot in languages in the south of Africa, along with other so-called clicks. English sounds written as _th_ in _thrive_ is not a speech sound in French, and so on. The study of speech sounds is called **phonetics**.
+
+`````{admonition} A tiny question along the way
+:class: attention 
+Do you know a sound that the Dutch language that English doesn't?
+`````
 
 
-There is quite a lot of variation between languages in that respect -- some sounds that are not speech sounds in one language, can be used in another language. 
 
-
+One thing these various sets of speech sounds used in different languages have in common is that they are produced by roughly the same set of organs in the human body. Here is a schematic depiction of human vocal organs:
 
 ```{margin} 
 [Source](https://web.stanford.edu/~jurafsky/slp3/28.pdf), originally from OpenStax University
 Physics, CC BY 4.0
 ```
 
-
 ```{image} ./images/vocal_tract.png
-:alt: ChatGPT news titles!
+:alt: Speech organs
 :class: bg-primary mb-1
 :width: 500px
 :align: center
 ```
 
+In the schematic dissection of the head in this diagram (which is for some reason saying _aaa_), you will see some parts and organs marked. Those are the parts typically responsible for producing speech sounds. The sounds can be looked at through the lens of where and how they are produced, which is the area of study called **articulatory phonetics**.
 
-|              |              |               |               |               | 
-|   :----:    |    :----:    |    :----:    |     :----:   |     :----:   |
-| ![mri](./images/mri_1.gif)  | ![fishy](./images/mri_2.gif)   | ![mri](./images/mri_3.gif)    | ![mri](./images/mri_4.gif)  | ![mri](./images/mri_5.gif)   |
+Speech sounds are produced by movement of air -- typically, from the lungs, but we will see some exceptions to that -- through the vocal tract with whatever it meets on its way, coming out of the mouth or nose.  Sounds differ in the position of the organs when making the sound and how the air flows through the speech organs.
+
+Before we move on to how different sounds relate to the place and manner of articulation, a side-note is due on how we represent sounds in writing. This is not going to be a note about writing systems! We will talk about them later. This is just to draw your attention to the fact **orthography** -- or **spelling** -- does not always represent the sounds of language consistently.  You might have heard of the **ghoti** example showing this for English -- a creative misspelling of a word that you might not be able to decipher from this spelling at all, and yet it follows spelling practices actually attested in English orthography.
+
+`````{admonition} A tiny question along the way
+:class: attention 
+Can you guess what word this is?
+`````
+
+```{margin} 
+The **/ /** signs surrounding _f_, _i_ and &#643; here mark the fact that we are talking about symbols for sounds, not the English (or any other, for that matter) orthography. You will sometimes see different brackets used for this purpose: **[ ]** or **< >**. Sometimes, two of these are used to distinguished between writing down specific sounds vs. more abstract sounds, without details of pronunciation that don't matter for contrasts in the language discussed. We will not make this distinction.
+```
+
+The word is _fish_. This word has three sounds, let's write them down as /f/, /i/ and /&#643;/ (together -- /fi&#643;/). How come it can be written down as _ghoti_? Here is how:
+
+|              |              |              | 
+|   :----:    |    :----:    |   :----:    |
+**gh** | /f/ | pronounced as /f/ in _enou**gh**_ or _tou**gh**_ |
+**o** | /i/ | pronounced as /i/ as in _w**o**m**e**n_ |
+**ti** | /&#643;/ | pronounced /&#643;/ as in _na**ti**on_ or _mo**ti**on_
+
+Of course, nobody would actually write the word _fish_ like this, and these correspondences between writing and sound are not **actually** supported by English orthography, but what this creative misspelling highlights is the very fact that there we cannot rely on correspondences between writing and sound. Besides the fact that not every writing system is based on such correspondence to begin with, orthography is influenced by a bunch of historic factors and things can get pretty complicated there. 
+
+The standard way of transcribing language (= writing down speech sounds) is the **International Phonetic Alphabet** (IPA) developed by the [International Phonetic Association](https://www.internationalphoneticassociation.org/) (There are other systems as well, see this week's reading). I will introduce you to some symbols of IPA along the way.
+
+Let's get back to the sounds! The two main groups linguistic sounds fall into are **vowels** and **consonants**. Consonants are produced with restriction or closure in the vocal tract that obstructs the flow of air. Vowels are produced with little restriction of the airflow, are almost always voiced, and are generally louder and longer-lasting than consonants.
+
+#### Vowels
+
+The quality of the vowel depends on the shape of the vocal tract as the air passes through. Different parts of the tongue can be high or low in the mouth;  the mouth can be open to a different degree; the lips can be rounded or not rounded. The space of possible vowels is usually organized mostly along two parameters -- the low-high scale and the front-back scale. Both of these parameters refer not to the quality of the resulting sound (high pitch, for instance), but on the position of the articulatory organs. High vowels are those for which the tongue is positioned high and the mouth is not very open. When pronouncing front vowels, the high point of the tongue is towards the front. The four-angled shape corresponding to different values of these two parameters fits the whole space of possible vowels and has direct anatomic correspondence, as in this diagram:
+
+```{margin} 
+[Source](https://www.cambridge.org/elt/blog/fig-2-the-vowel-trapezium-a-schematic-representation-of-the-production-of-vowels/ )
+```
+
+```{image} ./images/vowels.png
+:alt: Vowels
+:class: bg-primary mb-1
+:width: 350px
+:align: center
+```
+
+On top of front-back vs. high-low (sometimes also known as closed-open) distinctions, vowels can also be rounded or not rounded (the latter require lips to be rounded during pronunciation -- roughly the same lip shape that's used for  whistling). Look at the MRI scan of a person pronouncing three very contrasting vowels from the peripheries of the quadrilateral: /i/ is front and high, /a/ is open and somewhere in the middle in terms of front-back, /u/ is back and high. /u/ is also rounded, unlike the other two:
+
+```{margin} 
+This set of MRI images and the ones I'll be using later on this week are taken from the fantastic resource '[Seeing speech](https://www.seeingspeech.ac.uk/ipa-charts)'. Check it out!
+```
+
+|      |       |       |
+| :-: | :-: | :-: |
+| ![mri](./images/MRI2_cardinal_1_vowel.gif)  | ![mri](./images/MRI2_cardinal_4_vowel.gif)  | ![mri](./images/MRI2_cardinal_8_vowel.gif)   |
+| **/i/**    |  **/a/**   |  **/u/**  |
+
+`````{admonition} A tiny question along the way
+:class: attention 
+What if /u/ were not rounded? Can you produce a sound that would correspond to the non-rounded /u/? What about rounded /i/?
+`````
+
+```{margin} 
+Generalizations about sound systems that I discuss here and below mostly come from _[Hyman, L. M. 2008. Universals in phonology. The Linguistic Review, 25, 81-135](https://doi.org/10.1515/TLIR.2008.003)._
+```
+
+The repertoire of vowels in different languages varies a lot. In general, the number of vowels in a language is smaller than the number of consonants that the language has, but not universally so -- [Iau](https://en.wikipedia.org/wiki/Iau_language) has six consonants and eight vowels, while [Puinave](https://en.wikipedia.org/wiki/Puinave_language) has eight consonants and eleven vowels. 
+
+The set of vowels a language has can be as small as three (the existence of even smaller vowel systems is disputed, see below). The actual vowels that make up these small systems are not random. The IPA set contains 22 vowel symbols, but if we look at the 23 attested 3-vowel languages, only a subset of 10 vowels are found in such systems. Moreover, there are only 8 types of 3-vowel systems found in languages of the world, which is a very very small subset of the set of all possible 3-vowel combinations taken out of the set of 22 vowels (_C<sub>3</sub>(22) = 1540_). Among those 3-vowel systems, only two are comparatively frequent, with 11 and 4 languages that have these systems, respectively:
+
+```{image} ./images/iua.png
+:alt: Vowels
+:class: bg-primary mb-1
+:width: 350px
+:align: center
+```
+
+The rest have been found only once (which equals to 4.8\% in the 23-language sample):
+
+```{image} ./images/vowel_typology.png
+:alt: Vowels
+:class: bg-primary mb-1
+:width: 420px
+:align: center
+```
+
+Here is one of the many examples of **unattested** vowel systems in languages of the world: 
+
+```{image} ./images/iyu.png
+:alt: Vowels
+:class: bg-primary mb-1
+:width: 180px
+:align: center
+```
+
+ `````{admonition} Discussion point
+:class: tip
+Why do you think a vowel system like that is not found in languages of the world?
+`````
+
+There are additional contrasts between vowels that we haven't mentioned yet:
+
+- **Length**: vowels can be long or short;
+- **Nasality**: nasal counterparts of oral vowels are produced with air flow escaping through the nose and the mouth simultaneously;
+- **Tone**: the pitch level or pitch level change during pronunciation (more accurately, tone characterizes syllables, but it manifests itself mostly on vowels, so I list it here).
+
+This is a good moment to take a step back and ask ourselves: What exactly does it mean for a language to have or not to have a particular vowel (or a particular sound, in general)? When we say that a language doesn't have nasal vowels, does it mean that its speakers **can't** pronounce a vowel with air flowing through the nasal cavity in addition to the mouth? Not really. Does it mean that speakers just **don't** produce nasal vowels at all while speaking? Or, returning to our case of 3-vowel systems, does it mean that the speakers never produce any vowels that don't strictly coincide with one of the three vowels that their systems consist of? Also, not really. The speakers of 3-vowel languages definitely end up producing sounds that, if we describe the pronunciation carefully enough, would end up at some other point in the vowel quadrilateral. 
+
+So, what **does** it mean then? It's not so clear, actually. As a first approximation, it means that even though in actual speech sounds can differ in a number of ways, a language is blind to some of these distinctions -- it doesn't use them as an architectural device in building its bigger units (roots, suffixes, words) from sounds. Most prominently, this means that the language does not have **minimal pairs** built on the distinction in question: two words that mean different things and only differ in the feature. French -- one of the languages with nasal vowels -- uses the nasal vs. oral contrast in building its lexicon, as evidenced by minimal pairs like /p&#603;&#771;/ _pain_ 'bread' vs. /p&#603;/ _paix_ 'peace'.
+
+Identifying and explaining generalizations about how speech sounds are organized into systems that languages employ to build words is studied by the field of **phonology**. 
+
+```{margin} 
+<br>
+<br>
+<br>
+<br>
+
+Notice that this 3-vowel analysis of Kabardian does not appear in the list of 3-vowel systems above! This is because in the database the above data come from an even different analysis of Kabardian is adopted! Things are tough.
+``` 
+A lot of questions in phonology require very nuanced theoretical discussion on how to identify which aspects of speech sounds matter linguistically in which language, how different these abstract systems of sounds can be from the space of sounds that speakers of these languages actually produce, and so on. Analysis of vowels in the [Kabardian language](https://en.wikipedia.org/wiki/Kabardian_language) is a good example of this. Here are different analyses of the system of Kabardian vowels that actually have been argued for in the literature:
+
+1. / &#616;, &#601;, a /
+2. / &#601;, a /
+3. / a /
+4. No vowels
+
+That's quite a range! Unfortunately, we will not talk much about these kinds of phonological discussions, but feel free to explore phonology further on your own.
+
+#### Consonants
+
+Like vowels, consonants can be organized according to positions of articulation organs responsible for the sound. 
+
+
+With which one is /t/ and which one is /d/
+
 
 
 
@@ -87,7 +225,57 @@ Whistled languages are not distinct from spoken languages and there is no case o
 
 Whistled languages hold poorer means to convey meaning than spoken languages. The numerous acoustic formants of spoken sounds have to be mapped on the one and only formant of whistled speech. The current UCL project focuses on the whistled speech of the village of Antia, on the Greek island of Euboea. It is based on Greek, a non-tonal language. 
 
+### Above the level of individual sounds
 
-## Gesture
+Supersegmental phonetics and phonology
+
+Tone and sometimes length; syllable structure; stress.
+
+### Signed languages
+
+> This will be covered by a student presentation based on the paper _Jeremy Kuhn. 2023. Sign languages: in France and across the world. Ms._
+
+### Secondary languages
+
+Whistled languages hold poorer means to convey meaning than spoken languages. The numerous acoustic formants of spoken sounds have to be mapped on the one and only formant of whistled speech. The current UCL project focuses on the whistled speech of the village of Antia, on the Greek island of Euboea. It is based on Greek, a non-tonal language. 
+
 
 ## Writing
+
+
+## Language modalities in natural language processing
+
+
+`````{admonition} Homework 2
+:class: note
+
+**Task 1**
+
+Read the '[Phonetics](https://web.stanford.edu/~jurafsky/slp3/28.pdf)' chapter from _Speech and Language Processing. Daniel Jurafsky \& James H. Martin. Draft of January 7, 2023_.
+
+Answer the following questions:
+
+1. 
+
+**Task 2**
+
+Look at the MRI images of five sounds below. Each of the images encodes a sound (taken in isolation or in a neutral context). Together, they form a sequence -- a name of a municipality in the Netherlands. Guess which one out of the 10 listed below! Try to look at places of articulation and think what class this sound belongs to (vowel? consonant? front? alveolar? labial?). Say something about how you came up with your answer.
+
+|              |              |               |               |               |               | 
+|   :----:    |    :----:    |    :----:    |     :----:   |     :----:   |     :----:   |
+| ![mri](./images/mri_1.gif)  | ![mri](./images/mri_2.gif)   | ![mri](./images/mri_3.gif)    | ![mri](./images/mri_4.gif)  | ![mri](./images/mri_5.gif)   |               |
+
+1. Laren
+2. Garyp
+3. Almen
+4. Dalen
+5. Sumar
+6. Ulrum
+7. Asten
+8. Bedum
+9. Lopik
+10. Delft
+
+`````
+
+--!>

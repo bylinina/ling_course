@@ -37,10 +37,12 @@ Let's go!
 
 
 `````{admonition} Acknowledgements
-:class: note
+:class: note, dropdown
 I want to thank everybody who helped me shape this course [names will be added later!]. Special thanks go to the Telegram group 'ling for langtech playground'!
 `````
 
+
+<!--
 `````{admonition} Presentation choice!
 :class: note, dropdown
 
@@ -49,6 +51,7 @@ I want to thank everybody who helped me shape this course [names will be added l
 3. Atoms of language
 4. ...
 `````
+--!>
 
 
 
