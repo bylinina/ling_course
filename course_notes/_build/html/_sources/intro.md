@@ -1,7 +1,7 @@
 # Week 1. Introduction
 
 
-`````{admonition} TL;DR
+`````{admonition} TL;DR [[slides](https://github.com/bylinina/ling_course/blob/main/slides/ling_langtech_week1.pdf)]
 :class: note
 - Language technology **is everywhere**.
 - And it's pretty impressive -- but sometimes fails.
