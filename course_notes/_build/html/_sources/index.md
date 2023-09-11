@@ -25,13 +25,11 @@ Here is the current week-by-week schedule:
 |    Week        |      Topic      |
 |----------|-------------:|
 | **Week 1** |  **Intro** <br>Overview of course topics and activities. <br>Relevance of linguistic knowledge for language technology. |
-| **Week 2** |  **Transmitting and capturing language** <br>Sound, writing, gesture. <br>Phonetics, writing systems, sign languages ( + whistled languages, drum languages?) |
-| **Week 3** |  **Grammar** <br>Morphology and Syntax, ways of representing them. <br>Grammatical well-formedness on different linguistic levels. |
-| **Week 4** |  **Language variation** <br>What a natural language can and cannot look like. <br>Universal laws and tendencies in linguistic building blocks and how they can be put together. |
-| **Week 5** | **Meaning** <br>Semantics, Pragmatics and Discourse phenomena. <br>What meanings are and how they interact with grammar and different types of context. |
-| **Week 6** |  **Beyond human and natural languages** <br>Super-linguistics. Artificial/invented languages and their social and scientific role. |
-| **Week 7** |  **Outro** <br>Recap of the course content, Q&A, exam preparation |
-
+| **Weeks 2-3** |  **Transmitting and capturing language** <br>Sound, writing, gesture. <br>Phonetics, writing systems, sign languages ( + whistled languages, drum languages?) |
+| **Week 4** |  **Grammar** <br>Morphology and Syntax, ways of representing them. <br>Grammatical well-formedness on different linguistic levels. |
+| **Week 5** |  **Language variation** <br>What a natural language can and cannot look like. <br>Universal laws and tendencies in linguistic building blocks and how they can be put together. |
+| **Week 6** | **Meaning** <br>Semantics, Pragmatics and Discourse phenomena. <br>What meanings are and how they interact with grammar and different types of context. |
+| **Week 7** |  **Beyond human and natural languages** <br>Super-linguistics. Artificial/invented languages and their social and scientific role. <br> **Outro** <br>Recap of the course content, Q&A, exam preparation |
 
 Let's go!
 
