@@ -15,7 +15,6 @@
 - Phonetics is a field studying speech sounds. Speech sounds can be classified via the way they are pronounced (articulatory phonetics) or via the resulting acoustic signal (acoustic phonetics). 
     - Some corner cases: whistle languages, drum languages
     - Not all languages use sounds! Sign languages
-- Language in various modalities: speech vs. sign
 `````
 
 Languages comes in many forms and modalities: it can be spoken, it can be signed, it can be written, even whistled and played on drums. We will go over some ways language is transmitted and captured, just to give you an idea of the landscape of language modalities, and then we will see some ways this knowledge is relevant for language technology.
