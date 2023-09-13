@@ -1,5 +1,9 @@
 # Weeks 2-3. Transmitting and Capturing Language
 
+
+The topic of how language is captured and transmitted is a big one -- it will take us two lectures to cover it. Usually, in introductions to linguistics speech sounds (in spoken languages) and the phonology of signed languages are covered in one lecture (if the latter is covered at all) and writing systems are more often than not left out altogether. For a course like this -- aspects of linguistics tailored for Information Science students -- it's important to spend some time on these topics, as these different forms of language transmission are inputs to language technology systems, and being aware of different properties of these linguistic modalities is important in order to understand potential strengths and weaknesses of different types of systems, as well as what kinds of challenges these different systems face depending on the modality they work with. 
+
+
 `````{admonition} PARTS
 :class: note
 - PART I: Sounds and signs
@@ -8,7 +12,7 @@
 `````
 
 
-## PART I. SOUNDS AND SIGNS
+## PART I. Sounds and signs
 
 `````{admonition} TL;DR
 :class: note
@@ -513,7 +517,7 @@ Unlocked at the seminar this week.
 
 `````
 
-## PART II: WRITING
+## PART II: Writing
 <big>To be unlocked next week..<br></big>
 
 <!-- We discussed spoken (and signed!) language, now let's move to another mode of existence of language -- language can also be **written**.  Writing is a relatively recent invention, when judged against the time scale of the existence of human species and human language, it has been around for several thousand years. We will reflect a bit on what writing is and isn't and on existing types of writing systems, and then move on to the relevance of the speech vs. writing distinction for language technology. Let's start with a definition of writing.
@@ -675,7 +679,7 @@ As a final bit of writing-related content today, I want to note that writing sys
 This is all I plan to communicate to you about the ways of transmitting and capturing language (a.k.a. language modalities). We talked about sounds and gestures; and we talked about writing and how it relates to sound and meaning. We now move on to the relation between the things we discussed so far -- and language technology.
 -->
 
-## PART III: LANGUAGE MODALITIES AND LANGUAGE TECHNOLOGY
+## PART III: Language modalities and language technology
 
 <big>To be unlocked next week..<br></big>
 
