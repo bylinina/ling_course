@@ -489,7 +489,21 @@ document.write(`
 </div>
 <div class="danger dropdown admonition">
 <p class="admonition-title">Solution</p>
-<p>Nope.</p>
+<p><strong>Problem 1 solution</strong></p>
+<p>Let’s start with the first group of words only. We notice immediately that stress is somewhere close to the end of the word – either the last or the penultimate syllable. But how do we know which one of those? Let’s count the number of syllables in each of the words (I’ll put the number in parentheses):</p>
+<p>Stress on the last syllable: <em>cokó</em> (2), <em>iyanawá</em> (4)
+Stress on the penultimate syllable: <em>yanása</em> (3), <em>imahicíta</em> (5), <em>lafotaháya</em> (5), <em>itiwanayipíta</em> (7)</p>
+<p>Words with even number of syllables have stress on the final syllable, the ones with odd number of syllables get stress on the penultimate one. We can formulate a rule that puts stress on the last even syllable of the word. Then this will be the answer to Problem 1: <em>ifá</em>, <em>wanayitá</em>, <em>ifóci</em>, <em>awanayíta</em></p>
+<p><strong>Problem 2 solution</strong></p>
+<p>When the second group of words is introduced, we see that our rule does not work anymore. For example, the 2-syllable word <em>sókca</em> has stress on the first syllable, not on the second one. Can we revise the rule so that it explains the new portion of data? The first thing to notice is that there’s something different about the new group of words compared to the first one. Namely, the first group contained only words in which each consonant is followed by a vowel, while in the second group there are clusters of consonants, which give rise to closed syllables (the first consonant of the cluster belongs to the previous syllable, which is then a ‘closed syllable’ – closed by the consonant). Let’s count syllables in words as before:</p>
+<p>Stress on the last syllable: <em>aktopá</em> (3), <em>inkosapitá</em> (5)
+Stress on the penultimate syllable: <em>sókca</em> (2), <em>pocóswa</em> (3), <em>akkopánka</em> (4), <em>acahankatíta</em> (6), <em>pokkałakkoaopankacóko</em> (10)</p>
+<p>One thing to notice is that whenever the closed syllable is the penultimate one, it has stress on it. This observation leads us to connect the ‘closed’ status of the syllable to where stress is put. Let’s make another observation: all final-stress words in this group have odd number of syllables – which is the opposite of the generalization about the first group of words. They also have closed syllables in the very first position. Let’s put it this way: if the initial closed syllable didn’t exit, the stress would go to the last even syllable. Does this generalise to the words of this group with stress on the penultimate syllable? Yes, if we formulate it like this: the stress falls on the last even syllable of the word assuming that closed syllables restart the count (are position 0).</p>
+<p>Now we can solve problem 2: <em>hoktakí</em>, <em>isiskitóci</em>, <em>ilitohtałíta</em></p>
+<p><strong>Problem 3 solution</strong></p>
+<p>In the third group, long vowels appear. Syllables with long vowels behave exactly like closed syllables, restarting the syllable count. We can now solve problem 3 as well: <em>nâ:nakí</em>, <em>a:tamihomá</em>, <em>sâ:sákwa</em>, <em>homantá:ki</em></p>
+<p><strong>The final rule</strong> says: The stress falls on the last even syllable of the word, assuming that the last closed syllable or syllable with a long vowel restarts the count.</p>
+<p><strong>P.S.</strong> Why is this rule so complicated? In fact, there is a way to formulate the rule in a more simple way, but it would involve notions like <strong>mora</strong> and <strong>prosodic foot</strong>, which we haven’t covered in the lecture. In these terms, the stress falls on the last syllable of the final full foot of the word, where a foot is either one 2-moraic syllable or two 1-moraic ones!</p>
 </div>
 </section>
 </section>
