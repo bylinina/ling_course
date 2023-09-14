@@ -511,10 +511,6 @@ Identify the municipality given just the information below
 |    stop     |          |         |   rounded      |          |
 
 
-**Task 3**
-
-Unlocked at the seminar this week.
-
 `````
 
 ## PART II: Writing
