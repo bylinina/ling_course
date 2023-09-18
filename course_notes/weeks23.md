@@ -16,11 +16,11 @@ The topic of how language is captured and transmitted is a big one -- it will ta
 
 `````{admonition} TL;DR [[slides](https://docs.google.com/presentation/d/1CHYX2jWhGrkimSzslvOOdrveLX4n8i6Qy7wi7JYyd7M/edit?usp=sharing)]
 :class: note
-- **Phonetics** is a field studying speech sounds. Speech sounds can be classified via the way they are pronounced (articulatory phonetics) or via the resulting acoustic signal (acoustic phonetics). 
+- **Phonetics** as a study of speech sounds. Articulotary and acoustic phonetics. 
     - Some corner cases: whistle languages, drum languages
     - Not all languages use sounds! Sign languages
-- **Phonology** studies speech sounds on a more abstract level: how language organizes sounds into sound systems; how it constrains their possible combinations into sequences etc etc.
-- Speech sounds are organized in bigger units: **syllables** and **words**. Languages vary in the available structures for these units and the rules governing this organization (available syllable types, stress patterns).
+- **Phonology**: speech sounds on a more abstract level; constraints on their possible combinations into sequences etc etc.
+- Speech sounds organized in bigger units: **syllables** and **words**; variation in available structures for these units and rules governing this organization (syllable types, stress patterns).
 `````
 
 Languages comes in many forms and modalities: it can be spoken, it can be signed, it can be written, even whistled and played on drums. We will go over some ways language is transmitted and captured, just to give you an idea of the landscape of language modalities, and then we will see some ways this knowledge is relevant for language technology.
@@ -518,6 +518,10 @@ Identify the municipality given just the information below
 |   :----:    |    :----:    |    :----:    |     :----:   |     :----:   |  
 |    stop     |          |         |   rounded      |          |
 
+
+**Task 3**
+
+[The first linguistic puzzle](https://bylinina.github.io/ling_course/ling_puzzles.html) -- to be solved in groups during the seminar!
 
 `````
 
