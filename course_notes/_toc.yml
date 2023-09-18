@@ -8,7 +8,9 @@ defaults:  # The defaults key will be applied to all chapters and sub-sections
 chapters:
 - file: intro
   title: 'Week 1: Intro'
-- file: week2
+- file: weeks23
   title: 'Weeks 2-3: Transmitting and Capturing Language'
+- file: week4
+  title: 'Weeks 4: Morphology'
 - file: ling_puzzles
   title: 'Appendix: Linguistic Puzzles'

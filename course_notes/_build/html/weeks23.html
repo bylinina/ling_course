@@ -61,10 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'week2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weeks23';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Linguistic puzzles" href="ling_puzzles.html" />
+    <link rel="next" title="Week 4. Morphology" href="week4.html" />
     <link rel="prev" title="Week 1. Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -165,6 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Week 1: Intro</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Weeks 2-3: Transmitting and Capturing Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html">Weeks 4: Morphology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ling_puzzles.html">Appendix: Linguistic Puzzles</a></li>
 </ul>
 
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/week2.md" target="_blank"
+      <li><a href="_sources/weeks23.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -328,7 +329,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-writing">PART II: Writing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-language-modalities-and-language-technology">PART III: Language modalities and language technology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-speech-text-and-language-technology">PART III: Speech, text and language technology</a></li>
 </ul>
             </nav>
         </div>
@@ -354,14 +355,16 @@ document.write(`
 <section id="part-i-sounds-and-signs">
 <h2>PART I. Sounds and signs<a class="headerlink" href="#part-i-sounds-and-signs" title="Permalink to this heading">#</a></h2>
 <div class="note admonition">
-<p class="admonition-title">TL;DR</p>
+<p class="admonition-title">TL;DR [<a class="reference external" href="https://docs.google.com/presentation/d/1CHYX2jWhGrkimSzslvOOdrveLX4n8i6Qy7wi7JYyd7M/edit?usp=sharing">slides</a>]</p>
 <ul class="simple">
-<li><p>Phonetics is a field studying speech sounds. Speech sounds can be classified via the way they are pronounced (articulatory phonetics) or via the resulting acoustic signal (acoustic phonetics).</p>
+<li><p><strong>Phonetics</strong> is a field studying speech sounds. Speech sounds can be classified via the way they are pronounced (articulatory phonetics) or via the resulting acoustic signal (acoustic phonetics).</p>
 <ul>
 <li><p>Some corner cases: whistle languages, drum languages</p></li>
 <li><p>Not all languages use sounds! Sign languages</p></li>
 </ul>
 </li>
+<li><p><strong>Phonology</strong> studies speech sounds on a more abstract level: how language organizes sounds into sound systems; how it constrains their possible combinations into sequences etc etc.</p></li>
+<li><p>Speech sounds are organized in bigger units: <strong>syllables</strong> and <strong>words</strong>. Languages vary in the available structures for these units and the rules governing this organization (available syllable types, stress patterns).</p></li>
 </ul>
 </div>
 <p>Languages comes in many forms and modalities: it can be spoken, it can be signed, it can be written, even whistled and played on drums. We will go over some ways language is transmitted and captured, just to give you an idea of the landscape of language modalities, and then we will see some ways this knowledge is relevant for language technology.</p>
@@ -504,6 +507,10 @@ Physics, CC BY 4.0</p>
 <li><p>/ a /</p></li>
 <li><p>No vowels</p></li>
 </ol>
+<div class="attention dropdown admonition">
+<p class="admonition-title">A note</p>
+<p>BTW, remember how last week we asked – what can the result of linguistic analysis look like? Is it a formula? A statistical model? Well, here we have results of linguistic analysis: it can take form of a list of vowels (sometimes, empty).</p>
+</div>
 <p>That’s quite a range! Unfortunately, we will not talk much about these kinds of phonological discussions, but feel free to explore phonology further on your own.</p>
 <div class="attention admonition">
 <p class="admonition-title">A tiny question along the way</p>
@@ -944,175 +951,269 @@ Physics, CC BY 4.0</p>
 </section>
 <section id="part-ii-writing">
 <h2>PART II: Writing<a class="headerlink" href="#part-ii-writing" title="Permalink to this heading">#</a></h2>
-<p><big>To be unlocked next week..<br></big></p>
-<!-- We discussed spoken (and signed!) language, now let's move to another mode of existence of language -- language can also be **written**.  Writing is a relatively recent invention, when judged against the time scale of the existence of human species and human language, it has been around for several thousand years. We will reflect a bit on what writing is and isn't and on existing types of writing systems, and then move on to the relevance of the speech vs. writing distinction for language technology. Let's start with a definition of writing.
-
-`````{admonition} Important notion
-:class: warning
-**Writing** is a system of recording language by means of visible or tactile marks. 
-`````
-
-Like any decent definition, this one **excludes** some things from the defined notion. For instance, a painting or a photograph usually cannot be described as 'writing' (it conveys something but this 'something' is not a sentence or a word, even though it might be describable by a sentence or a word); a voice message on WhatsApp is not writing even though it records language, etc.
-
-Let's define some useful terminology.
-
-- '**Writing system**' has two meanings: 1) the writing system of an individual language; 2) an abstract type of writing system. In the first sense, there are as many writing systems as there are written languages, but in the second sense the number is limited to a few types, such as logographic or word writing systems, syllabic writing systems, phonetic writing systems, or variant forms thereof. 
-- **Script**: the graphic form of the units of a writing system (as in, 'The Croatian and Serbian writing systems are very similar, but they employ different scripts, Roman and Cyrillic, respectively.')
-- **Orthography** (=**spelling**): the standardized variety of a given, language-specific writing system (as in, 'American and British orthography or spelling conventions differ in some details.')
-- **Alphabet**: the inventory of basic signs of a writing system (as in, 'The Tibetan alphabet consists of 30 letters'.)
-
-One important fact about writing is that a lot of languages (in fact, probably the majority of languages of the world) are not written, that is, do not have a canonic way of writing them down. Another important fact about writing is that there are no languages that have written form but no spoken (or signed) form. What these two facts in combination mean is that written language is secondary to spoken -- actually, a type of language technology, an extra advancement on top of natural language to help with its transmission and storing. So, when we say that speech and writing are two different 'modalities' of language, we don't mean that they have equal status. They don't!
-
-Let's look at these differences between speech and writing and think about them together:
-
-```{margin} 
-Coulmas, F. 2003. _Writing systems: An introduction to their linguistic analysis_. Cambridge University Press.
-```
-|          speech         |      writing     |
-|:-----------------------:|:----------------:|
-| continuous              | discrete         |
-| bound to utterance time | timeless         |
-| contextual              | autonomous       |
-| short-lived             | permanent        |
-| audible                 | visible          |
-| produced by voice       | produced by hand |
-
-
-`````{admonition} Discussion point
-:class: tip
-Do all of these differences make sense? Do you agree with these distinctions? What consequences do they have?
-`````
-
-
-Writing is a tool to record and transmit utterances. If we think of an utterance as this dual object that's a combination of meaning and sound that expresses this meaning, what are possible strategies for writing it down? Should we focus on the **meaning** and try to transmit the meaning directly; or should we focus on the **sound** and look for a way to write down the sound? The second answer might seem most natural to us, but that might be due to the fact that we are used to the writing system designed this way. But it's not the only attested way. There are other writing systems, which are sometimes called **ideographic** (you might have heard this about the Chinese writing system) -- the name suggests that these systems write down ideas or thoughts directly. Can you actually have a system that directly writes down sounds or thoughts? 
-
-Let's start with **sound**, since this is something we discussed a lot today. A perfect, objective encoding of sound by means of writing is hardly possible or convenient. We saw that sound is very variable, fluid, with individual sounds intertwined with each other during speech. The same word or phrase pronounced by a child vs. a grown-up, a person who's sad vs. who's happy and so on would be physically different in terms of the sound. Moreover, it's impossible even for one and the same person to pronounce something exactly the same way twice. A true sound-oriented writing system would record all this, but it makes no sense -- because actually a lot of the aspects of sound don't matter for encoding a message. Maybe a sound-oriented writing system should just encode as many properties of the sound as possible, segment the sound as much as it can, and ignore the rest? A writing system like that would basically be **transcription**, like IPA discussed above. Still, transcription is not particularly convenient for everyday use of the speakers: IPA, for instance, has quite a lot of symbols, and encodes contrasts that, for a particular language, again, don't necessarily matter. Why would speakers of a language learn all the distinctions between different types of vowels and consonants that their language's phonological system does not care about? Their writing system should not encode such distinctions. In short, transcription is typically meant to be language-independent and writing systems -- even those focussing on individual sounds -- encodes 'sound' in a language-specific way. It does not provide a true and accurate recording of sound. And it shouldn't!
-
-What about writing down **ideas** (or **thoughts**?) rather than sounds? There is an obvious obstacle to that: what are ideas actually? How many are there? There's probably an infinite number of thoughts out there, so we can't really have a writing system with a symbol for each one. We'd need to break ideas down in some way so that we can then write down ideas as a combination of their components. What parts do ideas have though? I have no clue. But **utterances** expressing ideas certainly have parts -- for instance, words! We can design a symbol for each word and then combine them together as needed. But that won't be exactly encoding ideas in writing -- that would be encoding **a sequence of words that together express an idea**.  A more accurate term is **logographic** writing systems (= writing down words) rather than ideographic ones. For instance, Chinese writing is -- to a large extent -- logographic, as were ancient Egyptian hieroglyphs. How to make a logographic writing system? Assign each word a symbol, and that's it!
-
-```{margin} 
-Images by Freepik.
-```
-|          word         |      symbol     |
-|:-----------------------:|:----------------:|
-| <br>bee              | ![bee]( ./images/bee.jpg)         |
-| <br>leaf  | ![bee]( ./images/leaf.jpg)         |
-| ... | ...         |
-
-The above follows the same principle as Chinese characters **&#23665;** for 'mountain' and **&#26408;** for 'tree'.
-
-`````{admonition} A tiny question along the way
-:class: attention 
-Texts written in English (or in Dutch, or in any other European language, for that matter, contain quite some logograms! Can you figure out what they are?
-`````
-
-In practice, a pure logographic system is hardly possible. A language has -- very approximately -- around 400k words. It's unrealistic to have a separate symbol for each of them, and writing systems actually never do. At some -- pretty early -- stage of development logographic writing systems extend the use of existing symbols based on the sounds of the words they encode. This gives rise to the **rebus principle** that the writing system starts to support. Let's say I needed to write down the word _belief_ but didn't have a symbol for it at my disposal -- I might then do something like this, following the rebus principle!
-
-|          word         |      symbol     |
-|:-----------------------:|:----------------:|
-| <br>belief              | ![bee]( ./images/belief.png)         |
-
-This principle -- or some variation of it -- is used in many logographic systems we know. In Chinese writing system, when a character can be used to encode more than one word that sound the same, often an element has to be added to the character that disambiguates the use. For example, the word _m&#249;_ can mean 'tree' or 'to wash oneself'. As we saw above, the character for tree is **&#26408;**; the character for 'to wash oneself' is **&#27792;**, which has the same main element as 'tree', but also contains the element **&#27701;** 'water', that indicates that this particular _m&#249;_ has to do with water. A pretty complicated system!
-
-Writing systems that encode the smallest segments possible -- individual sounds --  as opposed to systems encoding words (modulo complications discussed above) are often called **phonetic** or **phonological** writing systems. They are familiar to us, since this is the one we are using now! Roman (a.k.a. Latin) script that is used in English -- and in Dutch -- has Egyptian hieroglyphs as a far ancestor, but has evolved to encode abstract speech sounds. If you remember the discussion early on in today's lecture about how untrustworthy writing can be when it comes to sound-writing correspondences (the **ghoti** example!), you might be confused now. Well, you have the right to be confused: phonetic writing systems usually have a lot of non-phonetic stuff going on that complicate the mapping, mostly for historic reasons. It is what it is!
-
-The phonetic and logographic systems don't exhaust all the options: between the level of individual sounds and the level of words, there is another level of sound units -- **syllables**. A lot of writing systems build on this unit. Such systems are called **syllabaries**. Japanese, for instance, in addition to Chinese characters, has two syllabaries: Hiragana (for native Japanese words) and Katakana (for loanwords).
-
-```{margin} 
-Katakana. [Source](https://en.wikipedia.org/wiki/Katakana)
-```
-```{image} ./images/katakana.jpg
-:alt: katakana
-:class: bg-primary mb-1
-:width: 600px
-:align: center
-```
-One famous syllabary is Hangul, a Korean writing system developed in the 15th century. It is remarkably transparent, as the symbols for syllables are put together from individual components corresponding to consonants and vowels in a small number of predictable ways. 
-
-
-```{margin} 
-Hangul structure. [Source](http://easykorean.edsoftapps.com/learn-structure-of-hangul/)
-```
-```{image} ./images/hangul.jpg
-:alt: hangul
-:class: bg-primary mb-1
-:width: 500px
-:align: center
-```
-Another notable writing system is **abjad** -- a system where only consonants are represented. This system is used in Arabic and Hebrew, for the reasons that we will discuss in the morphology lecture! It wouldn't be as convenient for English, but to some extent it would've work (let's say, to the extent you can read and understand the phrase _th qck brwn fx jmps vr th lz dg_).
-
-The final system I want to mention is somewhat similar to abjad and is called **abugida**. In this system, basic characters denote consonants followed by a particular vowel, and additional signs can denote other vowels. An example is Tibetan.
-
-
-```{margin} 
-Universal Declaration of Human Rights, article 1, written in Arabic (abjad), Hebrew (abjad) and Tibetan (abugida). <br> Coulmas, F. 2003. _Writing systems: An introduction to their linguistic analysis_. Cambridge University Press.
-```
-Arabic (abjad):
-```{image} ./images/arabic.png
-:alt: scripts
-:class: bg-primary mb-1
-:width: 500px
-:align: center
-```
-Hebrew (abjad):
-```{image} ./images/hebrew.png
-:alt: scripts
-:class: bg-primary mb-1
-:width: 700px
-:align: center
-```
-Tibetan (abugida):
-```{image} ./images/tibetan.png
-:alt: scripts
-:class: bg-primary mb-1
-:width: 600px
-:align: center
-```
-
-There is much more to writing systems than what I was able to tell you, but before we leave this chapter, I wanted to show you this super-helpful chart that comes from [Neography](https://neography.info/writing-systems/), a project which focusses on creation of writing systems. You can find more examples and discussions there! 
-```{margin} 
-[Source](https://neography.info/writing-systems/)
-
-Consonants:
-![writing]( ./images/consonants_glyph.png)
+<div class="note admonition">
+<p class="admonition-title">TL;DR [<a class="reference external" href="https://docs.google.com/presentation/d/1oKhOVWXx4vM9b1eZ5FknvApuuIfA1rZf-zo1xOsRqVU/edit?usp=sharing">slides</a>]</p>
+<p>The section covers:</p>
+<ul class="simple">
+<li><p><strong>Writing</strong> and its basic principles</p></li>
+<li><p>Relation between writing and speech – writing as an instrument for capturing utterances</p></li>
+<li><p>Types of writing systems</p></li>
+</ul>
+</div>
+<p>We discussed spoken (and signed!) language, now let’s move to another mode of existence of language – language can also be <strong>written</strong>.  Writing is a relatively recent invention, when judged against the time scale of the existence of human species and human language, it has been around for several thousand years. We will reflect a bit on what writing is and isn’t and on existing types of writing systems, and then move on to the relevance of the speech vs. writing distinction for language technology. Let’s start with a definition of writing.</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notion</p>
+<p><strong>Writing</strong> is a system of recording language by means of visible or tactile marks.</p>
+</div>
+<p>Like any decent definition, this one <strong>excludes</strong> some things from the defined notion. For instance, a painting or a photograph usually cannot be described as ‘writing’ (it conveys something but this ‘something’ is not a sentence or a word, even though it might be describable by a sentence or a word); a voice message on WhatsApp is not writing even though it records language, etc.</p>
+<p>Let’s define some useful terminology.</p>
+<ul class="simple">
+<li><p>‘<strong>Writing system</strong>’ has two meanings: 1) the writing system of an individual language; 2) an abstract type of writing system. In the first sense, there are as many writing systems as there are written languages, but in the second sense the number is limited to a few types, such as logographic or word writing systems, syllabic writing systems, phonetic writing systems, or variant forms thereof.</p></li>
+<li><p><strong>Script</strong>: the graphic form of the units of a writing system (as in, ‘The Croatian and Serbian writing systems are very similar, but they employ different scripts, Roman and Cyrillic, respectively.’)</p></li>
+<li><p><strong>Orthography</strong> (=<strong>spelling</strong>): the standardized variety of a given, language-specific writing system (as in, ‘American and British orthography or spelling conventions differ in some details.’)</p></li>
+<li><p>‘<strong>Alphabet</strong>’ is used to refer to either 1) the inventory of basic signs of a phonological writing system; or 2) of any writing system in general (as in, ‘The Tibetan alphabet consists of 30 letters’.)</p></li>
+</ul>
+<p>The starting point of talking about the relation between speech and writing are the following three important facts:</p>
+<ol class="arabic simple">
+<li><p>A lot of languages (in fact, probably the majority of languages of the world) are not written, that is, do not have a canonic way of writing them down.</p></li>
+<li><p>That there are no languages that have written form but no spoken (or signed) form.</p></li>
+<li><p>The writing system of a language can change without affecting the language much. <a class="reference external" href="https://en.wikipedia.org/wiki/Azerbaijani_language">Azerbaijani</a> is an example of a language that underwent three changes of writing systems within the course of one century (Arabic script → Latin → Cyrillic → Latin). This didn’t have any dramatic effect on the language itself.</p></li>
+</ol>
+<p>What these three facts in combination mean is that written language is secondary to spoken – actually, a type of language technology, an extra advancement on top of natural language to help with its transmission and storing. So, when we say that speech and writing are two different ‘modalities’ of language, we don’t mean that they have equal status. They don’t!</p>
+<p>Let’s look at differences between speech and writing that are listed in one popular book on writing systems and think about them together:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Coulmas, F. 2003. <em>Writing systems: An introduction to their linguistic analysis</em>. Cambridge University Press.</p>
+</aside>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>speech</p></th>
+<th class="head text-center"><p>writing</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>continuous</p></td>
+<td class="text-center"><p>discrete</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>bound to utterance time</p></td>
+<td class="text-center"><p>timeless</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>contextual</p></td>
+<td class="text-center"><p>autonomous</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>short-lived</p></td>
+<td class="text-center"><p>permanent</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>audible</p></td>
+<td class="text-center"><p>visible</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>produced by voice</p></td>
+<td class="text-center"><p>produced by hand</p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">Discussion point</p>
+<p>Do all of these differences make sense? Do you agree with these distinctions? What consequences do they have?</p>
+</div>
+<p>Some of these differences do not really stand the test of time: for instance, the short-lived vs. permanent distinction seems less relevant now with all the voice messages and other ways to store speech signal. Some of these differences are fundamental and definitive – for instance, the continuous vs. discrete divide will become relevant when we talk about modalities of language technology.</p>
+<p>Writing is a tool to record and transmit utterances. If we think of an utterance as this dual object that’s a combination of meaning and sound that expresses this meaning, what are possible strategies for writing it down? Should we focus on the <strong>meaning</strong> and try to transmit the meaning directly; or should we focus on the <strong>sound</strong> and look for a way to write down the sound? The second answer might seem most natural to us, but that might be due to the fact that we are used to the writing system designed this way. But it’s not the only possible way. For instance, you might have heard about <strong>ideographic</strong> writing systems – the name suggests writing down ideas or thoughts directly. But can you actually have a system that directly writes down sounds or thoughts?</p>
+<p>Let’s start with <strong>sound</strong>, since this is something we discussed a lot recently. A perfect, objective encoding of sound by means of writing is hardly possible or convenient. We saw that sound is very variable, fluid, with individual sounds intertwined with each other during speech. The same word or phrase pronounced by a child vs. a grown-up, a person who’s sad vs. who’s happy and so on would be physically different in terms of the sound. Moreover, it’s impossible even for one and the same person to pronounce something exactly the same way twice. A true sound-oriented writing system would record all this, but it makes no sense – because actually a lot of the aspects of sound don’t matter for encoding a message. Maybe a sound-oriented writing system should just encode as many properties of the sound as possible? A writing system like that would basically be <strong>transcription</strong>, like IPA discussed before. Still, transcription is not particularly convenient for everyday use of the speakers: IPA, for instance, has quite a lot of symbols, and encodes contrasts that, for a particular language, again, don’t necessarily matter. Why would speakers of a language learn all the distinctions between different types of vowels and consonants that their language’s sound system does not care about? Their writing system should not encode such distinctions. In short, transcription is typically meant to be language-independent and writing systems – even those focussing on individual sounds – encode ‘sound’ in a language-specific way. It does not provide a true and accurate recording of sound. And it shouldn’t!</p>
+<p>What about writing down <strong>ideas</strong> (or <strong>thoughts</strong>?) rather than sounds? There is an obvious obstacle to that: what are ideas actually? How many are there? There’s probably an infinite number of thoughts out there, so we can’t really have a writing system with a symbol for each one. We’d need to break ideas down in some way so that we can then write down ideas as a combination of their components. What parts do ideas have though? I have no clue. But <strong>utterances</strong> expressing ideas certainly have parts – for instance, words! We can design a symbol for each word and then combine them together as needed. But that won’t be exactly encoding ideas in writing – that would be encoding <strong>a sequence of words that together express an idea</strong>.  A more accurate term is <strong>logographic</strong> writing systems (= writing down words) rather than ideographic. For instance, Chinese writing is – to a large extent – logographic, as were ancient Egyptian hieroglyphs. How does one make a logographic writing system? Assign each word a symbol, and that’s it!</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Images by Freepik.</p>
+</aside>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>word</p></th>
+<th class="head text-center"><p>symbol</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><br>bee</p></td>
+<td class="text-center"><p><img alt="bee" src="_images/bee.jpg" /></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><br>leaf</p></td>
+<td class="text-center"><p><img alt="bee" src="_images/leaf.jpg" /></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>…</p></td>
+<td class="text-center"><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>The above follows the same principle as Chinese characters <strong>山</strong> for ‘mountain’ and <strong>木</strong> for ‘tree’.</p>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>Texts written in English (or in Dutch, or in any other European language, for that matter), contain quite some logograms – or maybe actually ideograms! Can you figure out what they are?</p>
+</div>
+<p>In practice, a pure logographic system is hardly possible. A language has – very approximately – around 400k words. It’s unrealistic to have a separate symbol for each of them, and writing systems actually never do. At some stage of development logographic writing systems inevitably extend the use of existing symbols based on the sounds of the words they encode. This gives rise to the <strong>rebus principle</strong> that the writing system starts to support. Let’s say I needed to write down the word <em>belief</em> but didn’t have a symbol for it at my disposal – I might then use the symbol for <em>bee</em> for its sound regardless of the meaning; and I might do the same for the symbol for <em>leaf</em>:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>word</p></th>
+<th class="head text-center"><p>symbol</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><br>belief</p></td>
+<td class="text-center"><p><img alt="bee" src="_images/belief.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>This trick – or some variation of it – is used in many logographic systems we know. In the Chinese writing system, when a character can be used to encode more than one word that sound the same, often an element has to be added to the character that disambiguates the use. For example, the word <em>mù</em> can mean ‘tree’ or ‘to wash oneself’. As we saw above, the character for tree is <strong>木</strong>; the character for ‘to wash oneself’ is <strong>沐</strong>, which has the same main element as ‘tree’, but also contains the element <strong>氵</strong> ‘water’, that indicates that this particular <em>mù</em> has to do with water. A pretty complicated system!</p>
+<p>Writing systems that encode the smallest segments possible – individual sounds –  as opposed to systems encoding words (modulo complications discussed above) are often called <strong>phonetic</strong> or <strong>phonological</strong> writing systems. They are familiar to us, since this is the one we are using now! Roman (a.k.a. Latin) script that is used in English – and in Dutch – has Egyptian hieroglyphs as a far ancestor, but has evolved to encode abstract speech sounds. A lot of alphabets used today have a noticeable overlap in symbols, due to their common origin (but some alphabets are quite different, see, for instance, Georgian and Armenian):</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>A Venn diagram showing the Greek (left), Cyrillic (bottom) and Latin (right) alphabets, which share many of the same letters (<a class="reference external" href="https://en.wikipedia.org/wiki/Alphabet">source</a>)</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/alphabet_diagram.jpg"><img alt="alphabet" class="bg-primary mb-1 align-center" src="_images/alphabet_diagram.jpg" style="width: 300px;" /></a>
+<p>If you remember the discussion early on in last week’s lecture about how untrustworthy writing can be when it comes to sound-writing correspondences (the <strong>ghoti</strong> example!), you might be confused now. Well, you have the right to be confused: sound-based writing systems usually have a lot of non-phonetic stuff going on that complicates the mapping, mostly for historic reasons. It is what it is!</p>
+<p>The phonetic and logographic systems don’t exhaust all the options: between the level of individual sounds and the level of words, there is another level of sound units – <strong>syllables</strong>. A lot of writing systems build on this unit. Such systems are called <strong>syllabaries</strong>. Japanese, for instance, in addition to Chinese characters, has two syllabaries: Hiragana (for native Japanese words) and Katakana (for loanwords).</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Left: Hiragana (<a class="reference external" href="https://en.wikipedia.org/wiki/Hiragana">source</a>)</p>
+<p>Below: Katakana (<a class="reference external" href="https://en.wikipedia.org/wiki/Katakana">source</a>)
+<img alt="katakana" src="_images/katakana.jpg" /></p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/hiragana.jpg"><img alt="hiragana" class="bg-primary mb-1 align-center" src="_images/hiragana.jpg" style="width: 600px;" /></a>
+<p>One famous writing system that is somehow between an alphabet and a syllabary is Hangul, a Korean writing system developed in the 15th century. It is remarkably transparent, as the symbols for syllables are put together from individual components corresponding to consonants and vowels in a small number of predictable ways.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Hangul structure (<a class="reference external" href="http://easykorean.edsoftapps.com/learn-structure-of-hangul/">source</a>)</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/hangul.jpg"><img alt="hangul" class="bg-primary mb-1 align-center" src="_images/hangul.jpg" style="width: 450px;" /></a>
+<p>Another notable writing system is <strong>abjad</strong> – a system where only consonants are represented. This system is used in Arabic and Hebrew, for the reasons that we will discuss in the morphology lecture! It wouldn’t be as convenient for English, but to some extent it would’ve work (let’s say, to the extent you can read and understand the phrase <em>th qck brwn fx jmps vr th lz dg</em>).</p>
+<p>The last system I want to mention is somewhat similar to abjad and is called <strong>abugida</strong>. In this system, basic characters denote consonants followed by a particular vowel, and additional signs can denote other vowels. An example is Tibetan.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Universal Declaration of Human Rights, article 1, written in Arabic (abjad), Hebrew (abjad) and Tibetan (abugida). <br> Coulmas, F. 2003. <em>Writing systems: An introduction to their linguistic analysis</em>. Cambridge University Press.</p>
+</aside>
+<p>Arabic (abjad):</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/arabic.png"><img alt="scripts" class="bg-primary mb-1 align-center" src="_images/arabic.png" style="width: 500px;" /></a>
+<p>Hebrew (abjad):</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/hebrew.png"><img alt="scripts" class="bg-primary mb-1 align-center" src="_images/hebrew.png" style="width: 700px;" /></a>
+<p>Tibetan (abugida):</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/tibetan.png"><img alt="scripts" class="bg-primary mb-1 align-center" src="_images/tibetan.png" style="width: 600px;" /></a>
+<p>There is much more to writing systems than what I was able to tell you, but before we leave this chapter, I wanted to show you this super-helpful chart that comes from <a class="reference external" href="https://neography.info/writing-systems/">Neography</a>, a project which focusses on creation of writing systems. You can find more examples and discussions there!</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://neography.info/writing-systems/">Source</a></p>
+<p>Consonants:
+<img alt="writing" src="_images/consonants_glyph.png" />
 Vowels:
-![writing]( ./images/vowels_glyph.png)
+<img alt="writing" src="_images/vowels_glyph.png" />
 Syllabograms:
-![writing]( ./images/syllabograms.png)
+<img alt="writing" src="_images/syllabograms.png" />
 Logograms:
-![writing]( ./images/logograms.png)
-```
-```{image} ./images/types_of_scripts.png
-:alt: scripts
-:class: bg-primary mb-1
-:width: 700px
-:align: center
-```
-
-As a final bit of writing-related content today, I want to note that writing systems can also differ in the direction of writing. Here are the main options and their geographic distribution:
-
-```{margin} 
-[Source](https://vividmaps.com/writing-directions-of-the-world/)
-```
-```{image} ./images/writing_directions.jpg
-:alt: scripts
-:class: bg-primary mb-1
-:width: 700px
-:align: center
-```
-
-This is all I plan to communicate to you about the ways of transmitting and capturing language (a.k.a. language modalities). We talked about sounds and gestures; and we talked about writing and how it relates to sound and meaning. We now move on to the relation between the things we discussed so far -- and language technology.
--->
+<img alt="writing" src="_images/logograms.png" /></p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/types_of_scripts.png"><img alt="scripts" class="bg-primary mb-1 align-center" src="_images/types_of_scripts.png" style="width: 700px;" /></a>
+<p>Finally, a parameter that is orthogonal to the size of the unit that that writing system is based on (word, syllable, individual sound) is the <strong>direction</strong> of writing. Most European languages write from left to right and top-to-bottom. But this is not the only option, and this is good to keep in mind!</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://vividmaps.com/writing-directions-of-the-world/">Source</a></p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/writing_directions.jpg"><img alt="scripts" class="bg-primary mb-1 align-center" src="_images/writing_directions.jpg" style="width: 700px;" /></a>
+<p>Here is the main take-away from this section: In practice, all writing systems that are meant to convey the whole variety of possible messages in a language rely on sound in some way. But still the main working units of different writing systems are different:</p>
+<ul class="simple">
+<li><p><strong>Logographic</strong> writing systems focus on words as their unit (Chinese, Japanese)</p></li>
+<li><p><strong>Syllabaries</strong> encode syllables (Japanese, Korean..)</p></li>
+<li><p><strong>Alphabets</strong> encode individual sounds (English, Dutch, Georgian, Armenian..)</p></li>
+<li><p>There are systems that are somewhere in between!</p></li>
+</ul>
+<p>This should be enough to keep you aware of what you are dealing with if you need to use or design a text-based system dealing with various languages. If you want to learn more about writing, its variants and history, you might find some the resources below useful.</p>
+<div class="tip admonition">
+<p class="admonition-title">Resources on writing systems</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.worldswritingsystems.org/">The World’s Writing Systems</a> – a project organizing old and existing writing systems along different parameters; a good FAQ!</p></li>
+<li><p><a class="reference external" href="https://www.omniglot.com/">Omniglot</a> – a comprehensive online encyclopedia of writing systems and languages</p></li>
+<li><p><a class="reference external" href="https://neography.info/writing-systems/">Neography</a> – a very nice project on creating new writing systems, which also summarizes existing ones well!</p></li>
+</ul>
+</div>
+<p>This is all I plan to communicate to you about the ways of transmitting and capturing language (a.k.a. language modalities). During the last two weeks, we talked about speech sounds and signs; and we talked about writing and how it relates to sound and meaning. We now move on to the relation between the things we discussed so far – and language technology.</p>
 </section>
-<section id="part-iii-language-modalities-and-language-technology">
-<h2>PART III: Language modalities and language technology<a class="headerlink" href="#part-iii-language-modalities-and-language-technology" title="Permalink to this heading">#</a></h2>
-<p><big>To be unlocked next week..<br></big></p>
-<!-- To anyone with experience reading, reviewing and
-publishing papers in NLP conferences and journals (such the ACL conferences and TACL) it is
-evident that the field is very strongly focused on
-processing written language. While this is evident
-to practitioners, it is also largely tacit and implicit.
--->
+<section id="part-iii-speech-text-and-language-technology">
+<h2>PART III: Speech, text and language technology<a class="headerlink" href="#part-iii-speech-text-and-language-technology" title="Permalink to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">TL;DR</p>
+<ul class="simple">
+<li><p>Speech and text-based systems have their own typical associated tasks</p></li>
+<li><p>The field of language technology is text-dominated</p></li>
+<li><p>But it doesn’t have to be! And maybe shouldn’t be</p></li>
+<li><p>There is a tendency to formulate deeper tasks in terms of sound directly</p></li>
+</ul>
+</div>
+<p>Systems that linguistically interact with users differ in the type of input that they take (and the output they give). The main two types of systems are:</p>
+<ul class="simple">
+<li><p>the ones that analyse and/or output <strong>speech</strong>;</p></li>
+<li><p>the ones that deal with <strong>text</strong>.</p></li>
+</ul>
+<p>Natural language processing and computational linguistics are to a large extent text-dominated fields. If we look at the proportion of speech- and sound-related papers in the <a class="reference external" href="https://aclanthology.org/">ACL Anthology</a> (a comprehensive database of NLP papers covering all the main conferences, journals and workshops), we will see that it never goes above 20%, and apart from the spike in 1989 (inclusion of the Speech and Natural Language Workshop in the Anthology), stays mostly below 10%:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Graph from <a class="reference external" href="https://arxiv.org/pdf/2305.04572.pdf">Grzegorz Chrupała. 2023. Putting Natural in Natural Language Processing</a>.</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/acl.png"><img alt="acl" class="bg-primary mb-1 align-center" src="_images/acl.png" style="width: 500px;" /></a>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://huggingface.co/">Huggingface.co</a> is a platform where one can find – and upload their own! – models, datasets, spaces for different tasks having to do with natural language processing, computer vision etc. If you haven’t seen it before (there were a couple of references to it during Week 1!), you should familiarize yourself with it and things you can find there!</p>
+</aside>
+<p>Classic tasks for speech technology are <strong>Automatic Speech Recognition</strong> (ASR) – given the sound input, the model outputs its written form – and <strong>Text-to-Speech</strong> (TTS) that maps written text to sound. You can try some of these models on Huggingface: see models under <a class="reference external" href="https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&amp;sort=trending">ASR</a> and <a class="reference external" href="https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&amp;sort=trending">TTS</a> tasks. Recent ASR models, for instance, are very impressive! Whisper from OpenAI is a recent model that is doing a pretty amazing job mapping speech to text for 75 languages – you can try it yourself on <a class="reference external" href="https://huggingface.co/openai/whisper-large-v2">its Huggingface page</a> or <a class="reference external" href="https://huggingface.co/spaces/sanchit-gandhi/whisper-large-v2">a Huggingface space that uses this model</a>.</p>
+<p>As for <strong>text-based</strong> models and systems, we’ve seen some of them before, in the introduction lecture. The range of tasks that are typically defined and implemented over text is  broad:</p>
+<ul class="simple">
+<li><p>text summarization,</p></li>
+<li><p>question answering,</p></li>
+<li><p>machine translation</p></li>
+<li><p>and many many others.</p></li>
+</ul>
+<p>In principle, there is nothing specifically <strong>textual</strong> about these tasks – they could as well be defined over speech: you may want to summarize a spoken interaction or monologue, answer a spoken question about such interactions/monologues etc. In practice, a lot of systems with speech input and/or output targeting complex tasks like these are in fact multi-component pipelines: first, an ASR system maps spoken input to its written form, then a text-based model is called (a.k.a. cascaded systems); similarly for systems with speech output – often, it’s actually text output with a layer of TTS. This is, for example, the way virtual assistants such as Siri and Alexa work – at least, for now.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>A cascaded system with speech input / output. (Yep, I drew it on my iPad, why not)</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cascade.jpg"><img alt="cascaded" class="bg-primary mb-1 align-center" src="_images/cascade.jpg" style="width: 550px;" /></a>
+<p>There are upsides and downsides to this approach. One benefit is clear: given that NLP has for decades been a predominantly text-oriented field, and all this time text-based tasks have been the focus of a large research community, now it just works pretty well! So it’s a natural solution to reduce spoken tasks to text-based tasks by sticking ASR/TTS modules on either side of the system.</p>
+<p>But <strong>why</strong> has written text been the primary language modality for NLP?</p>
+<ul class="simple">
+<li><p><strong>One reason</strong> is large quantities of available text data: Wikipedia, social networks and all interactions there, digitized books and so on. More data means better systems trained on these data.</p></li>
+<li><p><strong>Another reason</strong> might be cultural: we are used to seeing written texts as more valuable, more important and more worthy of analysis.</p></li>
+<li><p><strong>Finally</strong>, written language is simply easier for computational modelling. As we discussed earlier, spoken language is messy, intrinsically non-segmented and variable. Even if you try very hard, there is no way you can pronounce one and the same word in exactly the same way twice. The pronunciation and the resulting sound varies even more when a word or a phrase is pronounced by speakers of different ages or dialects; depending on its position in the message and so on and so forth. We as listeners factor out a lot of this variation without any problem; and all the various pronunciations of the same linguistic elements  correspond in writing to one and the same, discrete sequence of letters. This sequence is easier to deal with, since a lot of complexity of spoken language does not show up in this representation.</p></li>
+</ul>
+<p>There are also <strong>problems</strong> with treating written text as the default input/output of language technology. The main issue is actually the same as the last point we discussed above! In writing, a lot of information is lost: the intonation, the general tone of voice, a lot of things about speaker identity (age, gender etc.) that can contribute to the message that the utterance conveys. This loss of information can be a good thing – in a sense that it makes the analysis of written language a comparatively simpler task – but it at the same time makes the task harder when it comes to certain other phenomena that rely on the aspects of the spoken utterance that are typically not written down. Think about sarcasm, for instance. It’s often marked in speech by a complex combination of intonation, sound duration and more. When our interlocutor is angry or sad, often it’s not the words themselves that indicate that, but we can still pick it up from how the person sounds. For many tasks in natural language processing, it’s important to identify these aspects of the interaction, but the written form does not convey them directly, making the task hard.</p>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>Think about the properties of the spoken version of the phrase ‘Wow, thanks for your help!’ that would make it sound sarcastic or sincere.</p>
+</div>
+<p>Here is another thought about the relation between speech and writing in language technology. When we talked about writing, we established that writing is secondary to speech – historically and acquisitionally. We learn to write and read <strong>after</strong> we learn to speak, and quite a noticeable percentage of people across the world do not learn how to write or read even in languages that have written form. Writing is just a convention to convey the spoken message. A language can have one or more writing systems, can switch from one writing system to another many times in the course of its history without much effect on the actual spoken form. Whenever a message is written, there is always a corresponding spoken message that it represents (you can pronounce it – for instance, reading out loud). Now think about a text-based NLP system. Text is the <strong>only</strong> thing they know about language. There’s never a step to recover a spoken version of what’s written – so, it’s kind of the opposite of what people do, I guess! If a language has two written forms, a model exposed to texts in both will have no way to know they actually correspond to the same language. Will the model somehow learn an alignment between two written forms eventually just looking at the data? Who knows! I don’t know work asking this research question. It’d be interesting to find out.</p>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Oversimplification alert!</p>
+<p>Ok, the statement ‘Whenever a message is written, there is always a corresponding spoken message that it represents’ is a simplification. Given how much knowledge we acquire from reading rather from conversation these days, there are some things that we learn to recognize as written words but never actually encounter in their spoken form and don’t even know how to pronounce. One class of those things are names of fiction characters: if you have read ‘War and Peace’, I bet you’ve <strong>read but never knew how to pronounce</strong> the name ‘Andrei Nikolayevich Bolkonsky’. There are other words that are often known from text but are much more rarely pronounced (think ‘mischievous’, ‘hyperbole’, ‘abugida’ and such).</p>
+</div>
+<p>The solution is to embrace the goal of analyzing speech for complex tasks directly! Yes, it is potentially more difficult because of all the variability, but the benefits of getting the full picture of what was said – and how it was said – are potentially worth it. The field has been turning in this direction: release of newest speech models such as <a class="reference external" href="https://arxiv.org/abs/2106.07447">HuBERT</a> signals and drives a turn to deep analysis of speech signal. Some of the recent speech models that can be used for ASR and speech translation actually do the latter directly from the speech signal, without the intermediate step of written representation. I mentioned <a class="reference external" href="https://huggingface.co/spaces/sanchit-gandhi/whisper-large-v2">Whisper</a> above as an ASR model, but it does speech translation as well (to English only), and it does it directly. Another important recent release is <a class="reference external" href="https://ai.meta.com/blog/seamless-m4t/">SeamlessM4T</a> from Meta. It’s a text and speech model that does ASR, TTS and both text and speech translation – directly (at least on the input side). Speech translation works from 100 to 30 languages! You can try it out either on their <a class="reference external" href="https://seamless.metademolab.com/demo">demo page</a> or in a <a class="reference external" href="https://huggingface.co/spaces/facebook/seamless_m4t">Huggingface space</a> that runs the model.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>An end-to-end system with speech input / output.</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/e2e.jpg"><img alt="end-to-end" class="bg-primary mb-1 align-center" src="_images/e2e.jpg" style="width: 450px;" /></a>
+<p>So, ASR/TTS is not all there is to speech technology! In addition to sequence-to-sequence tasks I discussed above, I want to mention <a class="reference external" href="https://huggingface.co/tasks/audio-classification">audio classificaion</a>. Some of the popular tasks are language identification, command identification (very useful for virtual assistants), speaker identification and emotion identification. Try out this <a class="reference external" href="https://huggingface.co/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition">emotion recognition model</a>! These tasks have traditionally been audio-centered – and it’s no coincidence that a lot of them focus on properties of speech that do not get reflected in written form.</p>
+<p>Finally, a note on diversity in technology when it comes to linguistic modalities.</p>
+<ul class="simple">
+<li><p>ASR and other speech technology shows bias that disfavours minorities whose dialects show phonetic traits less represented in speech datasets the models are trained on. If your pronunciation is not ‘typical’ in some sense relevant for speech dataset construction – you will have a harder time being understood by a computer. Check out, for example, <a class="reference external" href="https://academic.oup.com/applij/article/44/4/613/6901317">a recent paper about racial bias in ASR</a></p></li>
+<li><p>Text models show a lot of bias as well, some of it complex – but some of it can be seen on the level of symbols used to represent text. This word cloud, for instance, is meant to visualize <em>hey</em> in 52 languages. The tool fails to render many of the languages (including Arabic, Hindi, and Korean) in its default font.</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://blog.yenniejun.com/p/all-languages-are-not-created-tokenized">Source</a></p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cloud.png"><img alt="wordcloud" class="bg-primary mb-1 align-center" src="_images/cloud.png" style="width: 450px;" /></a>
+<ul class="simple">
+<li><p>Signed languages are severely underrepresented in language technology. Things are getting better in this field, but there’s a long road ahead. I recommend <a class="reference external" href="https://research.sign.mt/">Moryossef &amp; Goldberg (2021) Sign Language Processing</a> as a resource for those who want to know more!</p></li>
+</ul>
+<p>I guess that’s all I wanted to say about sounds, signs and writing! Next week, we are moving on to grammatical organization of language.</p>
+<div class="note admonition">
+<p class="admonition-title">Homework 3</p>
+<p>To be added soon!</p>
+</div>
 </section>
 </section>
 
@@ -1157,11 +1258,11 @@ to practitioners, it is also largely tacit and implicit.
       </div>
     </a>
     <a class="right-next"
-       href="ling_puzzles.html"
+       href="week4.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linguistic puzzles</p>
+        <p class="prev-next-title">Week 4. Morphology</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1199,7 +1300,7 @@ to practitioners, it is also largely tacit and implicit.
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-writing">PART II: Writing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-language-modalities-and-language-technology">PART III: Language modalities and language technology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-speech-text-and-language-technology">PART III: Speech, text and language technology</a></li>
 </ul>
   </nav></div>
 
