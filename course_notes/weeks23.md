@@ -843,7 +843,21 @@ I guess that's all I wanted to say about sounds, signs and writing! Next week, w
 `````{admonition} Homework 3
 :class: note
 
-To be added soon!
+**Task 1**
+
+Katakana is a Japanese syllabary that is mainly used for writing foreign words. This week, we talked about different writing principles and systems, and mentioned -- briefly -- how properties of a language might make some writing systems more suitable for this language than others. This assignment is meant to give you a bit of a first-hand experience with a writing system that is very different from the one we are used to, designed for a language that is also very different from the languages of the European type. 
+
+So, here is the task: given the information about katakana on Wikipedia, try to write down your full name in katakana. Submit your result (if you have trouble rendering the symbols on your computer, feel free to take a picture of the result and submit that) **and** describe the difficulties you faced while trying to do so, if you had any.
+
+**Task 2** 
+
+A lot of even very sophisticated language technology is pretty [bad when it comes to tasks that require working at the level of individual letters/characters](https://chat.openai.com/share/436f6fd5-78e7-40ca-83a9-11eae9c997dd). We will discuss reasons for this next week. For now, I want you to make note of this fact. Ask ChatGPT to write your name in katakana! Was the result the same as when you tried to do it? Does the result make sense to you or were there any obvious mistakes? Submit the link to the chat or the screenshot and discuss what you got.
+
+**Task 3**
+
+We talked about how writing is historically and acquisitionally secondary to spoken language: there can be many different writing systems for one and the same language, and the way you write things down does not affect the grammar or the meaning of the message. It might seem obvious to us, but it is not obvious at all anymore if we think about this from a perspective of text-based language technology. For instance, if we think about translation of one and the same text in the same language written using two different writing systems to some other language -- we expect the translation to remain the same. But does it really remain the same, in practice? Let's check.
+
+Take a paragraph in English or Dutch. It can be anything -- but not something very well-known, so that the chances that the text is in training data of GPT is lower. Don't make it too short! You can take a syllabus of one of the courses you are now taking. Google Translate this paragraph to Serbian. Google Translate gives you two versions in the output: one written in Cyrillic, one written in Latin script. That's exactly what we need, since Serbian officially uses two alphabets. Go to ChatGPT and ask it to translate these two messages to Dutch (or English; but I prefer Dutch). Do it in two separate chat sessions, so that the model doesn't know the context of your previous request when fulfilling the other one. You will get two translations. Compare them: are they exactly the same? If not, do they only differ in small details that do not change the meaning, or are there deeper differences? Which version do you like better: the one that translated the Cyrillic or the Latin version of the Serbian text? Submit links to chats or screenshots and your analysis.
 
 `````
 
