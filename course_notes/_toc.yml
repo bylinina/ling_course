@@ -11,6 +11,8 @@ chapters:
 - file: weeks23
   title: 'Weeks 2-3: Transmitting and Capturing Language'
 - file: week4
-  title: 'Weeks 4: Morphology'
+  title: 'Weeks 4: Grammar I: Morphology'
+- file: week5
+  title: 'Weeks 5: Grammar II: Syntax'
 - file: ling_puzzles
   title: 'Appendix: Linguistic Puzzles'
