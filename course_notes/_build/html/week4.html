@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Week 4. Morphology &#8212; Linguistics for Language Technology</title>
+    <title>Week 4. Grammar I: Morphology &#8212; Linguistics for Language Technology</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -64,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'week4';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Linguistic puzzles" href="ling_puzzles.html" />
+    <link rel="next" title="Week 5. Grammar II: Syntax" href="week5.html" />
     <link rel="prev" title="Weeks 2-3. Transmitting and Capturing Language" href="weeks23.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -165,7 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Week 1: Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weeks23.html">Weeks 2-3: Transmitting and Capturing Language</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Weeks 4: Morphology</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Weeks 4: Grammar I: Morphology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week5.html">Weeks 5: Grammar II: Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ling_puzzles.html">Appendix: Linguistic Puzzles</a></li>
 </ul>
 
@@ -213,6 +224,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -221,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/week4.md" target="_blank"
+      <li><a href="_sources/week4.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -231,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -275,10 +317,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -286,11 +328,13 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -301,11 +345,48 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week 4. Morphology</h1>
+    <h1>Week 4. Grammar I: Morphology</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#words-and-morphemes">Words and morphemes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-vs-bound-roots-vs-affixes-open-vs-closed-class">Free vs. bound; roots vs. affixes; open- vs. closed-class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivational-vs-inflectional-morphology">Derivational vs. inflectional morphology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-types-of-affixes">Positional types of affixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prefixes-and-suffixes">Prefixes and suffixes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#circumfixes">Circumfixes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infixes">Infixes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-template-morphology">Pattern (template) morphology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#affixes-as-operations">Affixes as operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#reduplication">Reduplication</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#umlaut-ablaut-tone-and-stress-change">Umlaut, ablaut, tone and stress change</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#suppletion">Suppletion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morphological-typology">Morphological typology</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allomorphy-and-fusion">Allomorphy and fusion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-synthesis">Degree of synthesis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interlinear-glossing">Interlinear glossing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-and-language-technology">Morphology and language technology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-tasks">Classic tasks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-groups-events">Resources, groups, events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization-and-morphology">Tokenization and morphology</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -315,12 +396,636 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week-4-morphology">
-<h1>Week 4. Morphology<a class="headerlink" href="#week-4-morphology" title="Permalink to this heading">#</a></h1>
-<p><big>To be unlocked 25 September.</big></p>
-<!-- 
-sdfgsdfg
---></section>
+  <section class="tex2jax_ignore mathjax_ignore" id="week-4-grammar-i-morphology">
+<h1>Week 4. Grammar I: Morphology<a class="headerlink" href="#week-4-grammar-i-morphology" title="Permalink to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">TL;DR [<a class="reference external" href="https://docs.google.com/presentation/d/1USbvMiLbEx-GCgd5MS_OioFiVJO0A6G9f9xzKKiDWK8/edit?usp=sharing">slides</a>]</p>
+<ul class="simple">
+<li><p><strong>Morphology</strong> as a study of words and their parts, <strong>morphemes</strong>.</p></li>
+<li><p>Word vs. morpheme: a sometimes complicated distinction</p></li>
+<li><p>Other traditional distinctions:</p>
+<ul>
+<li><p>Free vs. bound morphemes;</p></li>
+<li><p>Roots vs. affixes;</p></li>
+<li><p>Open- vs. closed-class morphemes;</p></li>
+<li><p>Derivational vs. inflectional morphology</p></li>
+</ul>
+</li>
+<li><p>Positional types of affixes</p></li>
+<li><p>Morphological types of languages: fusion and syncretism</p></li>
+<li><p>Morphology and language technology</p></li>
+</ul>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Source acknowledgement</p>
+<p>This class follows the logic and general structure that’s a mix from <a class="reference external" href="https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/">MIT undergrad Intro to Linguistics</a>, <a class="reference external" href="http://demo.clab.cs.cmu.edu/11737fa20/">CMU Multilingual NLP course</a> morphology lectures. Some examples are taken from these sources, some other examples come from <em>Kibrik et al. 2019. Introduction to Language Science (in Russian)</em> and <em>Plungian. 2003. General morphology (in Russian)</em>.</p>
+</div>
+<section id="words-and-morphemes">
+<h2>Words and morphemes<a class="headerlink" href="#words-and-morphemes" title="Permalink to this heading">#</a></h2>
+<p>This week we are moving from the immediately observable side of language – its sound or other modalities – to its deeper, not immediately visible organization: grammar. We will be looking at how words are put together into phrases and sentences (syntax), and how words are built from even smaller parts (morphology). We start with morphology.</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notion</p>
+<p><strong>Morphology</strong> studies words and their internal structure.</p>
+</div>
+<p>Intuitively, we all know what <strong>words</strong> are. In fact, knowing the words of a language – and consequently, being able to tell a word from a non-word or from a bigger or smaller unit – is part of knowing the language. A typical word has a bunch of properties:</p>
+<ul class="simple">
+<li><p>In written text, it’s separated from other words by white spaces.</p></li>
+<li><p>In speech, it has one main stress.</p></li>
+<li><p>It describes a single idea / concept.</p></li>
+<li><p>It has autonomy that smaller units don’t have: it can be an utterance by itself (for example, as an answer to a question) and can occupy different positions in the sentence, not glued to any other word.</p></li>
+</ul>
+<p>Together, these properties outline very clear words. But we should be careful relying on these particular properties as definitions. Let’s look at the sentence below:</p>
+<center><big><span style="color:DeepPink"><b>Juniper</b></span><span style="color:Indigo"><b>'s</b></span> <span style="color:Crimson"><b>mother-in-law</b></span> <span style="color:FireBrick"><b>is</b></span> <span style="color:DarkSlateGray"><b>kind</b></span><span style="color:Purple"><b>a</b></span> <span style="color:SteelBlue"><b>hilarious</b></span>, <span style="color:DarkGreen"><b>is</b></span><span style="color:DarkRed"><b>n't</b></span> <span style="color:ForestGreen"><b>she</b></span>?</big></center>
+<br>
+Some words  clear -- <span style="color:FireBrick"><b>is</b></span>, <span style="color:SteelBlue"><b>hilarious</b></span> and <span style="color:ForestGreen"><b>she</b></span> are definitely words according to all the properties above -- apart from maybe <span style="color:ForestGreen"><b>she</b></span> and <span style="color:FireBrick"><b>is</b></span>, not so sure what the concepts behind them are. But what about the rest? Those are not obvious.
+<ul class="simple">
+<li><p>Is <span style="color:DarkSlateGray"><b>kind</b></span><span style="color:Purple"><b>a</b></span> one word – or does the fact that the full version – <em>kind of</em> – is spelled with a space between its parts make this decision suspicious?</p></li>
+<li><p>What about <span style="color:Crimson"><b>mother-in-law</b></span>  – one word or three?</p></li>
+<li><p>Same question – one word or more? – for <span style="color:DeepPink"><b>Juniper</b></span><span style="color:Indigo"><b>’s</b></span> and <span style="color:DarkGreen"><b>is</b></span><span style="color:DarkRed"><b>n’t</b></span>.</p></li>
+</ul>
+<p>In these – and other – more complicated cases not all of these criteria are equally helpful.</p>
+<ul class="simple">
+<li><p>The general down side of the <strong>orthographic</strong> criterion is that it makes sense only for written languages – and, as we discussed before, only half of languages are written. Certainly the other half has words too!</p></li>
+<li><p>The <strong>semantic</strong> definition is not very reliable either – at least until we have a better definition what a single idea is and how to tell it from a combination of ideas or parts of ideas (recall that we mentioned this problem before when discussing whether it’s realistic to have a purely <strong>ideographic</strong> writing system).</p></li>
+<li><p>The <strong>phonetic</strong> and <strong>distributional</strong> criteria are more widely applicable. They can say something interesting in problematic cases! For example, <span style="color:Indigo"><b>’s</b></span> and <span style="color:DarkRed"><b>n’t</b></span> can’t carry their own stress – simply because they have no vowel to put it on – and so they are not autonomous in that they can’t appear on their own. At the same time, <span style="color:Indigo"><b>’s</b></span> has freedom that <span style="color:DarkRed"><b>n’t</b></span> doesn’t: it can be separated pretty far from the word it’s related to (<em>The guy from the gym’s phone number</em> is a well-formed sentence in English), while <span style="color:DarkRed"><b>n’t</b></span> is stuck right next to <span style="color:DarkGreen"><b>is</b></span>.</p></li>
+</ul>
+<p>Language is full of intermediate cases like <span style="color:Indigo"><b>’s</b></span> and others (often referred to as <strong>clitics</strong> in the literature). In some cases, there is no obvious answer whether something is a word or not. The vagueness of this boundary between words and units of other sizes corresponds to the vagueness of the division of labor between morphology and syntax. In some cases, a closer look would help us make this decision, but in other cases it will only highlight the true complexity of this boundary. We will do our best to be as precise as possible where we can! What’s important here is the general intuition that the connections between <strong>morphemes</strong> within a word are generally more tight than the connections between words in a sentence (the latter are studied by <strong>syntax</strong>, or next topic.)</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notion</p>
+<p><strong>Morphemes</strong> are smallest meaningful linguistic units.</p>
+</div>
+<p>Why do we need to say ‘meaningful’ in this definition? This is to differentiate them from other units that we studied before – sounds and syllables, the building blocks that language uses to make units that grammar operates with – pairings of sound and meaning. This is what morphemes are.</p>
+<p>It’s worth noting here that meanings of some morphemes are easier to pin down than others. When talking about morphemes as meaningful units, you will often see these kinds of diagrams:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Image of a cat generated by Midjourney.</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cat.jpg"><img alt="morpheme 'cat'" class="bg-primary mb-1 align-center" src="_images/cat.jpg" style="width: 350px;" /></a>
+<p>But nobody draws something similar for <em>‘s</em>, <em>-ed</em> or <em>-ity</em>. Do those morphemes even have meanings? They do, but their meanings are much harder to formulate. We will talk about them during Week 6.</p>
+<p>Let’s move on to some notions and distinctions important in the field of morphology. Almost none of them are clear-cut or even make obvious sense. I’m not going to pretend they do when they don’t – but we need to know what people talk about when they use these terms, so hold tight.</p>
+<section id="free-vs-bound-roots-vs-affixes-open-vs-closed-class">
+<h3>Free vs. bound; roots vs. affixes; open- vs. closed-class<a class="headerlink" href="#free-vs-bound-roots-vs-affixes-open-vs-closed-class" title="Permalink to this heading">#</a></h3>
+<p>The first distinction between different types of morphemes that is often drawn is free morphemes vs. bound morphemes.</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notions</p>
+<ul class="simple">
+<li><p><strong>Free morphemes</strong> can constitute words by themselves, without any other morphemes.</p></li>
+<li><p><strong>Bound morphemes</strong> are never words by themselves but are always parts of words.</p></li>
+</ul>
+</div>
+<p>When we say a morpheme is free and can be a word by itself, we mean that it has the autonomy properties a word has, including the power to be used in isolation as an utterance (but keep in mind the caveat in the previous section!) and/or to be linearly separated from the item it’s related to.</p>
+<p>Examples of free morphemes are typically <strong>roots</strong> – <em>cat</em>, <em>nice</em>, <em>walk</em> and so on; examples of bound morphemes are usually <strong>affixes</strong> like <em>-ed</em>, <em>anti-</em>, <em>-less</em> etc.</p>
+<p>Don’t these distinctions then describe the same thing? Not really. In a language with not much morphology – like English – it is tempting to just say that roots are always free and affixes are always bound, but in languages that require you to specify a lot of grammatical information on most words in any context, you don’t often see roots without affixes expressing this information attached. In those languages, the distinctions free vs. bound and roots vs. affixes are misaligned. Well, affixes are still bound, but roots – a lot of them! – are bound too. For instance, in Latin, a lot of nouns always come with non-empty case and number markers, so you never see the root <em>lūn-</em> ‘moon’ without some other morpheme accompanying it. According to the definition above, this root then is bound rather than free.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Latin</p>
+</aside>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-left"><p><strong>Sg</strong></p></th>
+<th class="head text-left"><p><strong>Pl</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Nom</strong></p></td>
+<td class="text-left"><p>lūn-a</p></td>
+<td class="text-left"><p>lūn-ae</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Gen</strong></p></td>
+<td class="text-left"><p>lūn-ae</p></td>
+<td class="text-left"><p>lūn-ārum</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Dat</strong></p></td>
+<td class="text-left"><p>lūn-ae</p></td>
+<td class="text-left"><p>lūn-īs</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Abl</strong></p></td>
+<td class="text-left"><p>lūn-ā</p></td>
+<td class="text-left"><p>lūn-īs</p></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s say something slightly more accurate:</p>
+<center>Every word contains at least one root.</center>
+<br>
+<p>There are words that contain more than one root – these are compounds like <em>toothbrush</em>, for example. There are words that contain just the root – for instance, <em>tooth</em>. There are words that contain a root and an affix, as in <em>brush-ing</em>. But there are no words that only contain affixes.</p>
+<p>This is helpful in more accurately connecting the root vs. affix distinction to the distinction between free vs. bound morphemes. But is this really what roots are? Things that every word has?</p>
+<p>Maybe that’s all we can really say. Sometimes, you will see that roots are defined <strong>semantically</strong>, as a morpheme that ‘carries the main content of the word’. As it’s often the case with strategies of reducing a complex linguistic construct to meaning-based properties, it works in some cases relatively well and doesn’t work so well on a larger scale. Even if we assume that we know what ‘the main content of the word’ is, languages distribute types of information encoded by linguistic units between roots and affixes in different ways.</p>
+<p>As an example, let’s compare two words that have the same meaning: <em>zagryzt’</em> (Russian) and <em>yat<sup>h</sup>a</em> (<a class="reference external" href="https://en.wikipedia.org/wiki/Lakota_language">Lakota</a>). Both mean ‘gnaw; bite to death’; both contain an affix (more specifically, a prefix, see below), but the way this meaning is packaged in the word and distributed between the affix and the root is different:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Russian <strong><em>zagryzt’</em></strong></p></td>
+<td class="text-center"><p>‘gnaw; bite to death’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>   prefix <em>za-</em></p></td>
+<td class="text-center"><p>‘completely; to death’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>   root <em>gryzt’</em></p></td>
+<td class="text-center"><p>‘bite’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Lakota <strong><em>yat<sup>h</sup>a</em></strong></p></td>
+<td class="text-center"><p>‘gnaw; bite to death’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>   prefix <em>ya-</em></p></td>
+<td class="text-center"><p>‘cause something using teeth’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>   root <em>t<sup>h</sup>a</em></p></td>
+<td class="text-center"><p>‘die’</p></td>
+</tr>
+</tbody>
+</table>
+<p>The part of meaning ‘using teeth’ is conveyed by the root in Russian but expressed in the prefix in Lakota. One should be careful with semantic definitions of morphological phenomena!</p>
+<p>Another distinction that is indirectly related to the previous two is <strong>open-class</strong> vs. <strong>closed-class morphemes</strong>. Morphemes can be grouped into classes depending on the typical positions they occupy in a sentence. Think of a context like <em>The cat was thinking about a ___</em> – what can occupy the slot after <em>a</em>? A lot of things, a potentially infinite list (<em>mouse</em>, <em>seagull</em>, <em>window</em> etc.). What about a position here: <em>The cat was thinking about ___ mouse</em>? Much fewer things can show up there: one of the articles – <em>a</em> or <em>the</em>; maybe a possessive pronoun.. This is the core of the difference between open-class and closed-class morphemes. Nominal roots are open-class morphemes (as well as verbs, adjectives and maybe something else), articles and other morphemes typically expressing types of meanings pre-defined by the grammar of the language are much less numerous, and not so open to extensions; they form <strong>closed classes</strong>.</p>
+<p>But, again, we should be careful not to mix up this distinction and the previous two: not all closed class morphemes are affixes! Some are more autonomous units – clitics or even separate words:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Tagalog</p>
+</aside>
+<div id='outerTable'><table>
+  <tr><td>(1)&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>mga</b>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>malalaking&nbsp;&nbsp;&nbsp;&nbsp;</td><td>saging</td></tr>
+  <tr><td></td><td><b>PL</b></td><td>big</td><td>banana</td></tr>
+  <tr><td></td><td colspan=3>'big banana<b>s</b>'</td></tr>
+</table></div>
+<br>
+<p>So, the closed vs. open class distinction does not refer to how the morpheme behaves as part of the word and as part of the sentence. Rather, it describes how many other morphemes of this type the language has. These two things are often correlated, but, since their definitions are based on different aspects of language organization, one might expect that the boundaries they draw don’t always align.</p>
+<p>I know.. We will just have to live with it and when using these terms, we need to make sure to communicate well what exactly we mean.</p>
+</section>
+<section id="derivational-vs-inflectional-morphology">
+<h3>Derivational vs. inflectional morphology<a class="headerlink" href="#derivational-vs-inflectional-morphology" title="Permalink to this heading">#</a></h3>
+<p>Yet another popular morphological distinction contrasts <strong>derivational</strong> and <strong>inflectional</strong> affixes. The intuition behind this distinction is that some affixes make new words out of whatever they attach to, while inflectional morphology just creates a variant of the same word. This intuition can be made precise in more than one way, depending on what you consider to be the defining criterion for whether two objects are similar enough to group them together as versions of each other.</p>
+<p>An often-cited criterion is that inflectional morphology does not change the word’s part of speech. That’s why <em>-er</em> in <em>singer</em> is a derivational morpheme: it makes a noun out of a verb (<em>sing</em>). Fair enough! The opposite does not necessarily hold though: some derivational affixes keep the part of speech the same: suffix <em>-ship</em> attaches to nouns and produces nouns as well, for instance, <em>friendship</em> is a noun and <em>friend</em> is a noun as well. So, not messing with the part of speech is not enough for the affix to be inflectional.</p>
+<p>Another take on this distinction is ‘derivational morphemes have clear semantic content’, so that they significantly change the meaning of what they attach to. I don’t think I have the energy to comment on that, we’ve said enough on semantic criteria on other occasions above. One thing to note is that I personally think that the meaning of the plural suffix <em>-s</em> as in <em>cat<strong>s</strong></em>– an uncontroversially inflectional suffix – is as clear or clearer than the contribution of the uncontroversially derivational suffix <em>-ness</em> as in abstract properties like <em>tall<strong>ness</strong></em>. I wouldn’t rely on that too much.</p>
+<p>Finally, inflectional status of a morpheme can be approached via the effect that the grammatical pressure of the context has on the word. As one popular textbook puts it, ‘inflectional morphemes represent relationships between different parts of a sentence’. A clear case is verbal agreement in English: in <em>Mary walk<strong>s</strong> fast</em>, the suffix <em>-s</em> is brought to life by the fact that the sentence has a singular subject and the verb has to have the agreement suffix. This pressure makes the suffix inflectional, and <em>walk</em> and <em>walks</em> sort of <strong>variants</strong> of one and the same word – in a more abstract sense of the notion <strong>word</strong> than before (you will sometimes find terms <strong>lemma</strong> or <strong>lexeme</strong> used to refer to this more abstract notion). This reasoning seems very attractive, but it seems a bit of a stretch to apply it to large classes of uncontroversially inflectional morphemes like past tense <em>-ed</em>, for instance. Nothing in the sentence forces you to use the past tense specifically – you could’ve used the present tense and still get a well-formed sentence. Unless something more specific is said about where the intended meaning comes into play as ‘part of the sentence’, but it’s not clear how to say something more specific on this. Tough!</p>
+<p>I think we will just have to agree with the underlying intuition (different words vs. variants of the same thing, a more abstract thing we can still call one and the same word) and think of different possible ways this can manifest itself in linguistic behaviour of different morphemes, but treat these behavioral tests with caution.</p>
+<p>We are now leaving the swampy territory of widespread but very complex morphological distinctions that mix together how morphemes can be used and what types of meanings they can express. Hooray!</p>
+<p>Now we will focus on affixes specifically and formal tools that languages use to attach them to wherever they need to be attached.</p>
+</section>
+<section id="positional-types-of-affixes">
+<h3>Positional types of affixes<a class="headerlink" href="#positional-types-of-affixes" title="Permalink to this heading">#</a></h3>
+<p>I will list the main formal types of affixes here. By ‘formal’ I mean that I will ignore the meanings that these affixes express, I will only be concerned with what you need to do to the sequence that the affix is being attached to and the sequence that corresponds to the affix itself so that they can be put together.</p>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Oversimplification alert!</p>
+<p>Morphemes aren’t always sequences! And most definitely not always continuous sequences. But more on that later.</p>
+</div>
+<p>We will look at our classic types of affixes – prefixes and suffixes – but also ones that you might have not come across before: circumfixes, infixes, pattern morphology, as well as affixes that are better defined as operations rather than (continuous or discontinuous) sequences: reduplication, umlaut / ablaut, tone.</p>
+<section id="prefixes-and-suffixes">
+<h4>Prefixes and suffixes<a class="headerlink" href="#prefixes-and-suffixes" title="Permalink to this heading">#</a></h4>
+<p>Prefixes and postfixes are affixes distinguished by their linear position against their morphological base. <strong>Prefixes</strong> are attached to the beginning, <strong>suffixes</strong> (sometimes the term <strong>postfix</strong> is used synonymously) are attached to the end:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Prefixes</p></th>
+<th class="head text-center"><p>Suffixes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>a</strong>moral</p></td>
+<td class="text-center"><p>read<strong>able</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>in</strong>accurate</p></td>
+<td class="text-center"><p>moral<strong>ize</strong></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>il</strong>legal</p></td>
+<td class="text-center"><p>friend<strong>ship</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>A word can have more than one prefix or affix at the same time:</p>
+<center><big><span style="color:DeepPink"><b>anti</b></span><span style="color:Indigo"><b>dis</b></span><span style="color:Crimson"><b>establish</b></span><span style="color:ForestGreen"><b>ment</b></span><span style="color:DarkSlateGray"><b>ari</b></span><span style="color:Purple"><b>an</b></span><span style="color:SteelBlue"><b>ism</b></span></big></center>
+<br>
+<p>Are the ones closer to the root still prefixes / suffixes? They are not in the very beginning or very end of the resulting word. Yes, they still are prefixes and suffixes. In order to make sense of it, it helps to think about morphological combination as happening in steps. These steps are not necessarily something that a speaker does sequentially in their head every time they produce a complex form like this (but also not necessarily not!) – but it’s a good way to represent the structure of complex words like these. At the point when a prefix or a suffix attaches, it attaches to the periphery of the word. But <strong>then</strong>, another prefix or suffix can attach, and it will be attaching to the beginning or end of the output of the previous step. So, affixes don’t necessarily attach to roots directly, they attach to potentially bigger units, combinations of roots and other affixes. There is a term for that bigger unit, <strong>stem</strong> – so, affixes attach to stems. Thinking about this as a multi-step process allows us to think about internal structure of complex words, where each step of conjoining an affix corresponds to conjoining two units together in a tree-like structure.</p>
+<p>Here is one piece of evidence for this hierarchical structure within words. Think about the word <em>unlockable</em>. You can understand this word in two different ways:</p>
+<ol class="arabic simple">
+<li><p>something that can’t be locked;</p></li>
+<li><p>something that can be unlocked.</p></li>
+</ol>
+<p>These two meanings fall out naturally if we think about two different processing that could’ve given rise to the same sequence <em>unlockable</em>:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/unlockable.png"><img alt="unlockable" class="bg-primary mb-1 align-center" src="_images/unlockable.png" style="width: 300px;" /></a>
+</section>
+<section id="circumfixes">
+<h4>Circumfixes<a class="headerlink" href="#circumfixes" title="Permalink to this heading">#</a></h4>
+<p>A circumfix can best be seen as a combination of prefix and suffix frozen together. Historically, that’s what they most often indeed are.</p>
+<p>Dutch and German are famous for having circumfixes as part of verbal morphology. For example, <em>dansen</em> ‘dance’ and <em>horen</em> ‘hear’ in analytic past tenses (a.k.a. present perfect and past perfect) show up in the form that involves circumfixes <em>ge- -t</em> / <em>ge- -d</em>:</p>
+<blockquote>
+<div><p>We hebben tot laat in de nacht <strong>ge</strong>dans<strong>t</strong>. <br>
+Heb jij <strong>ge</strong>hoor<strong>d</strong> wat Marieke zei?</p>
+</div></blockquote>
+</section>
+<section id="infixes">
+<h4>Infixes<a class="headerlink" href="#infixes" title="Permalink to this heading">#</a></h4>
+<p>Some affixes are not placed at the edges of the stem they attach to, but are insted inserted somewhere inside that stem. Existing cross-linguistic data suggests that even then, these affixes gravitate towards one of the edges of the stem: rules of their insertion are usually formulated in terms of the first syllable or the first consonant of the stem, or in terms of the last syllable or consonant.</p>
+<p>Infixes can be found, for instance, in Tagalog. <em>Kagat</em> is a noun which means ‘bite’; adding <em>-um-</em> after the first consonant of the stem results in a past tense active verb <em>k&lt;um&gt;agat</em> ‘bit’, while adding <em>-in-</em> in that position produces a passive verb <em>k&lt;in&gt;agat</em> ‘was bit’.
+Interesting that when the stem starts with the vowel, the infix becomes a prefix in Tagalog: <em>awit</em> ‘song’ ~ <em>um-awit</em> ‘sang’.</p>
+<p>Another example is <a class="reference external" href="https://www.ethnologue.com/language/ulw/">Ulwa</a>, where possessive morphemes are infixed in the root: <em>sú:lu</em> ‘dog’, <em>sú:&lt;ki&gt;lu</em> ‘my dog’, <em>sú:&lt;ma&gt;lu</em> ‘your dog’, <em>sú:&lt;ka&gt;lu</em> ‘his/her dog’.</p>
+</section>
+<section id="pattern-template-morphology">
+<h4>Pattern (template) morphology<a class="headerlink" href="#pattern-template-morphology" title="Permalink to this heading">#</a></h4>
+<p>An even less straighforward way of combining two morphemes is <strong>pattern morphology</strong> which Semitic languages (Arabic, Hebrew) are famous for. We have seen discontinuous affixes (circumfixes) and root that are interrupted by an affix (infix), but pattern morphology shows both these phenomena at the same time. A typical Arabic root is a template consisting of 3 consonants; affixes combining with these roots are discontinuous sequences of vowels that can be inserted between these consonants:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Figure from Islam, M.S., Masum, M.H., Bhuyan, M.S.I. and Ahmed, R., 2010. Arabic nominals in HPSG: a verbal noun perspective. 17th International Conference on HPSG (pp. 158-178).</p>
+</aside>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Now you see why abjad as a writing system makes sense for these languages – consonants carry a lot of information that can’t be deduced from the grammatical context; the rest can be left out without much loss.</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/ktb.png"><img alt="ktb" class="bg-primary mb-1 align-center" src="_images/ktb.png" style="width: 400px;" /></a>
+<p>To get other meanings, for example, based on the root <em>k_t_b</em>, other vowels could be combined with the root. This is how you get <em>kitaab</em> ‘book’, <em>kaatib</em> ‘writer’ etc.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Extra info</p>
+<p>The distribution of prefixes, suffixes and discontinuous morphemes is not completely random in languages of the world. Here is a <a class="reference external" href="https://en.wikipedia.org/wiki/Greenberg%27s_linguistic_universals">linguistic universal</a> by Joseph Greenberg that conditionally connects the presence of continuous and discontinuous affixes in a langauge:</p>
+<blockquote>
+<div><p>If a language has discontinuous affixes then it also has either prefixing or suffixing or both.</p>
+</div></blockquote>
+</div>
+</section>
+<section id="affixes-as-operations">
+<h4>Affixes as operations<a class="headerlink" href="#affixes-as-operations" title="Permalink to this heading">#</a></h4>
+<section id="reduplication">
+<h5>Reduplication<a class="headerlink" href="#reduplication" title="Permalink to this heading">#</a></h5>
+<p>Sometimes, an affix adds segments to the stem but is not fully defined segmentally. In case of reduplication, for example, the general shape of the affix is all that is grammatically specified, but the actual segments that fill it in vary depending on the stem it attaches to. For instance, this is how you form a plural in <a class="reference external" href="https://en.wikipedia.org/wiki/Ilocano_language">Ilocano</a>: you take the first segments of the stem so that the result is a closed syllable, and attach it as a prefix: <em>kláse</em> ‘class’ ~ <em>klas-kláse</em> ‘classes’.</p>
+</section>
+<section id="umlaut-ablaut-tone-and-stress-change">
+<h5>Umlaut, ablaut, tone and stress change<a class="headerlink" href="#umlaut-ablaut-tone-and-stress-change" title="Permalink to this heading">#</a></h5>
+<p>Sometimes, an affix does not contain any segments at all and the only way to define it is as an operation producing some systematic alternation in the stem. Here are some types of those:</p>
+<ul class="simple">
+<li><p><strong>Umlaut</strong>: Fronting the vowel(s) in the stem. It’s a term that mostly describes processes in Germanic languages, in particular, German, where fronting of a vowel is often used as a grammatical device, see <em>Mutter</em> ‘mother’ vs. <em>Mütter</em> ‘mothers’. Occasionally, the same be found in English, e.g. <em>tooth</em> vs. <em>teeth</em>.  There is no systematic of umlaut in Dutch as a grammatical device, but see, for instance, <em>stad</em> ‘city’ vs. <em>steden</em> ‘cities’.</p></li>
+<li><p><strong>Ablaut</strong> is another Germanic vowel alternation term, not specifically fronting. Think <em>get:got</em>, <em>sing:sang</em>.</p></li>
+<li><p><strong>Tone and stress change</strong> can be grammatical instruments as well. In <a class="reference external" href="https://en.wikipedia.org/wiki/Dida_language">Dida</a>, a tone language spoken in Ivory Coast, changing the tone on a verb changes its tense interpretation: <em>li<sup>3</sup></em> ‘ate’ with tone 3 describes a one-time past event of eating, while <em>li<sup>2</sup></em> ‘eat’ describes a habitual event happening now from time to time. Sometimes, stress shift can serve the purposes of derivational morphology in English: compare <em>conrást</em> (verb) and <em>cóntrast</em> (noun).</p></li>
+</ul>
+</section>
+<section id="suppletion">
+<h5>Suppletion<a class="headerlink" href="#suppletion" title="Permalink to this heading">#</a></h5>
+<p>Finally, the change that can happen to the stem when in a particular grammatical context can be as radical as a complete change. For instance, this is what happens to an English verb <em>go</em> in the past tense, when it turns into <em>went</em>. Not only there is no segment corresponding to past tense, there is no clear rule on how <em>went</em> derives from <em>go</em> that could be formulated as a reasonable operation over segments. The same is true for Dutch <em>zijn</em> ‘be’ vs. <em>was</em> ‘was’. It’s just a completely different stem that expresses two things together: the lexical meaning of ‘go’ and the grammatical meaning of past tense.</p>
+</section>
+</section>
+</section>
+<section id="morphological-typology">
+<h3>Morphological typology<a class="headerlink" href="#morphological-typology" title="Permalink to this heading">#</a></h3>
+<p>We’ve seen examples from many different languages and many different types of morphemes. This is a good time to take a more systematic look at this landscape and organize it a little bit. Obviously, languages differ in what kind of morphological devices it uses and how much morphology in general its words contain. Let’s take these two properties as two axes along which we can characterize languages. We will call the first one ‘degree of allomorphy and fusion’ and the second one ‘degree of synthesis’.</p>
+<section id="allomorphy-and-fusion">
+<h4>Allomorphy and fusion<a class="headerlink" href="#allomorphy-and-fusion" title="Permalink to this heading">#</a></h4>
+<p>I started this part of the lecture with a sort of a morphological additive ideal, where clear segmental morphemes attach to each other in a predictable way, with each morpheme playing some clear grammatical and semantic role, something like this:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sg</p></th>
+<th class="head text-center"><p>Pl</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>cat</p></td>
+<td class="text-center"><p>cat<strong>s</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>bike</p></td>
+<td class="text-center"><p>bike<strong>s</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>There are many ways a language can deviate from this ideal. For example, a morpheme can change slighlty when combining with another morpheme. This happens with English plural <em>s</em>: in <em>cat<strong>s</strong></em> and <em>bike<strong>s</strong></em> it’s pronounced as /s/, but in <em>dog<strong>s</strong></em>, it’s actually /z/ – it’s affected by the previous consonant.</p>
+<p>Turkic languages have <strong>vowel harmony</strong>: the plural suffix in Turkish, for example, has two <strong>allomorphs</strong>: <em>ler</em> and <em>lar</em>. You have to choose one of them depending on the vowels in the stem you attach it to. Stems with front vowels (<em>e, i, ö, ü</em>) require <em>ler</em>, while stems with back vowels (<em>a, ı, o, u</em>) combine with <em>lar</em>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Turkish</p>
+</aside>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sg</p></th>
+<th class="head text-center"><p>Pl</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><em>soru</em> ‘question’</p></td>
+<td class="text-center"><p><em>soru<strong>lar</strong></em></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>göz</em> ‘eye’</p></td>
+<td class="text-center"><p><em>göz<strong>ler</strong></em></p></td>
+</tr>
+</tbody>
+</table>
+<p>It’s not always the affix that changes its shape depending on the stem: in Russian, the infinivie of ‘write’ is <em>pis-at’</em> (where <em>-at’</em> is the infinitive suffix) and the first person singular in present tense is <em>piš-u</em> ‘(I) write’, with a change in the final consonant of the stem. This latter type of alternation makes the morpheme boundary harder to draw even when the linear type of the affix is very simple: a prefix or a suffix. The morphemes kind of <strong>fuse</strong> together, affecting each other’s appearance. We have seen different quite complicated linear types of morphemes above that can be very far from the additive ideal (infixes, templates, reduplication etc.), but take a moment to recognize that fusion can be seen as an additional parameter on top of that complexity.</p>
+<p>Languages differ in the levels of fusion that their morphology exhibits. The scale is from very little or zero fusion (languages like that are called <strong>agglutinative</strong>) to a lot of fusion and hard-to-find or barely existent morpheme boundaries (<strong>fusional</strong> languages).</p>
+<ul class="simple">
+<li><p>Examples of agglutinative languages: Turkish, Finnish, Korean and others – but even in those languages, some level of allomorphy is found (see the example of Turkish vowel harmony above; but also note that it does not affect morpheme boundaries). A typical agglutinative multi-morpheme word would be something like <em>ev-ler-iniz-den</em> ‘from your houses’, translated morpheme-by-morpheme as ‘house-plural-your(plural)-from’.</p></li>
+<li><p>Examples of fusional languages: a lot of Indo-European languages (but not English! and not Dutch); Russian; Spanish; Semitic languages (but that’s subject to debate). One example here is the Russian word <em>lun-a</em>, which encodes the nominative case singular with one undivisible suffix <em>-a</em>, and – even more compactly – expresses the genitive plural of the same word as <em>lun</em>, which is completely undivisible.</p></li>
+</ul>
+</section>
+<section id="degree-of-synthesis">
+<h4>Degree of synthesis<a class="headerlink" href="#degree-of-synthesis" title="Permalink to this heading">#</a></h4>
+<p>Languages differ also in how many morphemes a word in this language typically has. The continuum here is from isolating languages (roughly one morpheme per word) to polysynthetic languages with typically extreme amount of information packed in one word by means of a large number of morphemes.</p>
+<ul class="simple">
+<li><p>Examples of isolating languages: Chinese, Vietnamese, Thai, English.</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Thai (<a class="reference external" href="https://journals.sagepub.com/doi/pdf/10.1177/0539018410389107">source</a>)</p>
+</aside>
+<div id='outerTable'><table>
+  <tr><td>(2)&nbsp;&nbsp;&nbsp;&nbsp;</td><td>cháaŋ&nbsp;&nbsp;&nbsp;</td><td>ŋuaŋ&nbsp;&nbsp;&nbsp;</td><td>yaaw&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td></td><td>elephant</td><td>tusk</td><td>long</td></tr>
+  <tr><td></td><td colspan=3>'The elephant has long tasks'</td></tr>
+</table></div>
+<br>
+<ul class="simple">
+<li><p>Examples of polysynthetic languages: Chukchi, Ainu, Greenlandic, Norwest Caucasian such as Adyghe, where the verb morphologically expresses a lot of information about the event it describes:</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Temirgoy Adyghe (<a class="reference external" href="http://adyghe.web-corpora.net/adyghe_corpus/search">corpus</a>).</p>
+</aside>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>I thank Peter Arkadiev for helping me with this example and the calculations below.</p>
+</aside>
+<div id='outerTable'><table>
+  <tr><td>(3)&nbsp;&nbsp;&nbsp;&nbsp;</td><td>∅-qə-p-fe-t-ṣ̂ə-ŝʷə-šʼt-ep</td></tr>
+  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>3.ABS-CSL-2SG.IO-BEN-1PL.ERG-do-HBL-FUT-NEG</td></tr>
+  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td colspan=1>'We won’t be able to do it for you.'</td></tr>
+</table></div>
+<br>
+<p>In English, there is no single word that can contain all that information: English doesn’t have the morphological devices to do so. Inflectional morphology of English verbs produces very few forms that could be seen as belonging to one and the same lemma. Given how few forms English words have, it might seem reasonable to not even treat combinations of morphemes as a result of some actual process, as we did above. Do speakers need to build together different forms of the verb like <em>walk</em> from pieces if instead they can simply remember the forms <em>walking</em>, <em>walked</em>, <em>walks</em> as they are?</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Option 1</p></th>
+<th class="head text-left"><p>Option 2</p></th>
+<th class="head text-left"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><em>walks</em></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p>+ <em>s</em></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><em>walked</em></p></td>
+<td class="text-left"><p><em>walk</em></p></td>
+<td class="text-left"><p>+ <em>ed</em></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><em>walking</em></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p>+ <em>ing</em></p></td>
+</tr>
+</tbody>
+</table>
+<p>If one can try to make sense of this first option for English, it’s definitely not viable for languages with more complex morphology: it’s simply impossible to memorize all the different forms of one word of the type shown in (3). If we try to evaluate how many different forms this verbs can have, it’s 246 person-number combinations for agreement with different participants, and multiplying this by different other options of filling in other positions, we get <strong>177120</strong> forms! And this is just a modest estimation. Morphology has to involve operations rather than direct memorization.</p>
+</section>
+</section>
+<section id="interlinear-glossing">
+<h3>Interlinear glossing<a class="headerlink" href="#interlinear-glossing" title="Permalink to this heading">#</a></h3>
+<div class="danger admonition">
+<p class="admonition-title">External content</p>
+<p>I presented some examples above in a 3-line format that we haven’t properly introduced before, such as this Tagalog example:</p>
+<div id='outerTable'><table>
+  <tr><td>(1)&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>mga</b>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>malalaking&nbsp;&nbsp;&nbsp;&nbsp;</td><td>saging</td></tr>
+  <tr><td></td><td><b>PL</b></td><td>big</td><td>banana</td></tr>
+  <tr><td></td><td colspan=3>'big banana<b>s</b>'</td></tr>
+</table></div>
+<br>
+<p>This format is called <strong>interlinear glossing</strong>. It’s concisely described in <a class="reference external" href="https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf">the document on Leipzig glossing conventions</a>.</p>
+</div>
+</section>
+</section>
+<section id="morphology-and-language-technology">
+<h2>Morphology and language technology<a class="headerlink" href="#morphology-and-language-technology" title="Permalink to this heading">#</a></h2>
+<section id="classic-tasks">
+<h3>Classic tasks<a class="headerlink" href="#classic-tasks" title="Permalink to this heading">#</a></h3>
+<p>Morphology and language technology interact in cases where word structure matters for the NLP task (either is part of the task directly or helps it in some way) and, vice versa, where language technology helps identify word structure. These are not two necessarily separate cases – as we will see below, often it’s both things at the same time.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Starting now, I will include small bits of Python code in the course notes so that you can get used to them little by little and try them out on your own in a Colab or locally on your computer, if you like (some of the things I try here will require installing packages and downloading models for them to work – if you are trying something and it doesn’t work immediately, check out documentation of the package). If you don’t want to dive deep into the code parts now, feel free to ignore them and just focus on the general story.</p>
+</aside>
+<p>Some classic NLP tasks that have morphology at their core involve abstracting away from some morphological properties of the words in text and representing these words at a more abstract level. One such task is <strong>lemmatization</strong>: given a word with some inflectional morphology, lemmatization outputs its ‘basic’ form taken as the representative of all the forms of the word, like in this code snippet below, where lemmatization is part of the analysis performed by the spaCy library:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;en_core_web_sm&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;compute&#39;</span><span class="p">,</span> <span class="s1">&#39;computed&#39;</span><span class="p">,</span> <span class="s1">&#39;computing&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">,</span> <span class="s1">&#39;computers&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">token</span> <span class="o">+</span> <span class="s1">&#39; --&gt; &#39;</span> <span class="o">+</span> <span class="n">sp</span><span class="p">(</span><span class="n">token</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lemma_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>compute --&gt; compute
+computed --&gt; compute
+computing --&gt; compute
+computer --&gt; computer
+computers --&gt; computer
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another version of the task of abstracting away from inflectional morphology is <strong>stemming</strong>: instead of mapping a word to its ‘basic’ form, stemming chops off parts of the word that are probably not part of its stem or root. You see that the result (here using another popular NLP toolkit – NLTK) is different from what we got with lemmatization:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.stem.porter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;compute&#39;</span><span class="p">,</span> <span class="s1">&#39;computed&#39;</span><span class="p">,</span> <span class="s1">&#39;computing&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">,</span> <span class="s1">&#39;computers&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">token</span> <span class="o">+</span> <span class="s1">&#39; --&gt; &#39;</span> <span class="o">+</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">token</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>compute --&gt; comput
+computed --&gt; comput
+computing --&gt; comput
+computer --&gt; comput
+computers --&gt; comput
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both lemmatization and stemming have the same purpose: abstracting away from grammatical details, which allows to focus on the core lexical content of the text. When does it matter? Well, whenever you think that grammar matters less than words! If you have a model that relies on word counts, for example, you might want to count more abstract entities than those that are actually found in text. If you care whether something has to do with computers and/or computing, you might not necessarily want to count <em>compute</em>, <em>computing</em> etc. separately. Might be a good idea for topic detection, for instance – but it really depends on how you want to approach the task at hand.</p>
+<p>The opposite task – generating a form with the required inflectional morphology given the ‘basic’ form – can also be important for certain applications. One example is automatic extension of search queries: if the search query contains <em>compute</em>, it might be a good idea to match documents that contain <em>computing</em>, <em>computed</em> etc. Here a system that can do automatic <strong>inflection</strong> can help. Here are two examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mlconjug3</span> <span class="kn">import</span> <span class="n">Conjugator</span>
+<span class="n">conjugator</span> <span class="o">=</span> <span class="n">Conjugator</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">)</span>
+<span class="n">verb</span> <span class="o">=</span> <span class="n">conjugator</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="s2">&quot;speak&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;speak&#39;</span> <span class="o">+</span> <span class="s1">&#39; + indicative past tense --&gt; &#39;</span> <span class="o">+</span> <span class="n">verb</span><span class="p">[</span><span class="s1">&#39;indicative&#39;</span><span class="p">][</span><span class="s1">&#39;indicative past tense&#39;</span><span class="p">][</span><span class="s1">&#39;I&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>speak + indicative past tense --&gt; spoke
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inflect</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">inflect</span><span class="o">.</span><span class="n">engine</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tooth&#39;</span> <span class="o">+</span> <span class="s1">&#39; + plural --&gt; &#39;</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">plural_noun</span><span class="p">(</span><span class="s1">&#39;tooth&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tooth + plural --&gt; teeth
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resources-groups-events">
+<h3>Resources, groups, events<a class="headerlink" href="#resources-groups-events" title="Permalink to this heading">#</a></h3>
+<p>The tasks described above might be almost trivial for languages like English, which doesn’t have much (inflectional) morphology, but are way harder for languages with rich morphology, like some of the languages we talked about in this class.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://unimorph.github.io/">UniMorph</a> is a collaborative project that aims to improve how NLP handles complex morphology in the world’s languages. It focusses on creation of morphologically annotated datasets and the standards for such datasets that can, in turn, be used to create new models that deal with complex morphology better.</p></li>
+<li><p><a class="reference external" href="https://sigmorphon.github.io/">SIGMORPHON</a> is the ACL Special Interest Group on Computational Morphology and Phonology. The group organizes SIGMORPHON workshops that are a platform for new research on computational morphology and phonology as well as shared tasks – challenges for morphological and phonological automatic analysis. This year’s two SIGMORPHON challenges were:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/sigmorphon/2023GlossingST">Automatic Interlinear Glossing</a> that we discussed earlier in this class. Formally, the task is defined as a sequence-to-sequence task, where a sentence and its translation are given as input and the output should contain the gloss layer (morpheme-by-morpheme translation). The usefulness of this task for linguists that have to deal with a lot of manual glossing work is obvious – but a sort of a side-effect of this task is a system that has learned some aspects of morphology of the target language, and we can examine what it learned successfully, what was difficult to learn, and try to figure out why.</p></li>
+</ol>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Gitksan</p>
+</aside>
+<div id='outerTable'><table>
+  <tr><td><i>(Input 1) Source</i>: </td><td>Ii</td><td>k̲'ap&nbsp;&nbsp;&nbsp;</td><td>g̲aniwila</td><td>yukwhl</td><td>surveyors</td></tr>
+  <tr><td><i><b>(Output) Gloss</i></b>: </td><td>CCNJ&nbsp;&nbsp;&nbsp;</td><td>VER</td><td>continually-MANR&nbsp;&nbsp;&nbsp;</td><td>do-CN&nbsp;&nbsp;&nbsp;</td><td>surveyors</td></tr>
+  <tr><td><i>(Input2) Translation:</i>&nbsp;&nbsp;&nbsp; </td><td colspan=5>‘But the surveyors continued.’</td></tr>
+</table></div>
+<br>
+<ol class="arabic simple" start="2">
+<li><p><a class="reference external" href="https://github.com/sigmorphon/2023InflectionST">Morphological Inflection Generation</a>, examples of which we just saw above: Given the ‘basic’ form of the word and the grammatical characteristics of the desired output, the system needs to produce the required form:</p></li>
+</ol>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Turkish</p>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asimptot</span>	<span class="n">N</span><span class="p">;</span><span class="n">NOM</span><span class="p">(</span><span class="n">PL</span><span class="p">;</span><span class="n">PSS</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">PL</span><span class="p">))</span>	<span class="n">asimptotlarımız</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://universaldependencies.org/">Universal Dependencies</a> is a framework and a huge dataset with grammatical annotation for over 100 languages. The annotation includes both morphology and syntax – which we will discuss next week! Here is one sentence from the dataset, in the CONLL format, where each word of the text is characterized grammatically in a separate line:</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Croatian</p>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># text = Kazna medijskom mogulu obnovila raspravu u Makedoniji</span>
+<span class="mi">1</span>	<span class="n">Kazna</span>	<span class="n">kazna</span>	<span class="n">NOUN</span>	<span class="n">Ncfsn</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Nom</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">4</span>	<span class="n">nsubj</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">2</span>	<span class="n">medijskom</span>	<span class="n">medijski</span>	<span class="n">ADJ</span>	<span class="n">Agpmsdy</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Dat</span><span class="o">|</span><span class="n">Definite</span><span class="o">=</span><span class="n">Def</span><span class="o">|</span><span class="n">Degree</span><span class="o">=</span><span class="n">Pos</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Masc</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">3</span>	<span class="n">amod</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">3</span>	<span class="n">mogulu</span>	<span class="n">mogul</span>	<span class="n">NOUN</span>	<span class="n">Ncmsd</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Dat</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Masc</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">1</span>	<span class="n">nmod</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">4</span>	<span class="n">obnovila</span>	<span class="n">obnoviti</span>	<span class="n">VERB</span>	<span class="n">Vmp</span><span class="o">-</span><span class="n">sf</span>	<span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span><span class="o">|</span><span class="n">Tense</span><span class="o">=</span><span class="n">Past</span><span class="o">|</span><span class="n">VerbForm</span><span class="o">=</span><span class="n">Part</span><span class="o">|</span><span class="n">Voice</span><span class="o">=</span><span class="n">Act</span>	<span class="mi">0</span>	<span class="n">root</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">5</span>	<span class="n">raspravu</span>	<span class="n">rasprava</span>	<span class="n">NOUN</span>	<span class="n">Ncfsa</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Acc</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">4</span>	<span class="n">obj</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">6</span>	<span class="n">u</span>	<span class="n">u</span>	<span class="n">ADP</span>	<span class="n">Sl</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Loc</span>	<span class="mi">7</span>	<span class="n">case</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">7</span>	<span class="n">Makedoniji</span>	<span class="n">Makedonija</span>	<span class="n">PROPN</span>	<span class="n">Npfsl</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Loc</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">4</span>	<span class="n">obl</span>	<span class="n">_</span>	<span class="n">_</span>
+</pre></div>
+</div>
+<p>As you see, grammatical information is assigned to the word as a whole, and not strictly speaking <strong>glossed</strong> – there is no division of the original word into morphemes and morphological information is not ordered accoding to how it is expressed in the word. But it is still rich and useful information, so I think you should know Universal Dependencies as a source of morphological information!</p>
+</section>
+<section id="tokenization-and-morphology">
+<h3>Tokenization and morphology<a class="headerlink" href="#tokenization-and-morphology" title="Permalink to this heading">#</a></h3>
+<p>A lot of the large deep learning models that we see around today and that have shown impressive performance on language-related tasks do not employ any analysis of morphology explicitly. In fact, they don’t operate on the level of individual characters, individual words or individual morphemes at all. They do something else. Before doing any deep learning magic to the input text, they split it into smaller bits – tokens – a process known as <strong>tokenization</strong>. More often than not, current models use <a class="reference external" href="https://huggingface.co/docs/transformers/tokenizer_summary#subword-tokenization"><strong>subword tokenization</strong></a>, which means that the tokens they are dealing with are usually somewhat smaller than words. What these pieces should be is decided by a separate training process that looks for regularities in the character combinations in training data. There are different ways of finding these regularities and the resulting pieces, and these different algorithms together with different training data and different desireable size of the resulting vocabulary of tokens can produce different splits into tokens. As a linguist, I am always curious to inspect the resulting vocabularies of tokens to see whether – and to what extent – they end up close to what we think the morphological composition of words is! Sometimes it’s pretty close, sometimes not.</p>
+<p>Let’s see for ourselves! Remember the sentence we started today’s lecture with? Here it is again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;Juniper&#39;s mother-in-law is kinda hilarious, isn&#39;t she?&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s tokenize it using a couple of different subword tokenizers that pre-process text for a couple of popular models.</p>
+<p>The first one is the tokenizer used by GPT2 – a predecessor of newer GPT-based models, including ChatGPT, which is much more recent, but AFAIK still uses exactly the same tokenizer as GPT2 (you can compare the result below with what the <a class="reference external" href="https://platform.openai.com/tokenizer">OpenAI tokenization demo</a> outputs).</p>
+<p>The other tokenizer we can look at is built to work with BERT, another popular relatively recent language model.</p>
+<p>Both tokenizers are of the subword kind, built for English on English data, with some differences in the tokenization algorithm and training data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span>
+<span class="n">gpt_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;gpt2&#39;</span><span class="p">)</span>
+<span class="n">bert_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;bert-base-cased&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GPT2 tokenizer:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; | &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;Ġ&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gpt_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sentence</span><span class="p">)])</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BERT tokenizer:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; | &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;##&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bert_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sentence</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GPT2 tokenizer:
+Jun | iper | &#39;s | mother | - | in | - | law | is | kinda | hilarious | , | isn | &#39;t | she | ?
+
+BERT tokenizer:
+Jun | iper | &#39; | s | mother | - | in | - | law | is | kinda | hi | lar | ious | , | isn | &#39; | t | she | ?
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that the results are generally similar – but also a bit different, especially when it comes to somewhat more rare words, such as the rare name <em>Juniper</em> and adjective <em>hilarious</em>.</p>
+<p>It’s also interesting to see how subword tokenization changes when the tokenizer is trained on many languages at the same time. Here are two examples from multilingual (100+ languages) tokenizers when they are given the same sentence: very frequent English words are tokens again (raising the suspicion that English was prevalent in the training data) but the bits are generally shorter, which makes sense as they will need to be shared across all languages of the model. Check out how the Multilingual BERT tokenizer finds <em>us</em> in <em>hilarious</em> - an actual English free morpheme, first person plural pronoun, but not really a morpheme in this particular word:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mbert_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;bert-base-multilingual-cased&#39;</span><span class="p">)</span>
+<span class="n">xlmr_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;xlm-roberta-base&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Multilingual BERT tokenizer:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; | &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;##&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mbert_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sentence</span><span class="p">)])</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;XLM-RoBERTa tokenizer:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; | &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;▁&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xlmr_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sentence</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multilingual BERT tokenizer:
+Juni | per | &#39; | s | mother | - | in | - | law | is | kind | a | hil | ario | us | , | isn | &#39; | t | she | ?
+
+XLM-RoBERTa tokenizer:
+Juni | per | &#39; | s | mother | - | in | - | law | is | kind | a |  | hila | rious | , | isn | &#39; | t | she | ?
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a good moment to look back at the homework assignment from last week: when formulating an alphabet-related task, I mentioned that ChatGPT is <a class="reference external" href="https://chat.openai.com/share/436f6fd5-78e7-40ca-83a9-11eae9c997dd">not great at character-level tasks</a>. Now you understand why: it does not work with characters, but instead with larger units – subword tokens – that are treated basically as undivisible monoliths. Given this, it’s in fact surprising how <strong>good</strong> it is with some of those tasks!</p>
+<p>Before we leave this topic, it’s worth mentioning models with <strong>character-level tokenizers</strong>. They are less widespread, but very interesting! Here is how one of such tokenizers deals with our running example – indeed, each symbol is a separate token:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;google/byt5-base&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; | &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s2">&quot;Juniper&#39;s mother-in-law is kinda hilarious, isn&#39;t she?&quot;</span><span class="p">)[:</span><span class="mi">25</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>J | u | n | i | p | e | r | &#39; | s |   | m | o | t | h | e | r | - | i | n | - | l | a | w |   | i
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will not talk much about character-level models and their pros and cons, but, again, linguistically it’s extremely interesting whether and how these models learn to group these character-level tokens together while being trained on some linguistic task such as translation or next-token prediction. Are there any traces of these models operating on morphological units such as morphemes or words?</p>
+<p>Maybe! Here are two figures that suggest they might be.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Hahn, M. and Baroni, M. 2019. Tabula nearly rasa: Probing the linguistic knowledge of character-level neural language models trained on unsegmented text. TACL 7. [<a class="reference external" href="https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00283/1923543/tacl_a_00283.pdf">pdf</a>]</p>
+</aside>
+<p>This first figure shows activations of a component in a character-level neural network that was trained on text <strong>with spaces between words deleted</strong>. So, the model didn’t have information about word or morpheme boundaries during training. Still, the model developed dedicated units that track positions that correspond to word boundaries in all three languages under consideration experiments (ground truth word boundaries are marked with green lines). Moreover, some of the model’s boundaries that were found correspond to morpheme boundaries: <em>co-</em> and <em>produced</em> in <em>co-produced</em> are treated as separate elements, and a weaker boundary is found after the prefix <em>pro-</em>. The German word <em>Hauptaufgabe</em> (‘main task’) is segmented into the morphemes <em>haupt</em>, <em>auf</em> and <em>gabe</em>. For the details about training and results, see the paper.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/tabula.png"><img alt="words" class="bg-primary mb-1 align-center" src="_images/tabula.png" style="width: 650px;" /></a>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Edman, L., Toral, A. and van Noord, G. 2023. Are Character-level Translations Worth the Wait? An Extensive Comparison of Character-and Subword-level Models for Machine Translation. <a class="reference external" href="https://arxiv.org/abs/2302.14220">arXiv preprint</a>.</p>
+</aside>
+<p>Another piece of evidence pointing in the direction of the usefullness of morphological units for practical linguistic tasks comes from work on character-level translation done here at GroNLP. The graph below shows the dynamics of the relative importance of source and target sequences for the translation (here, from German to English). Peaks in source importance at the beginning of each word suggest word-level modeling: the processed is packaged in words.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/byt5.png"><img alt="words" class="bg-primary mb-1 align-center" src="_images/byt5.png" style="width: 600px;" /></a>
+<div class="note admonition">
+<p class="admonition-title">Homework 4</p>
+<p><strong>Task 1</strong></p>
+<p>Read the following introduction to morphology:</p>
+<blockquote>
+<div><p>Fromkin, Rodman and Hyams.2017. An Introduction to Language, 11th edition. Chapter 2 ‘The Words of Language’, pp. 33-60.</p>
+</div></blockquote>
+<p>Submit, as before, three things discussed in this chapter that were either not discussed during the lecture or discussed differently. Say a bit more than just naming these things – provide a short comparison or definition.</p>
+<p>NB: Pay attention to exercises at the end of the chapter – something like that will appear in the final exam! But more on this later in the course.</p>
+<p><strong>Task 2</strong></p>
+<p>Familiarize youself with <a class="reference external" href="https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf">Leipzig glossing rules</a>. Gloss the following simplified excerpt from the syllabus for this course. Make sure to do it sentence-by-sentence, adhering to the rules as much as possible. List points where you had doubts along the way.</p>
+<blockquote>
+<div><p>De informatiewetenschap vereist dat beoefenaars op het gebied van taaltechnologie daadwerkelijk over taalkundige kennis beschikken. Deze kennis moet worden afgestemd op de uitdagingen van natuurlijke taalverwerking. Dit vereist praktische kennis van de basisconcepten van de taaltheorie.</p>
+</div></blockquote>
+</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -331,27 +1036,26 @@ sdfgsdfg
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "ling_course"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ling_course",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ling_course'</script>
 
                 </article>
               
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="weeks23.html"
@@ -363,23 +1067,63 @@ sdfgsdfg
       </div>
     </a>
     <a class="right-next"
-       href="ling_puzzles.html"
+       href="week5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linguistic puzzles</p>
+        <p class="prev-next-title">Week 5. Grammar II: Syntax</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#words-and-morphemes">Words and morphemes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-vs-bound-roots-vs-affixes-open-vs-closed-class">Free vs. bound; roots vs. affixes; open- vs. closed-class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivational-vs-inflectional-morphology">Derivational vs. inflectional morphology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-types-of-affixes">Positional types of affixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prefixes-and-suffixes">Prefixes and suffixes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#circumfixes">Circumfixes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infixes">Infixes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-template-morphology">Pattern (template) morphology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#affixes-as-operations">Affixes as operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#reduplication">Reduplication</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#umlaut-ablaut-tone-and-stress-change">Umlaut, ablaut, tone and stress change</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#suppletion">Suppletion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morphological-typology">Morphological typology</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allomorphy-and-fusion">Allomorphy and fusion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-of-synthesis">Degree of synthesis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interlinear-glossing">Interlinear glossing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-and-language-technology">Morphology and language technology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-tasks">Classic tasks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-groups-events">Resources, groups, events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization-and-morphology">Tokenization and morphology</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -423,8 +1167,8 @@ By Lisa Bylinina
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
