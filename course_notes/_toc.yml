@@ -14,5 +14,7 @@ chapters:
   title: 'Weeks 4: Grammar I: Morphology'
 - file: week5
   title: 'Weeks 5: Grammar II: Syntax'
+- file: week6
+  title: 'Weeks 6: Semantics'
 - file: ling_puzzles
   title: 'Appendix: Linguistic Puzzles'

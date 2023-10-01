@@ -154,3 +154,121 @@ In the third group, long vowels appear. Syllables with long vowels behave exactl
 **P.S.** Why is this rule so complicated? In fact, there is a way to formulate the rule in a more simple way, but it would involve notions like **mora** and **prosodic foot**, which we haven't covered in the lecture. In these terms, the stress falls on the last syllable of the final full foot of the word, where a foot is either one 2-moraic syllable or two 1-moraic ones! 
 `````
 
+## Puzzle 2: Imperatives in Arabic
+
+This puzzle is related to the topic of Week 4: Morphology. It allows you to dive deeper into morphological analysis of a set of forms that combine a verbal stem and different verbal affixes -- and as a result, given the data, you come up with a rule behind these combinations. This is a direct extension of what we talked about in class.
+
+`````{margin}
+Puzzle by Anton Somin.
+`````
+
+The table below contains verbs in Arabic in different forms, all of them 2nd person singular: 
+
+- indicative present tense singular masculine (as in 'you [masc.] are spinning'), glossed IND.PRS.2.SG.M; 
+- imperative singular masulune (as in 'spin! [masc.]'), glossed IMP.2.SG.M;
+- imperative singular feminine (as in 'spin! [fem.]'), glossed IMP.2.SG.F.
+
+The forms are given in simplified transcription. Some forms are missing, with corresponding cells containing question marks.
+
+
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     IMP.2.SG.F       |      translation      |
+|:----------:|:----------:|:----------:|:----------:|
+| _tadūru_ | _dur!_ | _dūrī!_ | spin |
+| _taktubu_ | _'uktub!_ | _'uktubi!_ | write |
+| _tamšī_ | _'imši!_ | _'imšī!_ | go |
+| _taqsimu_ | _'iqsim!_ | _'iqsimī!_ | split |
+| _tarğū_ | _'urğu!_ | _'urğī!_ | hope |
+| _tasmaʕu_ | _'ismaʕ!_ | _'ismaʕī!_ | listen |
+| _tastabriku_ | _'istabrik!_ | _'istabrikī!_ | make camel kneel |
+| _tarīmu_ | _rim!_ | ? | leave |
+| _tarmī_ | _'irmi!_ | ? | throw |
+| _tanāmu_ | ? | _nāmī! | sleep |
+| ? | _fi!_ | ? | carry out |
+| _tadʕū_ | ? | ? | call |
+
+**Note**: line over the vowel marks long vowels; ğ, ḫ, q, š, ṯ, ', ʕ are consonants.
+
+### Problem 1
+
+```{toggle}
+Fill in the missing forms. Explain your solution.
+```
+
+### Problem 2
+
+```{toggle}
+Do the same for the following verbs:
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     translation      |
+|:----------:|:----------:|:----------:|
+| _tafqišu_ |  ? | break |
+| _taktariṯu_ | ? | take care |
+| _taḫruğu_ | ? | go out |
+
+```
+
+`````{admonition} Hint
+:class: tip, dropdown
+
+In order to solve this puzzle, you need to answer three main questions:
+1. In what case does the imperative verb get a prefix?
+2. In what case this prefix will be _'i-_ and when is it _'u-_?
+3. When do long vowels become short vowels?
+`````
+
+
+`````{admonition} Solution
+:class: danger, dropdown
+Nope!
+<!---
+When building imperative masculine forms (2nd column) from indicative forms (1st column), the following things are happening:
+- prefix _ta-_ is deleted;
+- if the remaining part of the verb starts with **two consonants**, the imperative will have a prefix: either _'u-_ or _'i-_. Otherwise, the prefix is not needed. The choice of the prefix depends on the vowel in the root (including the final long vowels): if the vowel in the root is _u_, then _'u-_ is chosen; if the vowel is _a_ or _i_, then the prefix will be _'i-_;   
+- if the verb ends in short _-u_, this vowel is dropped;
+- long vowels become short vowels: both in the middle of the word (_tad**ū**ru_ \> _d**u**r!_) and at the end (_tarğ**ū**_ \> _'urğ**u**!_; _tamš**ī**_ \> _'imš**i**!_). This does not depend on whether the prefix is needed in this form.
+
+Imperative feminine forms (3rd column) are formed from the imperative masuline forms (2nd column) by adding the suffix _-ī_: _'uktub!_ \> _'uktubī!_. Additionally, the vowel in the root that was long in the indicative form and lost its length during the formation of the imperative masculine form, becomes long again: _tad**ū**ru_ \> _d**ur**!_ \> _d**ū**rī!_. Finally, if the indicative form of the word ends in a long vowel (**ū** or **ī**) that become short in the corresponding imperative masculine form, then in the corresponding imperative feminine form this vowel will be replaced by the suffix _-ī_:  _tarğ**ū**_ \> _'urğ**u**!_ \> _'urğ**ī**!_; _tamšī_ \> _'imši!_ \> _'imšī!_.
+
+Now we can fill in the gaps in the tables.
+
+**Problem 1 solution**
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     IMP.2.SG.F       |      translation      |
+|:----------:|:----------:|:----------:|:----------:|
+| _tarīmu_ | _rim!_ | _rīmī!_ | leave |
+| _tarmī_ | _'irmi!_ | _'irmī!_ | throw |
+| _tanāmu_ | _nam!_ | _nāmī!_ | sleep |
+| _tafī_ | _fi!_ | _fī!_ | carry out |
+| _tadʕū_ | _'udʕu!_ | _'udʕī!_ | call |
+
+
+**Problem 2 solution**
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     translation      |
+|:----------:|:----------:|:----------:|
+| _tafqišu_ |  _'ifqiš!_ | break |
+| _taktariṯu_ | _'iktariṯ!_ | take care |
+| _taḫruğu_ | _'uḫruğ!_ | go out |
+--->
+`````
+
+<!---
+## Puzzle 3: Number in Kiowa
+
+`````{margin}
+Puzzle by Aleksey Pegushev.
+`````
+
+The table below contains singular, dual and plural forms of some [Kiowa](https://en.wikipedia.org/wiki/Kiowa_language) nouns in simplified transcription, along with their translations. Empty cells can be ignored -- the forms corresponding to these cells are not relevant for the task. 
+
+
+
+|     SG     |     DU       |     PL       |      translation      |
+|:----------:|:----------:|:----------:|:----------:|
+|  _adɔ_ | _a_ | _a_ | tree |
+| _mat<sup>h</sup>ɔnsjan_ | _mat<sup>h</sup>ɔnsjan_ | _mat<sup>h</sup>ɔnsjadɔ_
+
+--->
+
+

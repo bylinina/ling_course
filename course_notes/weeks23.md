@@ -821,7 +821,7 @@ So, ASR/TTS is not all there is to speech technology! In addition to sequence-to
 
 Finally, a note on diversity in technology when it comes to linguistic modalities. 
 
-- ASR and other speech technology shows bias that disfavours minorities whose dialects show phonetic traits less represented in speech datasets the models are trained on. If your pronunciation is not 'typical' in some sense relevant for speech dataset construction -- you will have a harder time being understood by a computer. Check out, for example, [a recent paper about racial bias in ASR](https://academic.oup.com/applij/article/44/4/613/6901317)
+- ASR and other speech technology shows bias that disfavours minorities whose dialects show phonetic traits less represented in speech datasets the models are trained on. If your pronunciation is not 'typical' in some sense relevant for speech dataset construction -- you will have a harder time being understood by a computer. Check out, for example, [a recent paper about bias in ASR](https://www.sciencedirect.com/science/article/pii/S0885230823000864)
 - Text models show a lot of bias as well, some of it complex – but some of it can be seen on the level of symbols used to represent text. This word cloud, for instance, is meant to visualize _hey_ in 52 languages. The tool fails to render many of the languages (including Arabic, Hindi, and Korean) in its default font. 
 
 ```{margin} 
