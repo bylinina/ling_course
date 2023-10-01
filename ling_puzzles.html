@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ling_puzzles';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Week 4. Morphology" href="week4.html" />
+    <link rel="prev" title="Week 6. Semantics" href="week6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,7 +174,9 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Week 1: Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weeks23.html">Weeks 2-3: Transmitting and Capturing Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week4.html">Weeks 4: Morphology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html">Weeks 4: Grammar I: Morphology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week5.html">Weeks 5: Grammar II: Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week6.html">Weeks 6: Semantics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix: Linguistic Puzzles</a></li>
 </ul>
 
@@ -326,6 +328,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puzzle-2-imperatives-in-arabic">Puzzle 2: Imperatives in Arabic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Problem 2</a></li>
 </ul>
 </li>
 </ul>
@@ -518,6 +525,187 @@ Stress on the penultimate syllable: <em>sókca</em> (2), <em>pocóswa</em> (3), 
 </div>
 </section>
 </section>
+<section id="puzzle-2-imperatives-in-arabic">
+<h2>Puzzle 2: Imperatives in Arabic<a class="headerlink" href="#puzzle-2-imperatives-in-arabic" title="Permalink to this heading">#</a></h2>
+<p>This puzzle is related to the topic of Week 4: Morphology. It allows you to dive deeper into morphological analysis of a set of forms that combine a verbal stem and different verbal affixes – and as a result, given the data, you come up with a rule behind these combinations. This is a direct extension of what we talked about in class.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Puzzle by Anton Somin.</p>
+</aside>
+<p>The table below contains verbs in Arabic in different forms, all of them 2nd person singular:</p>
+<ul class="simple">
+<li><p>indicative present tense singular masculine (as in ‘you [masc.] are spinning’), glossed IND.PRS.2.SG.M;</p></li>
+<li><p>imperative singular masulune (as in ‘spin! [masc.]’), glossed IMP.2.SG.M;</p></li>
+<li><p>imperative singular feminine (as in ‘spin! [fem.]’), glossed IMP.2.SG.F.</p></li>
+</ul>
+<p>The forms are given in simplified transcription. Some forms are missing, with corresponding cells containing question marks.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>IND.PRS.2.SG.M</p></th>
+<th class="head text-center"><p>IMP.2.SG.M</p></th>
+<th class="head text-center"><p>IMP.2.SG.F</p></th>
+<th class="head text-center"><p>translation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><em>tadūru</em></p></td>
+<td class="text-center"><p><em>dur!</em></p></td>
+<td class="text-center"><p><em>dūrī!</em></p></td>
+<td class="text-center"><p>spin</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>taktubu</em></p></td>
+<td class="text-center"><p><em>‘uktub!</em></p></td>
+<td class="text-center"><p><em>‘uktubi!</em></p></td>
+<td class="text-center"><p>write</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>tamšī</em></p></td>
+<td class="text-center"><p><em>‘imši!</em></p></td>
+<td class="text-center"><p><em>‘imšī!</em></p></td>
+<td class="text-center"><p>go</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>taqsimu</em></p></td>
+<td class="text-center"><p><em>‘iqsim!</em></p></td>
+<td class="text-center"><p><em>‘iqsimī!</em></p></td>
+<td class="text-center"><p>split</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>tarğū</em></p></td>
+<td class="text-center"><p><em>‘urğu!</em></p></td>
+<td class="text-center"><p><em>‘urğī!</em></p></td>
+<td class="text-center"><p>hope</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>tasmaʕu</em></p></td>
+<td class="text-center"><p><em>‘ismaʕ!</em></p></td>
+<td class="text-center"><p><em>‘ismaʕī!</em></p></td>
+<td class="text-center"><p>listen</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>tastabriku</em></p></td>
+<td class="text-center"><p><em>‘istabrik!</em></p></td>
+<td class="text-center"><p><em>‘istabrikī!</em></p></td>
+<td class="text-center"><p>make camel kneel</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>tarīmu</em></p></td>
+<td class="text-center"><p><em>rim!</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>leave</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>tarmī</em></p></td>
+<td class="text-center"><p><em>‘irmi!</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>throw</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>tanāmu</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>_nāmī!</p></td>
+<td class="text-center"><p>sleep</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>?</p></td>
+<td class="text-center"><p><em>fi!</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>carry out</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>tadʕū</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>call</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: line over the vowel marks long vowels; ğ, ḫ, q, š, ṯ, ‘, ʕ are consonants.</p>
+<section id="id1">
+<h3>Problem 1<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<div class="toggle docutils container">
+<p>Fill in the missing forms. Explain your solution.</p>
+</div>
+</section>
+<section id="id2">
+<h3>Problem 2<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<div class="toggle docutils container">
+<p>Do the same for the following verbs:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>IND.PRS.2.SG.M</p></th>
+<th class="head text-center"><p>IMP.2.SG.M</p></th>
+<th class="head text-center"><p>translation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><em>tafqišu</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>break</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><em>taktariṯu</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>take care</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><em>taḫruğu</em></p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-center"><p>go out</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Hint</p>
+<p>In order to solve this puzzle, you need to answer three main questions:</p>
+<ol class="arabic simple">
+<li><p>In what case does the imperative verb get a prefix?</p></li>
+<li><p>In what case this prefix will be <em>‘i-</em> and when is it <em>‘u-</em>?</p></li>
+<li><p>When do long vowels become short vowels?</p></li>
+</ol>
+</div>
+<div class="danger dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Nope!</p>
+<!---
+When building imperative masculine forms (2nd column) from indicative forms (1st column), the following things are happening:
+- prefix _ta-_ is deleted;
+- if the remaining part of the verb starts with **two consonants**, the imperative will have a prefix: either _'u-_ or _'i-_. Otherwise, the prefix is not needed. The choice of the prefix depends on the vowel in the root (including the final long vowels): if the vowel in the root is _u_, then _'u-_ is chosen; if the vowel is _a_ or _i_, then the prefix will be _'i-_;   
+- if the verb ends in short _-u_, this vowel is dropped;
+- long vowels become short vowels: both in the middle of the word (_tad**ū**ru_ \> _d**u**r!_) and at the end (_tarğ**ū**_ \> _'urğ**u**!_; _tamš**ī**_ \> _'imš**i**!_). This does not depend on whether the prefix is needed in this form.
+
+Imperative feminine forms (3rd column) are formed from the imperative masuline forms (2nd column) by adding the suffix _-ī_: _'uktub!_ \> _'uktubī!_. Additionally, the vowel in the root that was long in the indicative form and lost its length during the formation of the imperative masculine form, becomes long again: _tad**ū**ru_ \> _d**ur**!_ \> _d**ū**rī!_. Finally, if the indicative form of the word ends in a long vowel (**ū** or **ī**) that become short in the corresponding imperative masculine form, then in the corresponding imperative feminine form this vowel will be replaced by the suffix _-ī_:  _tarğ**ū**_ \> _'urğ**u**!_ \> _'urğ**ī**!_; _tamšī_ \> _'imši!_ \> _'imšī!_.
+
+Now we can fill in the gaps in the tables.
+
+**Problem 1 solution**
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     IMP.2.SG.F       |      translation      |
+|:----------:|:----------:|:----------:|:----------:|
+| _tarīmu_ | _rim!_ | _rīmī!_ | leave |
+| _tarmī_ | _'irmi!_ | _'irmī!_ | throw |
+| _tanāmu_ | _nam!_ | _nāmī!_ | sleep |
+| _tafī_ | _fi!_ | _fī!_ | carry out |
+| _tadʕū_ | _'udʕu!_ | _'udʕī!_ | call |
+
+
+**Problem 2 solution**
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     translation      |
+|:----------:|:----------:|:----------:|
+| _tafqišu_ |  _'ifqiš!_ | break |
+| _taktariṯu_ | _'iktariṯ!_ | take care |
+| _taḫruğu_ | _'uḫruğ!_ | go out |
+--->
+</div>
+<!---
+## Puzzle 3: Number in Kiowa
+
+`````{margin}
+Puzzle by Aleksey Pegushev.
+`````
+
+The table below contains singular, dual and plural forms of some [Kiowa](https://en.wikipedia.org/wiki/Kiowa_language) nouns in simplified transcription, along with their translations. Empty cells can be ignored -- the forms corresponding to these cells are not relevant for the task. 
+
+
+
+|     SG     |     DU       |     PL       |      translation      |
+|:----------:|:----------:|:----------:|:----------:|
+|  _adɔ_ | _a_ | _a_ | tree |
+| _mat<sup>h</sup>ɔnsjan_ | _mat<sup>h</sup>ɔnsjan_ | _mat<sup>h</sup>ɔnsjadɔ_
+
+--->
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -551,12 +739,12 @@ Stress on the penultimate syllable: <em>sókca</em> (2), <em>pocóswa</em> (3), 
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="week4.html"
+       href="week6.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 4. Morphology</p>
+        <p class="prev-next-title">Week 6. Semantics</p>
       </div>
     </a>
 </div>
@@ -578,6 +766,11 @@ Stress on the penultimate syllable: <em>sókca</em> (2), <em>pocóswa</em> (3), 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puzzle-2-imperatives-in-arabic">Puzzle 2: Imperatives in Arabic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Problem 2</a></li>
 </ul>
 </li>
 </ul>
