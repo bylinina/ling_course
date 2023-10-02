@@ -183,7 +183,7 @@ The forms are given in simplified transcription. Some forms are missing, with co
 | _tastabriku_ | _'istabrik!_ | _'istabrikī!_ | make camel kneel |
 | _tarīmu_ | _rim!_ | ? | leave |
 | _tarmī_ | _'irmi!_ | ? | throw |
-| _tanāmu_ | ? | _nāmī! | sleep |
+| _tanāmu_ | ? | _nāmī!_ | sleep |
 | ? | _fi!_ | ? | carry out |
 | _tadʕū_ | ? | ? | call |
 
