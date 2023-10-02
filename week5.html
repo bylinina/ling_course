@@ -65,8 +65,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'week5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Week 6. Semantics" href="week6.html" />
-    <link rel="prev" title="Week 4. Grammar I: Morphology" href="week4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,12 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Week 1: Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weeks23.html">Weeks 2-3: Transmitting and Capturing Language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week4.html">Weeks 4: Grammar I: Morphology</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Weeks 5: Grammar II: Syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week6.html">Weeks 6: Semantics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ling_puzzles.html">Appendix: Linguistic Puzzles</a></li>
 </ul>
 
@@ -225,6 +221,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -233,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/week5.md" target="_blank"
+      <li><a href="_sources/week5.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -243,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -329,9 +356,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="week-5-grammar-ii-syntax">
 <h1>Week 5. Grammar II: Syntax<a class="headerlink" href="#week-5-grammar-ii-syntax" title="Permalink to this heading">#</a></h1>
-<p><big>To be unlocked on October 2nd.</big></p>
 <!---
-
 `````{admonition} TL;DR [slides]
 :class: note
 
@@ -357,9 +382,34 @@ document.write(`
 
 ## Putting words together
 
-Last week, we talked about words and their parts, morphemes: how morphemes are put together, what types there are and so on. Today, we move one level up and discuss how words can be combined together to form phrases and sentences. Let's start by stating the maybe obvious fact that language has rules of putting words together, and not all word combinations in all orders result in phrases or sentences that the language allows.
+Last week, we talked about words and their parts, morphemes:  how morphemes are put together, what types there are and so on. Today, we move one level up and discuss how words can be combined together to form phrases and sentences. Let's start by stating the maybe obvious fact that language has rules of putting words together, and not all word combinations in all orders result in phrases or sentences that the language allows.
+
+<center><big> The girl read the book.</big></center>
 
 
+
+
+
+<center><big> The girl read the book.</big></center>
+
+
+```{margin} 
+Welsh
+
+Example from Borsley, R.D., Tallerman, M. and Willis, D. 2007. _The syntax of Welsh_. Cambridge University Press.
+```
+<div id='outerTable'><table>
+  <tr><td>(1)&nbsp;&nbsp;&nbsp;</td><td>Prynodd</td><td>Elin</td><td>dorth</td><td>o</td><td>fara.</td></tr>
+  <tr><td></td><td>buy.PAST.3S</td><td>Elin</td><td>loaf</td><td>of</td><td>bread</td></tr>
+  <tr><td></td><td colspan=5>'Elin bought a loaf of bread.'</td></tr>
+</table></div>
+
+
+
+
+
+
+<center><big><span style="color:DeepPink"><b>Juniper</b></span><span style="color:Indigo"><b>'s</b></span> <span style="color:Crimson"><b>mother-in-law</b></span> <span style="color:FireBrick"><b>is</b></span> <span style="color:DarkSlateGray"><b>kind</b></span><span style="color:Purple"><b>a</b></span> <span style="color:SteelBlue"><b>hilarious</b></span>, <span style="color:DarkGreen"><b>is</b></span><span style="color:DarkRed"><b>n't</b></span> <span style="color:ForestGreen"><b>she</b></span>?</big></center>
 
 
 [ungrammatical example]
@@ -372,9 +422,43 @@ This contrasts with how words generally work, by the way. Words can be very long
 - I called my friend who then called her friend who then called her friend...
 
 Syntax gives you combinatorial freedom that is somehow beyond the limits of combinatorial freedom of morphology. There must be a deep reason for that, but I don't know it and don't want to speculate.
-
-
---->
+---><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sentence = &quot;This is a sentence.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import benepar, spacy</span>
+<span class="c1">#from nltk import ParentedTree</span>
+<span class="c1">#from IPython.utils import io</span>
+<span class="c1">#with io.capture_output() as captured:</span>
+<span class="c1">#    nlp = spacy.load(&#39;en_core_web_sm&#39;)</span>
+<span class="c1">#    nlp.add_pipe(&quot;benepar&quot;, config={&quot;model&quot;: &quot;benepar_en3&quot;})</span>
+<span class="c1">#    sentence = list(nlp(sentence).sents)[0]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#parse_tree = ParentedTree.fromstring(&#39;(&#39; + sentence._.parse_string + &#39;)&#39;)</span>
+<span class="c1">#parse_tree.pretty_print()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!---
+Demo https://demos.explosion.ai/displacy
+---><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># spacy.displacy.render(sentence, style=&#39;dep&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -386,16 +470,16 @@ Syntax gives you combinatorial freedom that is somehow beyond the limits of comb
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "ling_course"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ling_course",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ling_course'</script>
 
                 </article>
               
@@ -407,24 +491,6 @@ Syntax gives you combinatorial freedom that is somehow beyond the limits of comb
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="week4.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 4. Grammar I: Morphology</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="week6.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 6. Semantics</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
