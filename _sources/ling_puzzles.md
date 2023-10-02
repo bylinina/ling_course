@@ -220,8 +220,7 @@ In order to solve this puzzle, you need to answer three main questions:
 
 `````{admonition} Solution
 :class: danger, dropdown
-Nope!
-<!---
+
 When building imperative masculine forms (2nd column) from indicative forms (1st column), the following things are happening:
 - prefix _ta-_ is deleted;
 - if the remaining part of the verb starts with **two consonants**, the imperative will have a prefix: either _'u-_ or _'i-_. Otherwise, the prefix is not needed. The choice of the prefix depends on the vowel in the root (including the final long vowels): if the vowel in the root is _u_, then _'u-_ is chosen; if the vowel is _a_ or _i_, then the prefix will be _'i-_;   
@@ -250,25 +249,5 @@ Now we can fill in the gaps in the tables.
 | _tafqišu_ |  _'ifqiš!_ | break |
 | _taktariṯu_ | _'iktariṯ!_ | take care |
 | _taḫruğu_ | _'uḫruğ!_ | go out |
---->
+
 `````
-
-<!---
-## Puzzle 3: Number in Kiowa
-
-`````{margin}
-Puzzle by Aleksey Pegushev.
-`````
-
-The table below contains singular, dual and plural forms of some [Kiowa](https://en.wikipedia.org/wiki/Kiowa_language) nouns in simplified transcription, along with their translations. Empty cells can be ignored -- the forms corresponding to these cells are not relevant for the task. 
-
-
-
-|     SG     |     DU       |     PL       |      translation      |
-|:----------:|:----------:|:----------:|:----------:|
-|  _adɔ_ | _a_ | _a_ | tree |
-| _mat<sup>h</sup>ɔnsjan_ | _mat<sup>h</sup>ɔnsjan_ | _mat<sup>h</sup>ɔnsjadɔ_
-
---->
-
-
