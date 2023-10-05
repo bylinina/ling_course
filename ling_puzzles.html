@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ling_puzzles';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Week 4. Grammar I: Morphology" href="week4.html" />
+    <link rel="prev" title="Week 7. Outro" href="week7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,6 +175,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Week 1: Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weeks23.html">Weeks 2-3: Transmitting and Capturing Language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week4.html">Weeks 4: Grammar I: Morphology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week5.html">Weeks 5: Grammar II: Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week6.html">Weeks 6: Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week7.html">Weeks 7: Outro</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix: Linguistic Puzzles</a></li>
 </ul>
 
@@ -346,7 +349,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linguistic-puzzles">
 <h1>Linguistic puzzles<a class="headerlink" href="#linguistic-puzzles" title="Permalink to this heading">#</a></h1>
-<p>This page contains linguistic puzzles grouped by topic. I am not the author of these puzzles! I use them in the ‘Linguistics for Language Technology’ course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data.</p>
+<p>This page contains linguistic puzzles grouped by topic. I am not the author of these puzzles! I use them in my course course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data.</p>
 <section id="puzzle-1-stress-in-muscogee">
 <h2>Puzzle 1: Stress in Muscogee<a class="headerlink" href="#puzzle-1-stress-in-muscogee" title="Permalink to this heading">#</a></h2>
 <aside class="margin sidebar">
@@ -505,21 +508,38 @@ document.write(`
 </div>
 <div class="danger dropdown admonition">
 <p class="admonition-title">Solution</p>
-<p><strong>Problem 1 solution</strong></p>
-<p>Let’s start with the first group of words only. We notice immediately that stress is somewhere close to the end of the word – either the last or the penultimate syllable. But how do we know which one of those? Let’s count the number of syllables in each of the words (I’ll put the number in parentheses):</p>
-<p>Stress on the last syllable: <em>cokó</em> (2), <em>iyanawá</em> (4)
-Stress on the penultimate syllable: <em>yanása</em> (3), <em>imahicíta</em> (5), <em>lafotaháya</em> (5), <em>itiwanayipíta</em> (7)</p>
-<p>Words with even number of syllables have stress on the final syllable, the ones with odd number of syllables get stress on the penultimate one. We can formulate a rule that puts stress on the last even syllable of the word. Then this will be the answer to Problem 1: <em>ifá</em>, <em>wanayitá</em>, <em>ifóci</em>, <em>awanayíta</em></p>
-<p><strong>Problem 2 solution</strong></p>
-<p>When the second group of words is introduced, we see that our rule does not work anymore. For example, the 2-syllable word <em>sókca</em> has stress on the first syllable, not on the second one. Can we revise the rule so that it explains the new portion of data? The first thing to notice is that there’s something different about the new group of words compared to the first one. Namely, the first group contained only words in which each consonant is followed by a vowel, while in the second group there are clusters of consonants, which give rise to closed syllables (the first consonant of the cluster belongs to the previous syllable, which is then a ‘closed syllable’ – closed by the consonant). Let’s count syllables in words as before:</p>
-<p>Stress on the last syllable: <em>aktopá</em> (3), <em>inkosapitá</em> (5)
-Stress on the penultimate syllable: <em>sókca</em> (2), <em>pocóswa</em> (3), <em>akkopánka</em> (4), <em>acahankatíta</em> (6), <em>pokkałakkoaopankacóko</em> (10)</p>
-<p>One thing to notice is that whenever the closed syllable is the penultimate one, it has stress on it. This observation leads us to connect the ‘closed’ status of the syllable to where stress is put. Let’s make another observation: all final-stress words in this group have odd number of syllables – which is the opposite of the generalization about the first group of words. They also have closed syllables in the very first position. Let’s put it this way: if the initial closed syllable didn’t exit, the stress would go to the last even syllable. Does this generalise to the words of this group with stress on the penultimate syllable? Yes, if we formulate it like this: the stress falls on the last even syllable of the word assuming that closed syllables restart the count (are position 0).</p>
-<p>Now we can solve problem 2: <em>hoktakí</em>, <em>isiskitóci</em>, <em>ilitohtałíta</em></p>
-<p><strong>Problem 3 solution</strong></p>
-<p>In the third group, long vowels appear. Syllables with long vowels behave exactly like closed syllables, restarting the syllable count. We can now solve problem 3 as well: <em>nâ:nakí</em>, <em>a:tamihomá</em>, <em>sâ:sákwa</em>, <em>homantá:ki</em></p>
-<p><strong>The final rule</strong> says: The stress falls on the last even syllable of the word, assuming that the last closed syllable or syllable with a long vowel restarts the count.</p>
-<p><strong>P.S.</strong> Why is this rule so complicated? In fact, there is a way to formulate the rule in a more simple way, but it would involve notions like <strong>mora</strong> and <strong>prosodic foot</strong>, which we haven’t covered in the lecture. In these terms, the stress falls on the last syllable of the final full foot of the word, where a foot is either one 2-moraic syllable or two 1-moraic ones!</p>
+<p>I hid the solutions for now. Contact me if you want to get them.</p>
+<!---
+**Problem 1 solution**
+
+Let's start with the first group of words only. We notice immediately that stress is somewhere close to the end of the word -- either the last or the penultimate syllable. But how do we know which one of those? Let's count the number of syllables in each of the words (I'll put the number in parentheses):
+
+Stress on the last syllable: _cokó_ (2), _iyanawá_ (4)
+Stress on the penultimate syllable: _yanása_ (3), _imahicíta_ (5), _lafotaháya_ (5), _itiwanayipíta_ (7)
+
+Words with even number of syllables have stress on the final syllable, the ones with odd number of syllables get stress on the penultimate one. We can formulate a rule that puts stress on the last even syllable of the word. Then this will be the answer to Problem 1: _ifá_, _wanayitá_, _ifóci_, _awanayíta_
+
+
+**Problem 2 solution**
+
+When the second group of words is introduced, we see that our rule does not work anymore. For example, the 2-syllable word _sókca_ has stress on the first syllable, not on the second one. Can we revise the rule so that it explains the new portion of data? The first thing to notice is that there's something different about the new group of words compared to the first one. Namely, the first group contained only words in which each consonant is followed by a vowel, while in the second group there are clusters of consonants, which give rise to closed syllables (the first consonant of the cluster belongs to the previous syllable, which is then a 'closed syllable' -- closed by the consonant). Let's count syllables in words as before:
+
+Stress on the last syllable: _aktopá_ (3), _inkosapitá_ (5)
+Stress on the penultimate syllable: _sókca_ (2), _pocóswa_ (3), _akkopánka_ (4), _acahankatíta_ (6), _pokkałakkoaopankacóko_ (10)
+
+One thing to notice is that whenever the closed syllable is the penultimate one, it has stress on it. This observation leads us to connect the 'closed' status of the syllable to where stress is put. Let's make another observation: all final-stress words in this group have odd number of syllables -- which is the opposite of the generalization about the first group of words. They also have closed syllables in the very first position. Let's put it this way: if the initial closed syllable didn't exit, the stress would go to the last even syllable. Does this generalise to the words of this group with stress on the penultimate syllable? Yes, if we formulate it like this: the stress falls on the last even syllable of the word assuming that closed syllables restart the count (are position 0).
+
+Now we can solve problem 2: _hoktakí_, _isiskitóci_, _ilitohtałíta_
+
+**Problem 3 solution**
+
+In the third group, long vowels appear. Syllables with long vowels behave exactly like closed syllables, restarting the syllable count. We can now solve problem 3 as well: _nâ:nakí_, _a:tamihomá_, _sâ:sákwa_, _homantá:ki_
+
+**The final rule** says: The stress falls on the last even syllable of the word, assuming that the last closed syllable or syllable with a long vowel restarts the count.
+
+
+**P.S.** Why is this rule so complicated? In fact, there is a way to formulate the rule in a more simple way, but it would involve notions like **mora** and **prosodic foot**, which we haven't covered in the lecture. In these terms, the stress falls on the last syllable of the final full foot of the word, where a foot is either one 2-moraic syllable or two 1-moraic ones! 
+--->
 </div>
 </section>
 </section>
@@ -653,75 +673,37 @@ Stress on the penultimate syllable: <em>sókca</em> (2), <em>pocóswa</em> (3), 
 </div>
 <div class="danger dropdown admonition">
 <p class="admonition-title">Solution</p>
-<p>When building imperative masculine forms (2nd column) from indicative forms (1st column), the following things are happening:</p>
-<ul class="simple">
-<li><p>prefix <em>ta-</em> is deleted;</p></li>
-<li><p>if the remaining part of the verb starts with <strong>two consonants</strong>, the imperative will have a prefix: either <em>‘u-</em> or <em>‘i-</em>. Otherwise, the prefix is not needed. The choice of the prefix depends on the vowel in the root (including the final long vowels): if the vowel in the root is <em>u</em>, then <em>‘u-</em> is chosen; if the vowel is <em>a</em> or <em>i</em>, then the prefix will be <em>‘i-</em>;</p></li>
-<li><p>if the verb ends in short <em>-u</em>, this vowel is dropped;</p></li>
-<li><p>long vowels become short vowels: both in the middle of the word (<em>tad<strong>ū</strong>ru</em> &gt; <em>d<strong>u</strong>r!</em>) and at the end (<em>tarğ<strong>ū</strong></em> &gt; <em>‘urğ<strong>u</strong>!</em>; <em>tamš<strong>ī</strong></em> &gt; <em>‘imš<strong>i</strong>!</em>). This does not depend on whether the prefix is needed in this form.</p></li>
-</ul>
-<p>Imperative feminine forms (3rd column) are formed from the imperative masuline forms (2nd column) by adding the suffix <em>-ī</em>: <em>‘uktub!</em> &gt; <em>‘uktubī!</em>. Additionally, the vowel in the root that was long in the indicative form and lost its length during the formation of the imperative masculine form, becomes long again: <em>tad<strong>ū</strong>ru</em> &gt; <em>d<strong>ur</strong>!</em> &gt; <em>d<strong>ū</strong>rī!</em>. Finally, if the indicative form of the word ends in a long vowel (<strong>ū</strong> or <strong>ī</strong>) that become short in the corresponding imperative masculine form, then in the corresponding imperative feminine form this vowel will be replaced by the suffix <em>-ī</em>:  <em>tarğ<strong>ū</strong></em> &gt; <em>‘urğ<strong>u</strong>!</em> &gt; <em>‘urğ<strong>ī</strong>!</em>; <em>tamšī</em> &gt; <em>‘imši!</em> &gt; <em>‘imšī!</em>.</p>
-<p>Now we can fill in the gaps in the tables.</p>
-<p><strong>Problem 1 solution</strong></p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>IND.PRS.2.SG.M</p></th>
-<th class="head text-center"><p>IMP.2.SG.M</p></th>
-<th class="head text-center"><p>IMP.2.SG.F</p></th>
-<th class="head text-center"><p>translation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><em>tarīmu</em></p></td>
-<td class="text-center"><p><em>rim!</em></p></td>
-<td class="text-center"><p><em>rīmī!</em></p></td>
-<td class="text-center"><p>leave</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><em>tarmī</em></p></td>
-<td class="text-center"><p><em>‘irmi!</em></p></td>
-<td class="text-center"><p><em>‘irmī!</em></p></td>
-<td class="text-center"><p>throw</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><em>tanāmu</em></p></td>
-<td class="text-center"><p><em>nam!</em></p></td>
-<td class="text-center"><p><em>nāmī!</em></p></td>
-<td class="text-center"><p>sleep</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><em>tafī</em></p></td>
-<td class="text-center"><p><em>fi!</em></p></td>
-<td class="text-center"><p><em>fī!</em></p></td>
-<td class="text-center"><p>carry out</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><em>tadʕū</em></p></td>
-<td class="text-center"><p><em>‘udʕu!</em></p></td>
-<td class="text-center"><p><em>‘udʕī!</em></p></td>
-<td class="text-center"><p>call</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Problem 2 solution</strong></p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>IND.PRS.2.SG.M</p></th>
-<th class="head text-center"><p>IMP.2.SG.M</p></th>
-<th class="head text-center"><p>translation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><em>tafqišu</em></p></td>
-<td class="text-center"><p><em>‘ifqiš!</em></p></td>
-<td class="text-center"><p>break</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><em>taktariṯu</em></p></td>
-<td class="text-center"><p><em>‘iktariṯ!</em></p></td>
-<td class="text-center"><p>take care</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><em>taḫruğu</em></p></td>
-<td class="text-center"><p><em>‘uḫruğ!</em></p></td>
-<td class="text-center"><p>go out</p></td>
-</tr>
-</tbody>
-</table>
+<p>I hid the solutions for now. Contact me if you want to get them.</p>
+<!---
+When building imperative masculine forms (2nd column) from indicative forms (1st column), the following things are happening:
+- prefix _ta-_ is deleted;
+- if the remaining part of the verb starts with **two consonants**, the imperative will have a prefix: either _'u-_ or _'i-_. Otherwise, the prefix is not needed. The choice of the prefix depends on the vowel in the root (including the final long vowels): if the vowel in the root is _u_, then _'u-_ is chosen; if the vowel is _a_ or _i_, then the prefix will be _'i-_;   
+- if the verb ends in short _-u_, this vowel is dropped;
+- long vowels become short vowels: both in the middle of the word (_tad**ū**ru_ \> _d**u**r!_) and at the end (_tarğ**ū**_ \> _'urğ**u**!_; _tamš**ī**_ \> _'imš**i**!_). This does not depend on whether the prefix is needed in this form.
+
+Imperative feminine forms (3rd column) are formed from the imperative masuline forms (2nd column) by adding the suffix _-ī_: _'uktub!_ \> _'uktubī!_. Additionally, the vowel in the root that was long in the indicative form and lost its length during the formation of the imperative masculine form, becomes long again: _tad**ū**ru_ \> _d**ur**!_ \> _d**ū**rī!_. Finally, if the indicative form of the word ends in a long vowel (**ū** or **ī**) that become short in the corresponding imperative masculine form, then in the corresponding imperative feminine form this vowel will be replaced by the suffix _-ī_:  _tarğ**ū**_ \> _'urğ**u**!_ \> _'urğ**ī**!_; _tamšī_ \> _'imši!_ \> _'imšī!_.
+
+Now we can fill in the gaps in the tables.
+
+**Problem 1 solution**
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     IMP.2.SG.F       |      translation      |
+|:----------:|:----------:|:----------:|:----------:|
+| _tarīmu_ | _rim!_ | _rīmī!_ | leave |
+| _tarmī_ | _'irmi!_ | _'irmī!_ | throw |
+| _tanāmu_ | _nam!_ | _nāmī!_ | sleep |
+| _tafī_ | _fi!_ | _fī!_ | carry out |
+| _tadʕū_ | _'udʕu!_ | _'udʕī!_ | call |
+
+
+**Problem 2 solution**
+
+|     IND.PRS.2.SG.M     |     IMP.2.SG.M       |     translation      |
+|:----------:|:----------:|:----------:|
+| _tafqišu_ |  _'ifqiš!_ | break |
+| _taktariṯu_ | _'iktariṯ!_ | take care |
+| _taḫruğu_ | _'uḫruğ!_ | go out |
+--->
 </div>
 </section>
 </section>
@@ -758,12 +740,12 @@ Stress on the penultimate syllable: <em>sókca</em> (2), <em>pocóswa</em> (3), 
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="week4.html"
+       href="week7.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 4. Grammar I: Morphology</p>
+        <p class="prev-next-title">Week 7. Outro</p>
       </div>
     </a>
 </div>
