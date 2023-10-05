@@ -16,5 +16,7 @@ chapters:
   title: 'Weeks 5: Grammar II: Syntax'
 - file: week6
   title: 'Weeks 6: Semantics'
+- file: week7
+  title: 'Weeks 7: Outro'
 - file: ling_puzzles
   title: 'Appendix: Linguistic Puzzles'

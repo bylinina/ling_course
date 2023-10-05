@@ -1,6 +1,6 @@
 # Linguistic puzzles
 
-This page contains linguistic puzzles grouped by topic. I am not the author of these puzzles! I use them in the 'Linguistics for Language Technology' course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data.
+This page contains linguistic puzzles grouped by topic. I am not the author of these puzzles! I use them in my course course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data.
 
 
 
@@ -123,6 +123,8 @@ In order to formulate this more precise rule, try to figure out what makes word 
 `````{admonition} Solution
 :class: danger, dropdown
 
+I hid the solutions for now. Contact me if you want to get them.
+<!---
 **Problem 1 solution**
 
 Let's start with the first group of words only. We notice immediately that stress is somewhere close to the end of the word -- either the last or the penultimate syllable. But how do we know which one of those? Let's count the number of syllables in each of the words (I'll put the number in parentheses):
@@ -152,6 +154,7 @@ In the third group, long vowels appear. Syllables with long vowels behave exactl
 
 
 **P.S.** Why is this rule so complicated? In fact, there is a way to formulate the rule in a more simple way, but it would involve notions like **mora** and **prosodic foot**, which we haven't covered in the lecture. In these terms, the stress falls on the last syllable of the final full foot of the word, where a foot is either one 2-moraic syllable or two 1-moraic ones! 
+--->
 `````
 
 ## Puzzle 2: Imperatives in Arabic
@@ -221,6 +224,8 @@ In order to solve this puzzle, you need to answer three main questions:
 `````{admonition} Solution
 :class: danger, dropdown
 
+I hid the solutions for now. Contact me if you want to get them.
+<!---
 When building imperative masculine forms (2nd column) from indicative forms (1st column), the following things are happening:
 - prefix _ta-_ is deleted;
 - if the remaining part of the verb starts with **two consonants**, the imperative will have a prefix: either _'u-_ or _'i-_. Otherwise, the prefix is not needed. The choice of the prefix depends on the vowel in the root (including the final long vowels): if the vowel in the root is _u_, then _'u-_ is chosen; if the vowel is _a_ or _i_, then the prefix will be _'i-_;   
@@ -249,5 +254,6 @@ Now we can fill in the gaps in the tables.
 | _tafqišu_ |  _'ifqiš!_ | break |
 | _taktariṯu_ | _'iktariṯ!_ | take care |
 | _taḫruğu_ | _'uḫruğ!_ | go out |
+--->
 
 `````
