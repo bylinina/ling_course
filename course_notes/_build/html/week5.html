@@ -65,6 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'week5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Week 6. Semantics" href="week6.html" />
+    <link rel="prev" title="Week 4. Grammar I: Morphology" href="week4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,10 +172,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Week 1: Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weeks23.html">Weeks 2-3: Transmitting and Capturing Language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week4.html">Weeks 4: Grammar I: Morphology</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Weeks 5: Grammar II: Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week6.html">Weeks 6: Semantics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ling_puzzles.html">Appendix: Linguistic Puzzles</a></li>
 </ul>
 
@@ -329,7 +333,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -345,6 +351,21 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-words-together">Putting words together</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sequences-finite-means">Infinite sequences, finite means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#words-in-the-right-order">Words in the right order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complete-recipes-for-simple-sentences">More complete recipes for simple sentences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-syntax">Representing syntax</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-and-language-technology">Syntax and language technology</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -356,109 +377,584 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="week-5-grammar-ii-syntax">
 <h1>Week 5. Grammar II: Syntax<a class="headerlink" href="#week-5-grammar-ii-syntax" title="Permalink to this heading">#</a></h1>
-<!---
-`````{admonition} TL;DR [slides]
-:class: note
-
-- Syntax: putting words together
-	- Grammaticality
-	- Words in linear order
-		- Head-final, head-initial; constraints
-	- Structures built from words
-		- Constituents
-		- Trees
-- Parts of speech
-- Marking the syntactic relation:
-	- Head marking vs. dependent marking
-		- In the nominal domain
-		- In the verbal domain
-		- Ergative vs accusative vs active alignment
-- Syntax and language technology
-	- Syntactic parsers
-	- Emergent syntax in language models?
-	- Injecting syntactic information into language models
-`````
-
-
-## Putting words together
-
-Last week, we talked about words and their parts, morphemes:  how morphemes are put together, what types there are and so on. Today, we move one level up and discuss how words can be combined together to form phrases and sentences. Let's start by stating the maybe obvious fact that language has rules of putting words together, and not all word combinations in all orders result in phrases or sentences that the language allows.
-
-<center><big> The girl read the book.</big></center>
-
-
-
-
-
-<center><big> The girl read the book.</big></center>
-
-
-```{margin} 
-Welsh
-
-Example from Borsley, R.D., Tallerman, M. and Willis, D. 2007. _The syntax of Welsh_. Cambridge University Press.
-```
+<div class="note admonition">
+<p class="admonition-title">TL;DR [<a class="reference external" href="https://docs.google.com/presentation/d/1wsjv8PVLyPvXI27o69clMr7U-yTkJINJaKPn76EvczQ/edit?usp=sharing">slides</a>]</p>
+<ul class="simple">
+<li><p>Syntax: putting words together</p>
+<ul>
+<li><p>Grammatical vs. ungrammatical sentences</p></li>
+<li><p>Words in linear order</p></li>
+<li><p>Syntax beyond linearization</p></li>
+</ul>
+</li>
+<li><p>Syntax and language technology</p>
+<ul>
+<li><p>Syntactic parsing: a classic task</p></li>
+<li><p>But do we need syntax at all? Maybe not as much as before, but probably still yes</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="putting-words-together">
+<h2>Putting words together<a class="headerlink" href="#putting-words-together" title="Permalink to this heading">#</a></h2>
+<p>Last week, we talked about words and their parts, morphemes: how morphemes are combined together, what kinds of morphemes exist and so on. Today, we move one level up and discuss how words can be put together to form phrases and sentences.</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notion</p>
+<p><strong>Syntax</strong> studies how words combine into larger units like phrases and sentences.</p>
+</div>
+<p>This seems very similar to morphology – there are objects (morphemes) that combine together to make words; there are objects (words) that combine together to make sentences, kind of like this:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/syntmorph.jpeg"><img alt="double structure" class="bg-primary mb-1 align-center" src="_images/syntmorph.jpeg" style="width: 350px;" /></a>
+<p>Aren’t syntax and morphology the same thing then, apart from working with different units? Why study them separately at all? That’s a fair consideration actually, which might be a reasonable concern for different languages to different extents, and boils down to the amount of distinct processes that work on the level of words but not at the level of sentences, and the other way around.</p>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>We discussed an example of such process last week for Turkish: it works on the level of individual words but not above. Can you remember what it was?</p>
+</div>
+<section id="infinite-sequences-finite-means">
+<h3>Infinite sequences, finite means<a class="headerlink" href="#infinite-sequences-finite-means" title="Permalink to this heading">#</a></h3>
+<p>There is one interesting way where morphology and syntax seem to diverge from each other. When reading syntax introductions, one can often find the discussion of syntax as a <strong>tool to build infinite sequences from finite means</strong>. This means two things:</p>
+<ul class="simple">
+<li><p>The number of sentences one can build in a language is potentially infinite;</p></li>
+<li><p>The length of each individual sentence is also in principle unconstrained: if I had infinite time in my disposal, I could’ve given you an infinite sentence.</p></li>
+</ul>
+<p>The first point can be illustrated by the fact that we constantly come up with sentences that have never been said before. Here is one: <em>Lisa Bylinina will teach in Groningen this week</em> – I am pretty sure it’s a brand new sentence, but it’s a part of English language, in a sense that you recognize that this is well-formed and you know what it means, so making and processing new sentences is clearly a core part of knowing and using language. With words, it does not really work this way – I can come up with a new word that nobody has seen before (here’s one: <em>braplomindew</em>), but it’s not very likely that people will understand me and, unless some time passes and more and more people use it the same way as I did, it will not really become a part of language.</p>
+<p>What about word vs. sentence length? We saw one pretty long word last week:</p>
+<center><big><span style="color:DeepPink"><b>anti</b></span><span style="color:Indigo"><b>dis</b></span><span style="color:Crimson"><b>establish</b></span><span style="color:ForestGreen"><b>ment</b></span><span style="color:DarkSlateGray"><b>ari</b></span><span style="color:Purple"><b>an</b></span><span style="color:SteelBlue"><b>ism</b></span></big></center>
+<br>
+<p>How much longer can it get? With this particular one, it’s easy: we can repeat the prefix <em>anti-</em> potentially indefinitely with a meaningful result, even though after a while we might struggle to see what exactly it’s supposed to mean:</p>
+<center><big>...<span style="color:Purple"><b>anti</b></span><span style="color:SteelBlue"><b>anti</b></span><span style="color:DeepPink"><b>anti</b></span><span style="color:Indigo"><b>dis</b></span><span style="color:Crimson"><b>establish</b></span><span style="color:ForestGreen"><b>ment</b></span><span style="color:DarkSlateGray"><b>ari</b></span><span style="color:Purple"><b>an</b></span><span style="color:SteelBlue"><b>ism</b></span></big></center>
+<br>
+<p>Similarly with sentences, in some cases we can infinitely repeat some parts of sentences and get potentially unbounded sentences:</p>
+<center><big>
+This sentence will go on and on and on and on and on and on...
+</big></center>
+<br>
+<p>But with sentences the sources of this potential infinity are more easy to come by and more diverse than that. As an example, a sentence can contain another sentence as its part, and once we see that grammar allows for this, it makes obvious the possibility of potentially infinite embedding, where a sentence contains a sentence, and it contains another sentence, and so on and so forth, infinitely (a property of a system known as <strong>recursion</strong>):</p>
+<center><big>
+[<sub>S</sub> I called my friend ]<br>
+[<sub>S</sub> I called my friend [<sub>S'</sub> who knows my colleague ] ]<br>
+[<sub>S</sub> I called my friend [<sub>S'</sub> who knows my colleague [<sub>S''</sub> who is away this semester ] ] ]<br>
+...
+</big></center>
+<br>
+<p>The thought here is this: it looks like there are some deep differences between combining morphemes into words and combining words into sentences. Sometimes these differences are not so clear, actually, but there’s something about this contrast in how free and creative word combinations are, while combinations of morphemes are less so. Syntax gives you combinatorial freedom that is somehow beyond the limits of combinatorial freedom of morphology.</p>
+<p>If you are not totally convinced by this, think about dictionaries! Dictionaries are attempts to list all words, or maybe as many words as possible. We don’t really have dictionaries of sentences – and intuitively, it’s clear why. There are just too many, and it’s easier to make / analyze them on the fly, no need to list them. Similarly, think about things like longest word challenges, where people compete to come up with very long words that are longer than what other people came up with. If combinatorial power of word formation were as great as those for sentences, such challenges wouldn’t exist. But, to be fair, I looked it up now and there are longest sentence challenges, go figure.</p>
+<p>Long story short, sentences are built from words, there is a potentially infinite set of sentences, and words can be treated as a finite set, as a bit of a simplification. So, syntax builds infinite sequences from finite means.</p>
+</section>
+<section id="words-in-the-right-order">
+<h3>Words in the right order<a class="headerlink" href="#words-in-the-right-order" title="Permalink to this heading">#</a></h3>
+<p>Let’s start by stating the maybe obvious fact that language has rules of combining words with each other, and not all word combinations in all orders result in phrases or sentences that the language allows. For instance, this sentence below is completely fine in English:</p>
+<center><big>The girl read the book.</big></center>
+<br>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The asterisk in front of the sentence is used to indicate ungrammaticality.</p>
+</aside>
+<p>But arranging the very same words in different order might result in a sentence that sounds bad, or ill-formed, or what’s called <strong>ungrammatical</strong> – a speaker of English wouldn’t say this:</p>
+<center><big><sup>*</sup>Read the girl the book.</big></center>
+<br>
+<p>In the first sentence, the word order was Subject – Verb – Object (<strong>SVO</strong>), while in the second, ungrammatical, sentence the order is <strong>VSO</strong>, which is not allowed in English. But not all languages work like English in this respect. In Welsh, for example, VSO order is exactly how you put together a sentence:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Welsh. Example from Borsley, R.D., Tallerman, M. and Willis, D. 2007. <em>The syntax of Welsh</em>. Cambridge University Press.</p>
+</aside>
 <div id='outerTable'><table>
   <tr><td>(1)&nbsp;&nbsp;&nbsp;</td><td>Prynodd</td><td>Elin</td><td>dorth</td><td>o</td><td>fara.</td></tr>
-  <tr><td></td><td>buy.PAST.3S</td><td>Elin</td><td>loaf</td><td>of</td><td>bread</td></tr>
+  <tr><td></td><td>buy.PAST.3S&nbsp;&nbsp;&nbsp;</td><td>Elin&nbsp;&nbsp;&nbsp;</td><td>loaf&nbsp;&nbsp;&nbsp;</td><td>of</td><td>bread&nbsp;&nbsp;&nbsp;</td></tr>
   <tr><td></td><td colspan=5>'Elin bought a loaf of bread.'</td></tr>
 </table></div>
-
-
-
-
-
-
-<center><big><span style="color:DeepPink"><b>Juniper</b></span><span style="color:Indigo"><b>'s</b></span> <span style="color:Crimson"><b>mother-in-law</b></span> <span style="color:FireBrick"><b>is</b></span> <span style="color:DarkSlateGray"><b>kind</b></span><span style="color:Purple"><b>a</b></span> <span style="color:SteelBlue"><b>hilarious</b></span>, <span style="color:DarkGreen"><b>is</b></span><span style="color:DarkRed"><b>n't</b></span> <span style="color:ForestGreen"><b>she</b></span>?</big></center>
-
-
-[ungrammatical example]
-
-Recursion
-
-This contrasts with how words generally work, by the way. Words can be very long, as we saw last week, but only in some very particular circumstances and maybe not in all languages words can be as long as potentially infinite. The reality of this inherent limitation is evidenced by fun facts and challenges about 'the longest word in the world' amd others like it. I don't think I've ever seen a challenge to produce the longest sentence in the world -- and even if somebody came up with a challenge like that, it's paradoxality is intuitively obvious: it's not a problem to come up with an infinitely long sentence. Here are a couple good candidates:
-
-- This sentence will go on and on and on and on and on and on...
-- I called my friend who then called her friend who then called her friend...
-
-Syntax gives you combinatorial freedom that is somehow beyond the limits of combinatorial freedom of morphology. There must be a deep reason for that, but I don't know it and don't want to speculate.
----><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sentence = &quot;This is a sentence.&quot;</span>
-</pre></div>
+<br>
+<p>In fact, the English word order is not even the most wide-spread word order among languages of the world, as far as we know. The most widespread group is <strong>SOV</strong> languages:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Data from <a class="reference external" href="https://wals.info/feature/81A#2/18.0/152.9">WALS</a>.</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/svo.png"><img alt="word orders" class="bg-primary mb-1 align-center" src="_images/svo.png" style="width: 500px;" /></a>
+<p>Some examples of SOV languages are Turkish, Japanese and Korean. Here’s an illustrating Japanese example:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Japanese</p>
+</aside>
+<div id='outerTable'><table>
+  <tr><td>(2)&nbsp;&nbsp;&nbsp;</td><td>Watashi&nbsp;&nbsp;&nbsp;</td><td>wa&nbsp;&nbsp;&nbsp;</td><td>hon&nbsp;&nbsp;&nbsp;</td><td>o</td><td>yomimasu.&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td></td><td>I</td><td>TOP&nbsp;&nbsp;&nbsp;</td><td>book&nbsp;&nbsp;&nbsp;</td><td>ACC&nbsp;&nbsp;&nbsp;</td><td>read&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td></td><td colspan=5>'I read the book'</td></tr>
+</table></div>
+<br>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Oversimplification alert!</p>
+<p>According to this classification, languages like Dutch seem to fall in the SVO category. In simple sentences, it’s correct:</p>
+<div id='outerTable'><table>
+  <tr><td>Riny</td><td>vindt</td><td>linguistiek</td><td>leuk</td></tr>
+  <tr><td>subject&nbsp;&nbsp;&nbsp;</td><td>verb&nbsp;&nbsp;&nbsp;</td><td>object&nbsp;&nbsp;&nbsp;</td><td></td></tr>
+</table></div>
+<br>
+<p>But when we are dealing with a complex sentence, the embedded one has SOV order:</p>
+<div id='outerTable'><table>
+  <tr><td>Thijs</td><td>vertelde</td><td>(aan) jou</td><td>dat&nbsp;&nbsp;&nbsp;</td><td>Riny</td><td>linguistiek</td><td>leuk</td><td>vindt</td></tr>
+  <tr><td>subject&nbsp;&nbsp;&nbsp;</td><td>verb&nbsp;&nbsp;&nbsp;</td><td>object&nbsp;&nbsp;&nbsp;</td><td></td><td>subject&nbsp;&nbsp;&nbsp;</td><td>object&nbsp;&nbsp;&nbsp;</td><td></td><td>verb</td></tr>
+</table></div>
+<br>
+<p>Also, it’s not like the order is free or unfixed – it’s fixed, but in different ways in different constructions! This is the case for many languages in this classification. We will ignore this fact.</p>
 </div>
+<p>Languages constrain word order not only between the verb and its subject and/or object. Languages differ, for example, also in the following (this is not an exhaustive list!):</p>
+<ol class="arabic simple">
+<li><p>Whether language has prepositions or postpositions (that is, the linear placement of the <strong>adpositions</strong>) (<a class="reference external" href="https://wals.info/feature/85A#2/16.0/170.9">see distribution across languages</a>)</p></li>
+</ol>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head text-center"><p>preposition</p></th>
+<th class="head text-center"><p>postposition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>English</p></td>
+<td class="text-center"><p>with Anna</p></td>
+<td class="text-center"><p><sup>*</sup>Anna with</p></td>
+</tr>
+<tr class="row-odd"><td><p>Turkish</p></td>
+<td class="text-center"><p><sup>*</sup>ile Anna</p></td>
+<td class="text-center"><p>Anna ile</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="2">
+<li><p>The position of the possessor with the respect to the possessee (<a class="reference external" href="https://wals.info/feature/86A#2/21.0/152.9">see distribution</a>):</p></li>
+</ol>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head text-center"><p>Poss-N</p></th>
+<th class="head text-center"><p>N-Poss</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>English</p></td>
+<td class="text-center"><p>Anna’s book</p></td>
+<td class="text-center"><p><sup>*</sup>book Anna’s</p></td>
+</tr>
+<tr class="row-odd"><td><p>Irish</p></td>
+<td class="text-center"><p><sup>*</sup>Anna leabhar</p></td>
+<td class="text-center"><p>leabhar Anna</p></td>
+</tr>
+</tbody>
+</table>
+<p>It’s interesting that these different word order parameters are not independent from each other. Linguists have been noticing interactions between them for quite a while now. Here are four relevant <a class="reference external" href="https://en.wikipedia.org/wiki/Greenberg%27s_linguistic_universals">Greenberg Universals</a> (we’ve seen one or two linguistic universals before!)</p>
+<blockquote>
+<div><p><strong>Universal 2</strong>: “In languages with prepositions, the genitive almost always follows the governing noun, while in languages with postpositions it almost always precedes.”<br><br>
+<strong>Universal 3</strong>: “Languages with dominant VSO order are always prepositional.”<br><br>
+<strong>Universal 4</strong>: “If a language has dominant SOV order and the genitive follows the governing noun, then the adjective likewise follows the noun.”<br><br>
+<strong>Universal 5</strong>: “With overwhelmingly greater than chance frequency, languages with normal SOV order are postpositional.”</p>
+</div></blockquote>
+<p>Looking at these generalizations – let’s say, at the last one in particular – one might want to generalize these constraints in a way that makes them fall out of just one rule. For instance, we can say that a language is either <strong>head-final</strong> or <strong>head-initial</strong>:</p>
+<ul class="simple">
+<li><p>if a verb combines with its object so that the object precedes the verb (as in the SOV order), the adposition combines with its noun so that the noun precedes the adposition (that’s like in Turkish);</p></li>
+<li><p>and the other way around: if the verb precedes its object, then the adposition precedes its noun (that’s English).</p></li>
+</ul>
+<p>That would give us two types of languages where two linear parameters are covered by just one rule:</p>
+<ul class="simple">
+<li><p><strong>Head-final</strong> languages (e.g. Turkish): O &gt; V; N &gt; ADP;</p></li>
+<li><p><strong>Head-initial</strong> languages (e.g. English): V &gt; O; ADP &gt; N.</p></li>
+</ul>
+<p>But this attempt is complicated by the fact that not all languages fall nicely into one of these patterns, and also by the fact that we have to define what the head is in each of these cases.</p>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>English does not conform to one of the generalizations above. Which one and how?</p>
 </div>
+<p>Some word order constraints received interesting potential explanations grounded in distributions of objects and their properties in the world, might be interesting as extra reading if you’re curious!</p>
+<blockquote>
+<div><p>Culbertson, J., Schouwstra, M. and Kirby, S., 2020. <a class="reference external" href="https://www.linguisticsociety.org/sites/default/files/08_96.3Culbertson.pdf">From the world to word order: deriving biases in noun phrase order from statistical properties of the world</a>. Language, 96(3), pp.696-717.</p>
+</div></blockquote>
+</section>
+<section id="more-complete-recipes-for-simple-sentences">
+<h3>More complete recipes for simple sentences<a class="headerlink" href="#more-complete-recipes-for-simple-sentences" title="Permalink to this heading">#</a></h3>
+<p>Constraints on word order work both ways:</p>
+<ul class="simple">
+<li><p>They tell speakers where to put subject and object of the sentence with respect to the verb;</p></li>
+<li><p>They tell the person hearing or reading the sentence which parts of the sentence are subjects and objects, based on their linear position.</p></li>
+</ul>
+<p>What if a language does not have fixed word order? As a speaker, this means you can do whatever you want placing different parts of sentences with respect to each other (well, there are often still constraints, but let’s ignore that too). But as a listener, how do you know who did what to whom if the participants can appear anywhere in the sentence? Well, grammar governs things beyond just linear order.</p>
+<p>Let’s look at ways you build a simple sentence in different languages in a way that takes into account things other than word order. We will need to start with a notion of <strong>semantic role</strong>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notion</p>
+<p><strong>Semantic role</strong>, a.k.a. thematic relation, describes the type of involvement of a participant in an event described by the verb in the sentence.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import benepar, spacy</span>
-<span class="c1">#from nltk import ParentedTree</span>
-<span class="c1">#from IPython.utils import io</span>
-<span class="c1">#with io.capture_output() as captured:</span>
-<span class="c1">#    nlp = spacy.load(&#39;en_core_web_sm&#39;)</span>
-<span class="c1">#    nlp.add_pipe(&quot;benepar&quot;, config={&quot;model&quot;: &quot;benepar_en3&quot;})</span>
-<span class="c1">#    sentence = list(nlp(sentence).sents)[0]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#parse_tree = ParentedTree.fromstring(&#39;(&#39; + sentence._.parse_string + &#39;)&#39;)</span>
-<span class="c1">#parse_tree.pretty_print()</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>We will look at just two:</p>
+<ul class="simple">
+<li><p><strong>Agent</strong> is a participant that initiates or causes the event, typically intentionally, and normally has control over the event.</p></li>
+<li><p><strong>Patient</strong> undergoes the action and changes its state, normally has no control over the course of the event.</p></li>
+</ul>
+<p>In a sentence <em>The dog attacked the cat</em>, for example, the dog is the agent and the cat is the patient. There can be events with just one participant, and it can be an agent (<em>Mary is walking</em>) or a patient (<em>John fell</em>). Note that semantic roles (agent, patient) are not the same as grammatical roles (subject, object). Often, those coincide:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/active.jpeg"><img alt="active construction" class="bg-primary mb-1 align-center" src="_images/active.jpeg" style="width: 350px;" /></a>
+<p>But sometimes, for example, in the passive construction, they do not: the agent can be the object, while the patient becomes the subject.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/passive.jpeg"><img alt="passive construction" class="bg-primary mb-1 align-center" src="_images/passive.jpeg" style="width: 400px;" /></a>
+<p>So, formulating a sentence requires mapping from its meaning-related components (such as participants and their type of participation) to syntax – and this mapping can sometimes be tricky. Let’s zoom in on this mapping for a bit and look at three types of events against the set of their main participants:</p>
+<ul class="simple">
+<li><p>Events with two participants: an agent and a patient (typical ones are: <em>kill</em>, <em>push</em>, <em>attack</em> etc.);</p></li>
+<li><p>Events with just one participant: an agent (<em>run</em>, <em>exercise</em>);</p></li>
+<li><p>Events with just one participant: a patient (<em>fall</em>, <em>die</em>).</p></li>
+</ul>
+<p>How does language encode them? Let’s look at English:</p>
+<blockquote>
+<div><p><strong>She</strong> attacked <strong>her</strong>. <br> <strong>She</strong> exercised. <br> <strong>She</strong> fell.</p>
+</div></blockquote>
+<p>We see that the agent of the 2-participant event and the agent as well as the patient of the one-participant events have the same form (<em>she</em>), while the patient of the 2-participant event is grammatically different (<em>her</em>). Let’s unfold the system behind this fact step by step.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Accusative alignment</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/acc_detail.jpeg"><img alt="accusative alignment" class="bg-primary mb-1 align-center" src="_images/acc_detail.jpeg" style="width: 650px;" /></a>
+<ol class="arabic simple">
+<li><p>First, let’s map these pronouns to the roles the corresponding participants play in the event described by the sentence.</p>
+<ul class="simple">
+<li><p><em>She</em> in <em>She exercised</em> is an agent in a 1-participant event.</p></li>
+<li><p><em>She</em> in <em>She fell</em> is a patient in a 1-participant event.</p></li>
+<li><p><em>She</em> and <em>her</em> are the agent and the patient in the 2-participant event, respectively.</p></li>
+</ul>
+</li>
+<li><p>If we look at the forms of these pronouns again, we see that three of them coincide and one of them looks different – that’s the patient in the 2-participant event.</p></li>
+<li><p>The two forms we are dealing with here – <em>she</em> and <em>her</em> – come from two different series of pronouns: 1) <em>I</em>, <em>we</em>, <em>she</em>, <em>he</em>, <em>they</em> vs. 2) <em>me</em>, <em>us</em>, <em>her</em>, <em>him</em>, <em>them</em>. These series differ in <strong>case</strong>: the first set is in nominative case, while the second set is in accusative. That’s what the observation is on a more abstract level: English, when it comes to pronouns, uses nominative case to encode the agent and the patient in 1-participant events and the agent of 2-participant events, and accusative for the patient of 2-participant events.</p></li>
+<li><p>This way of mapping participants to their grammatical encoding (<strong>morphosyntactic alignment</strong>) is called <strong>accusative alignment</strong> (sometimes, nominal-accusative alignment).</p></li>
+</ol>
+<p>NB: English distinguishes these cases only for pronouns, the full nouns would not show this contrast at least when we look at case marking, because English nouns don’t really have case!</p>
 <!---
-Demo https://demos.explosion.ai/displacy
----><div class="cell docutils container">
+. We can draw this schematically like this, where the blue marks one-participant events' agent and patient, and the green A and P are two participants in a 2-participant event. 
+
+```{margin} 
+Accusative alignment
+```
+```{image} ./images/acc.jpeg
+:alt: accusative alignment
+:class: bg-primary mb-1
+:width: 180px
+:align: center
+```
+
+This way of mapping participants to their grammatical encoding (**morphosyntactic alignment**) is called **accusative alignment** (sometimes, nominal-accusative alignment). 
+--->
+<p>Accusative alignment is very common but it’s not the only possible way!</p>
+<p>Here is another very popular type of morphosyntactic alignment called <strong>ergative alignment</strong> (a.k.a. ergative-absolutive alignment): the agent of a 2-participant event is treated grammatically differently from other kinds of participants, as shown below for Warlpiri:</p>
+<!---
+```{margin} 
+Ergative alignment
+```
+```{image} ./images/erg.jpeg
+:alt: ergative alignment
+:class: bg-primary mb-1
+:width: 180px
+:align: center
+```
+--->
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Warlpiri_language">Warlpiri</a>. Examples from Hale, K. 1983. <em>Warlpiri and the grammar of non-configurational languages</em>. NLLT 1.</p>
+</aside>
+<div id='outerTable'><table>
+  <tr><td>(3)&nbsp;&nbsp;&nbsp;</td><td>ngarrka-ngku&nbsp;&nbsp;&nbsp;</td><td>ka&nbsp;&nbsp;&nbsp;</td><td>wawirri&nbsp;&nbsp;&nbsp;</td><td>panti-rni&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td></td><td>man-ERG</td><td>AUX</td><td>cangaroo</td><td>spear-NPST</td></tr>
+  <tr><td></td><td colspan=4>'The man is spearing the kangaroo.'</td></tr>
+</table></div>
+<br>
+<div id='outerTable'><table>
+  <tr><td>(4)&nbsp;&nbsp;&nbsp;</td><td>kurdu&nbsp;&nbsp;&nbsp;</td><td>ka&nbsp;&nbsp;&nbsp;</td><td>wanka-mi&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>(5)&nbsp;&nbsp;&nbsp;</td><td>kurdu&nbsp;&nbsp;&nbsp;</td><td>kapi&nbsp;&nbsp;&nbsp;</td><td>wanti-mi&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td></td><td>child</td><td>AUX</td><td>speak-NPST</td><td>&nbsp;&nbsp;&nbsp;</td><td></td><td>child</td><td>AUX</td><td>fall-NPST</td></tr>
+  <tr><td></td><td colspan=3>'The child is speaking.'</td><td>&nbsp;&nbsp;&nbsp;</td><td></td><td colspan=3>'The child will fall.'</td></tr>
+</table></div>
+<br>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Ergative alignment</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/erg_detail.jpeg"><img alt="ergative alignment" class="bg-primary mb-1 align-center" src="_images/erg_detail.jpeg" style="width: 700px;" /></a>
+<ol class="arabic simple">
+<li><p>If we map nouns in these examples on the types of participants they encode –</p></li>
+<li><p>We see that in the 1-participant situations, there is no case marking on the participants, as well as on the patient of the 2-participant event, but there is something – <em>ngku</em> – that marks the agent of the 2-participant event</p></li>
+<li><p>This unmarked case is called absolutive case, and the <em>ngku</em> case here is an example of ergative case</p></li>
+<li><p>We see that Warlpiri groups the nouns here in a different way than what English does with pronouns. This is ergative alignment.</p></li>
+</ol>
+<p>Think about how English sentences with pronouns would look if English had ergative alignment. The 1-participant sentences would stay the same, but the 2-participant sentences could look something like *<em>Them hit he</em>, meaning <em>They hit him</em>.</p>
+<p>Accusative and ergative alignment do not exhaust all attested possibilities. Here are just two more (remember I said above that English nouns do not use case to distinguish different types of participants – so, in this fragment of English language, the alignment is <strong>neutral</strong>):</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Some more of existing alignments</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/good_alignments.jpeg"><img alt="alignments" class="bg-primary mb-1 align-center" src="_images/good_alignments.jpeg" style="width: 250px;" /></a>
+<p>For the distribution of existing alignments, see the corresponding <a class="reference external" href="https://wals.info/chapter/98">chapter of WALS</a>. We don’t need to talk in any detail about all available alignments, but it’s important, I think, to wrap our heads around the fact that not all languages of the world organize their syntactic structures in the same ways as languages we are most familiar with. At the same time, there are limits to this variability, for instance, here is a sample of alignments that are not attested in natural language:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Non-existent alignments</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bad_alignments.jpeg"><img alt="alignments" class="bg-primary mb-1 align-center" src="_images/bad_alignments.jpeg" style="width: 350px;" /></a>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>What should a language look like to exemplify one of these alignments?</p>
+</div>
+<p><strong>NB:</strong> Morphosyntactic alignment is not a classification of case marking – or, not exclusively. It’s a more general classification of the ways grammar encodes the basic clause structure. It can show itself as case, but it can also show as verbal agreement patterns, as in the examples from Halkomelem below, where the 3-person suffix on the verb only appears to agree with the agent of a 2-participant event and not in other situations:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Halkomelem">Halkomelem</a>. Example from Gerdts, D. 1988. <em>Object and absolutive in Halkomelem Salish</em>. Garland.</p>
+</aside>
+<div id='outerTable'><table>
+  <tr><td>(6)&nbsp;&nbsp;&nbsp;</td><td>a.&nbsp;&nbsp;</td><td>ni</td><td>Ɂímǝš</td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>b.&nbsp;&nbsp;</td><td>ni</td><td>q’<sup>w</sup>ǝ´l-ǝt-ǝs</td><td>&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>c.&nbsp;&nbsp;</td><td>ni</td><td>cǝn</td><td>q’<sup>w</sup>ǝ´l-ǝt</td></tr>
+  <tr><td></td><td></td><td>AUX</td><td>walk</td><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>AUX&nbsp;&nbsp;&nbsp;</td><td>bake-TR-<b>3ERG</b></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>AUX</td><td>I</td><td>bake-TR</td></tr>
+  <tr><td></td><td></td><td colspan=2>'He/she/it walks.'</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td><td></td><td colspan=2>'He/she/it baked it.'</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td><td colspan=3>'I baked it.'</td></tr>
+</table></div>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>What alignment does English show in its verbal agreement?</p>
+</div>
+<p>The take-away message from the discussion so far is this: combining words into sentences and phrases involves establishing grammatical connections between words and expressing these grammatical relations in one way or another. It can be word order and/or morphological marking of some type, such as case or agreement. Some ways of organizing these connections and expressing them are very common among languages, some less so, some are unattested for reasons we do or don’t have guesses about. Diving into this deeper can help you form expectations about language data and, consequently, can help you choose tools in how to deal with languages of different types.</p>
+</section>
+<section id="representing-syntax">
+<h3>Representing syntax<a class="headerlink" href="#representing-syntax" title="Permalink to this heading">#</a></h3>
+<p>I ended the previous subsection on a rather abstract note: words in a sentence are connected to each other in some way, and this connection can be expressed by grammar in different ways. But in order for us to be able to talk about these relations and connections, we should try to be more specific in how we represent them. There will be a much much more detailed discussion of this in the 2nd year of the program, during the ‘Computational Grammar’ course, but it might be helpful to say just one thing about it now.</p>
+<p>There are two main ways to talk about syntactic relations, each with their own long-standing linguistic tradition. One of them is based on the idea of <strong>constituency</strong>, and the other one is based on <strong>dependency</strong>. They rely on two equally important and basic intuitions about what happens when two words combine together. On the one hand, these two words now form a bigger unit – a phrase, a constituent. On the other hand, there is now a directed relation between these two words, one of them depends on the other in some way. The very core of these two approaches can be shown on a simple sentence:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/const_dep.jpeg"><img alt="constituency vs. dependency" class="bg-primary mb-1 align-center" src="_images/const_dep.jpeg" style="width: 550px;" /></a>
+<p>Constituency analysis emphasises the fact that these two words now function as a unit that can be used, for instance, as part of bigger phrases and sentences: <em>Mary thinks that [John runs]</em>. The dependency analysis shows the grammatical relation between the two words.</p>
+<p>These two systems convey a lot of the same information. Recall a sentence from the very first lecture that I used to convince you that there is more to grammar than linear order of words:</p>
+<center><big>They see a cat with the telescope.</big></center>
+<br>
+<p>This sentence is ambiguous – that is, has two readings. Both constituency analysis and dependency analysis can express the two structures that correspond to two readings of this sentence. In terms of dependencies, the <em>with the telescope</em> part bears a syntactic relation either to <em>cat</em> or to <em>see</em>, as I show in the partial dependency analysis below:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cat_dep.jpeg"><img alt="ambiguity dependency" class="bg-primary mb-1 align-center" src="_images/cat_dep.jpeg" style="width: 500px;" /></a>
+<p>Constituents allow us to express the same intuition about how these two readings of the same sentence are different structurally, see the partial constituency analysis below:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cat_const.jpeg"><img alt="ambiguity constituency" class="bg-primary mb-1 align-center" src="_images/cat_const.jpeg" style="width: 650px;" /></a>
+<p>In the first structure, <em>with the telescope</em> forms a constituent together with <em>cat</em> and to the exclusion of the verb. In the second structure, this is not the case: first, the constituent <em>see a cat</em> is formed, then it combines with the constituent <em>with the telescope</em>, so that the seeing-a-cat as a whole interacts with <em>with the telescope</em>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Extra info</p>
+<p>This sentence above is an example of <strong>attachment ambiguity</strong> – that is, where the phrase connects to the rest of the sentence. There are other types of syntactic ambiguity in language, here’s a short list with an example for each:</p>
+<ul class="simple">
+<li><p><strong>Modifier scope</strong> (which is actually also sort of attachment ambiguity): <em>southern food store</em></p></li>
+<li><p><strong>Complement structure</strong> (which is actually also sort of attachment ambiguity): <em>The tourists objected to the guide that they couldn’t hear</em></p></li>
+<li><p><strong>Coordination scope</strong> (which is, finally, something else, but also not a very nice thing to make a joke about; I wonder where I took this example from..): <em>“I see,” said the blind man, as he picked up the hammer and saw.</em></p></li>
+</ul>
+</div>
+<p>Constituent structures and dependency structures are similar in many ways in the information they convey, but not equivalent. A transitive sentence can show these differences nicely:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/johnmary.jpeg"><img alt="constituents vs. dependencies" class="bg-primary mb-1 align-center" src="_images/johnmary.jpeg" style="width: 550px;" /></a>
+<p>Here, both representations show that there is something going on between the word <em>admires</em> and the word <em>Mary</em>: they form a constituent, and there is a dependency relation that represents that connection too. The dependency relation is not symmetric though: the arrow starts at the verb and ends with the noun, not the other way around. If we were to recover this fragment of the dependency structure from the constituent structure, we wouldn’t know where to direct the arrow (unless we knew that one of the elements in the constituent is marked as <strong>head</strong>).</p>
+<p>On the other hand, if we were to reconstruct the constituents from the dependency tree, we wouldn’t know what to group with what first: is it <em>[[John admires] Mary]</em> or <em>[John [admires Mary]]</em>? The arrows show that there are two connections, each between the verb and the noun – but it doesn’t encode the priority, that is, which connection is more tight or comes first. Maybe it doesn’t matter? It kind of does: there are reasons to think that the connection between the verb and the object is more tight and they form a constituent together to the exclusion of the subject. How do we know? We know because they behave as one unit:</p>
+<ul class="simple">
+<li><p>They can be a conjunct in coordination: <em>John hates Bill and <strong>admires Mary</strong></em> vs. *<em><strong>John admires</strong> and Ann dislikes Mary</em></p></li>
+<li><p>They can undergo ellipsis together: <em>John <strong>admires Mary</strong> and Bill does too</em> (-&gt; <em>Bill admires Mary</em>)</p></li>
+<li><p>They participate in cleft constructions together: <em><strong>Admiring Mary</strong> is what John is good at</em> vs. *<em><strong>John admiring</strong> is what Mary likes</em>.</p></li>
+</ul>
+<p>A lot more can be said about constituents and dependencies, but I leave this here now – just remember that these things exist! That should be enough as a starting point for syntax and its role in language technology.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Extra info</p>
+<p>There are several very important topics in syntax that we were not able to cover. I don’t want to over-pack this class, but I invite you to look for information on these topics yourself. Some of them will be partially covered in the homework reading, some of them won’t:</p>
+<ul class="simple">
+<li><p>Parts of speech!</p></li>
+<li><p>Syntactic movement</p></li>
+<li><p>Ellipsis</p></li>
+<li><p>Pro-drop</p></li>
+<li><p>Head marking vs. dependent-marking</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="syntax-and-language-technology">
+<h2>Syntax and language technology<a class="headerlink" href="#syntax-and-language-technology" title="Permalink to this heading">#</a></h2>
+<p>Automatic syntactic analysis (known as <strong>syntactic parsing</strong>) is one of the classic NLP tasks: the text of the sentence serves as input, and the output is the syntactic structure, either as a constituency structure or a dependency structure. Let me show you both, using our previous example sentence:</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># spacy.displacy.render(sentence, style=&#39;dep&#39;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;John admires Mary&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Let’s do the constituents first. I’ll be using Berkley Neural Parser (benepar), you can try out the <a class="reference external" href="https://parser.kitaev.io/">no-coding demo</a> yourself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">benepar</span><span class="o">,</span> <span class="nn">spacy</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">ParentedTree</span>
+<span class="kn">from</span> <span class="nn">IPython.utils</span> <span class="kn">import</span> <span class="n">io</span>
+<span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">capture_output</span><span class="p">()</span> <span class="k">as</span> <span class="n">captured</span><span class="p">:</span>
+    <span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;en_core_web_sm&#39;</span><span class="p">)</span>
+    <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;benepar&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;benepar_en3&quot;</span><span class="p">})</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nlp</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span><span class="o">.</span><span class="n">sents</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse_tree</span> <span class="o">=</span> <span class="n">ParentedTree</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="n">sentence</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">parse_string</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+<span class="n">parse_tree</span><span class="o">.</span><span class="n">pretty_print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     
+        |             
+        S            
+  ______|_____        
+ |            VP     
+ |       _____|___    
+ NP     |         NP 
+ |      |         |   
+NNP    VBZ       NNP 
+ |      |         |   
+John admires     Mary
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output is structurally the same as my hand-drawn tree in the previous section – but note the additional information that this tree contains, compared to my version: nodes in this tree have labels that I did not write. These labels mark categories of constituents in the nodes, where <em>S</em>, for example, is a simple declarative sentence and <em>VP</em> is a verb phrase (here, verb plus its object).</p>
+<p>Let’s compare this to the dependency analysis from spaCy, a popular NLP library (see their <a class="reference external" href="https://demos.explosion.ai/displacy">no-coding demo</a> if you want to try more examples):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spacy</span><span class="o">.</span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;dep&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="b5f6c7a4d91f4991acdaeecdb9b7f524-0" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="134.5">
+    <tspan class="displacy-word" fill="currentColor" x="50">John</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">PROPN</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="134.5">
+    <tspan class="displacy-word" fill="currentColor" x="225">admires</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="225">VERB</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="134.5">
+    <tspan class="displacy-word" fill="currentColor" x="400">Mary</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="400">PROPN</tspan>
+</text>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b5f6c7a4d91f4991acdaeecdb9b7f524-0-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b5f6c7a4d91f4991acdaeecdb9b7f524-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M70,91.5 L62,79.5 78,79.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b5f6c7a4d91f4991acdaeecdb9b7f524-0-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b5f6c7a4d91f4991acdaeecdb9b7f524-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M400.0,91.5 L408.0,79.5 392.0,79.5" fill="currentColor"/>
+</g>
+</svg></span></div></div>
+</div>
+<p>Again, this is very similar to what I drew above! But this structure has more info – the dependency arrows now have labels that specify what type of relation we are looking at: a subject relation (nsubj) connecting the verb to its subject and a direct object relation (dobj) connecting the verb to the object.</p>
+<p>Models performing syntactic parsers in these two different ways heavily rely on data resources that encode syntactic structures in these particular ways – syntactic treebanks.</p>
+<p>An example of syntactic treebank annotated with constituency structure is <a class="reference external" href="https://catalog.ldc.upenn.edu/LDC99T42">Penn Treebank</a>, with annotation format that looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">IP</span><span class="o">-</span><span class="n">MAT</span> <span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="n">SBJ</span> <span class="p">(</span><span class="n">PRO</span> <span class="n">I</span><span class="p">))</span>  
+        <span class="p">(</span><span class="n">VBD</span> <span class="n">saw</span><span class="p">)</span>  
+        <span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="n">OB1</span> <span class="p">(</span><span class="n">D</span> <span class="n">the</span><span class="p">)</span>  
+                <span class="p">(</span><span class="n">N</span> <span class="n">man</span><span class="p">)))</span>  
+</pre></div>
+</div>
+<p>A very important resource for dependency structures is <a class="reference external" href="https://universaldependencies.org/">Universal Dependencies</a>, which I discussed last week as a source of morphological information. Its syntactic annotation is the same as what we saw in the analysis by spaCy, and that’s not a coincidence:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Croatian</p>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># text = Kazna medijskom mogulu obnovila raspravu u Makedoniji</span>
+<span class="mi">1</span>	<span class="n">Kazna</span>	<span class="n">kazna</span>	<span class="n">NOUN</span>	<span class="n">Ncfsn</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Nom</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">4</span>	<span class="n">nsubj</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">2</span>	<span class="n">medijskom</span>	<span class="n">medijski</span>	<span class="n">ADJ</span>	<span class="n">Agpmsdy</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Dat</span><span class="o">|</span><span class="n">Definite</span><span class="o">=</span><span class="n">Def</span><span class="o">|</span><span class="n">Degree</span><span class="o">=</span><span class="n">Pos</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Masc</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">3</span>	<span class="n">amod</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">3</span>	<span class="n">mogulu</span>	<span class="n">mogul</span>	<span class="n">NOUN</span>	<span class="n">Ncmsd</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Dat</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Masc</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">1</span>	<span class="n">nmod</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">4</span>	<span class="n">obnovila</span>	<span class="n">obnoviti</span>	<span class="n">VERB</span>	<span class="n">Vmp</span><span class="o">-</span><span class="n">sf</span>	<span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span><span class="o">|</span><span class="n">Tense</span><span class="o">=</span><span class="n">Past</span><span class="o">|</span><span class="n">VerbForm</span><span class="o">=</span><span class="n">Part</span><span class="o">|</span><span class="n">Voice</span><span class="o">=</span><span class="n">Act</span>	<span class="mi">0</span>	<span class="n">root</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">5</span>	<span class="n">raspravu</span>	<span class="n">rasprava</span>	<span class="n">NOUN</span>	<span class="n">Ncfsa</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Acc</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">4</span>	<span class="n">obj</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">6</span>	<span class="n">u</span>	<span class="n">u</span>	<span class="n">ADP</span>	<span class="n">Sl</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Loc</span>	<span class="mi">7</span>	<span class="n">case</span>	<span class="n">_</span>	<span class="n">_</span>
+<span class="mi">7</span>	<span class="n">Makedoniji</span>	<span class="n">Makedonija</span>	<span class="n">PROPN</span>	<span class="n">Npfsl</span>	<span class="n">Case</span><span class="o">=</span><span class="n">Loc</span><span class="o">|</span><span class="n">Gender</span><span class="o">=</span><span class="n">Fem</span><span class="o">|</span><span class="n">Number</span><span class="o">=</span><span class="n">Sing</span>	<span class="mi">4</span>	<span class="n">obl</span>	<span class="n">_</span>	<span class="n">_</span>
+</pre></div>
+</div>
+<p>What do we need syntactic parsing for? I said it’s a classic NLP task, but I didn’t say anything about <strong>why</strong> it exists apart from the sole purpose of us admiring or hating the resulting parses.</p>
+<p>The <strong>first – somewhat superficial – answer</strong> is that maybe we don’t need it much. During the last several years, there’s been a tendency to approach a lot of NLP tasks in an end-to-end fashion (if you remember this term from one of our previous lectures) rather than building pipelines of systems that produce different levels of linguistic analysis for the downstream task.</p>
+<p>Moreover, some relatively recent models that were not trained for syntactic parsing at all end up learning something that resembles syntactic relations. A seminal paper that introduced the currently most successful deep learning architecture in NLP (<a class="reference external" href="https://pdf-reader-dkraft.s3.us-east-2.amazonaws.com/1706.03762.pdf">Attention is all you need</a>) has the following figures in the appendix, showing information flow between different words in a sentence (the technical details of what it means and how it works don’t matter now) with a note that these patterns look related to the structure of the sentence, which the model has never been shown explicitly during training. And it actually does look roughly like it – see prominent groups of words like <em>[the law]</em>, <em>[its applications]</em> etc.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/attention.png"><img alt="attention patterns" class="bg-primary mb-1 align-center" src="_images/attention.png" style="width: 500px;" /></a>
+<p>Further research analysing the inner workings of this type of models showed that, indeed, there is some syntax emerging in them without specialized training. Check this work out if you are curious:</p>
+<blockquote>
+<div><p>Voita, L. et al. 2019. <a class="reference external" href="https://aclanthology.org/P19-1580/">Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned</a>. ACL.</p>
+</div></blockquote>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>I want to thank David Dalé for the discussion of this part – I closely follow his very good points.</p>
+</aside>
+<p>Does this all mean that language technology practicioners do not need syntax or knowledge of syntax at all anymore? I think they probably still <strong>need it anyway</strong>.</p>
+<ul class="simple">
+<li><p>First and foremost, you would be surprised how non-trivial the very idea of <strong>(un)grammaticality</strong> can be in the NLP world, and how this simple idea can change the course of an engineering approach to an NLP problem.</p></li>
+<li><p>Second, as we saw with the structural ambiguity example above, syntactic structure is related to meaning, and therefore syntax is linked to <strong>natural language understanding</strong> – a huge research area and a very important super-task – in ways we will discuss more next week;</p></li>
+<li><p>Identifying phrases and other units larger than words is still useful in a variety of downstream tasks, for instance in search – in cases when convenient search units are not individual words but something bigger, e.g. phrases.</p></li>
+<li><p>Sometimes, depending on the task, a small handwritten grammar is a better way to go than a huge model. Such small handwritten grammars are often used to help virtual assistants recognize and act on commands that have simple predictable structure. Those grammars don’t always have to be true to the letter of linguistic syntactic theory, but it’s a grammar that breaks down a sequence of words into smaller units, so it is syntax in that sense. An example below shows a tiny grammar for <a class="reference external" href="https://en.wikipedia.org/wiki/Alice_(virtual_assistant)">the virtual assistant Alice</a> that parses phrases like <em>turn on the light in the bathroom</em>, <em>turn on air conditioning in the kitchen</em> and the like, detecting what should be done and where, so that the structured request can be sent further down the pipeline:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:
+    turn on $What $Where
+
+slots:
+    what:
+        source: $What                   
+    where:
+        source: $Where
+$What:
+    the light | air conditioning
+$Where:
+    in the bathroom | in the kitchen | in the bedroom
+</pre></div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Example from Ban, P., Jiang, Y., Liu, T. and Steinert-Threlkeld, S. 2022. <a class="reference external" href="https://arxiv.org/pdf/2209.04761.pdf">Testing Pre-trained Language Models’ Understanding of Distributivity via Causal Mediation Analysis</a>. 5th BlackboxNLP Workshop.</p>
+</aside>
+<ul class="simple">
+<li><p>Syntactic templates are very handy when it comes to generating a lot of synthetic data for whichever purpose you might need it. For example, to generate test data for the task of Natural Language Inference (given two sentences, does the second one follow from the first? we will discuss this task next week), you can put together a list of nouns (<em>Mia</em>, <em>Lin</em> etc.) and predicates (<em>wore a mask</em> etc.), as well as simple templates, and generate a bunch of sentences:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Premise</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">N1</span><span class="p">]</span> <span class="ow">and</span> <span class="p">[</span><span class="n">N2</span><span class="p">]</span> <span class="p">[</span><span class="n">Pred</span><span class="p">]</span>
+<span class="n">Hypothesis</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">N1</span><span class="p">]</span> <span class="p">[</span><span class="n">Pred</span><span class="p">]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Premise</strong>: <em>Mia and Lin wore a mask</em>. <br> <strong>Hypothesis</strong>: <em>Mia wore a mask</em>.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Finally, I want to show one recent and, I think, very interesting use of syntactic parsing to improve performance of a very sophisticated model. Above I said that recent language models learn a little bit of syntax even when not trained for it. On the other hand, in the first lecture, I talked about cases where models actually <strong>do not</strong> learn syntax – or, at least, not enough of it. In particular, vision-and-language models have been shown to be pretty bad when it comes to semantically distinguishing sentences that encode different meanings by syntactic means:</p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/grass_mug.png"><img alt="the grass and the mug again" class="bg-primary mb-1 align-center" src="_images/grass_mug.png" style="width: 500px;" /></a>
+<p>For text-to-image models, this can result in inaccuracies in the generated image when it comes to assigning the right properties to the right object, as discussed in this recent paper:</p>
+<blockquote>
+<div><p>Rassin et al. 2023. <a class="reference external" href="https://arxiv.org/pdf/2306.08877.pdf">Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment</a>. To be presented at NeurIPS.</p>
+</div></blockquote>
+<p>To help the model relate properties to objects more consistently, the authors try to first apply syntactic parsing to the text prompt, and then force the model to act on this connection during the image generation process (the details of how this is done exactly are way beyond what we need to discuss today):</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/goldberg_method.png"><img alt="method" class="bg-primary mb-1 align-center" src="_images/goldberg_method.png" style="width: 650px;" /></a>
+<p>The result is more faithful to the meaning conveyed by the text prompt, as reflected in its syntactic structure, compare the outputs of the original model below and the syntactically guided one above:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/goldberg_result.png"><img alt="result" class="bg-primary mb-1 align-center" src="_images/goldberg_result.png" style="width: 300px;" /></a>
+<p>I think that’s pretty cool! So, you never know.</p>
+<div class="note admonition">
+<p class="admonition-title">Homework 5</p>
+<p><strong>Task 1</strong></p>
+<p>Read the following three bits from the textbook Bender, E.M. 2013. <em>Linguistic Fundamentals for Natural Language Processing: 100 Essentials from Morphology and Syntax</em>:</p>
+<ul class="simple">
+<li><p>Chapter 5. Syntax: Introduction, pp. 53-55</p></li>
+<li><p>Chapter 6. Parts of speech, pp. 57-60</p></li>
+<li><p>Chapter 8. Argument types and grammatical functions, pp. 79-99</p></li>
+</ul>
+<p>As usual, name (and say something about!) three things that the texbook discusses differently than I did or those missing from our class completely. Not from Chapter 6 though! We ignored parts of speech completely, unfortunately. But do read that part anyway.</p>
+<p><strong>Task 2</strong></p>
+<p>Imagine a language that’s almost like English, but a little bit different. Maybe a group of British travellers got stuck in a far-away island long, long ago, their language gradually changed and their descendents now speak this language. Here is a short text in that language, glossed:</p>
+<div id='outerTable'><table>
+  <tr><td>Chase-did</td><td>eagle-se</td><td>monkey</td><td>forest</td><td>in.</td><td>Escape-did</td><td>monkey</td><td>fast.</td><td>Fall-did</td><td>eagle.</td></tr>
+  <tr><td>chase-PST</td><td>eagle-CASE</td><td>monkey</td><td>forest</td><td>in</td><td>escape-PST</td><td>monkey</td><td>fast</td><td>fall-PST</td><td>eagle</td></tr>
+  <tr><td colspan=10>'An eagle chased a monkey in the forest. The monkey escaped fast. The eagle fell.'</td></tr>
+</table></div>
+<br>
+<p>Answer the following questions about this text:</p>
+<ul class="simple">
+<li><p>Which order of subject, verb, object does the language have?</p></li>
+<li><p>Does it obey all of Greenberg’s word order universals discussed above?</p></li>
+<li><p>What type of morphosyntactic alignment does this language have when it comes to case marking?</p></li>
+<li><p>What can we say about alignment when it comes to verb agreement?</p></li>
+</ul>
+<p><strong>Task 3</strong></p>
+<p>Run the first of the fake-English sentences in the text above (<em>Chase-did eagle-se monkey forest in</em>) through the syntactic parsers for English: <a class="reference external" href="https://parser.kitaev.io/">the constituency parser</a> and <a class="reference external" href="https://demos.explosion.ai/displacy">the dependency parser</a>. Describe what you get: Did the parsers analyse the sentence in a similar way? If not, how do their analyses differ?</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -491,12 +987,51 @@ Demo https://demos.explosion.ai/displacy
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="week4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Week 4. Grammar I: Morphology</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 6. Semantics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-words-together">Putting words together</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sequences-finite-means">Infinite sequences, finite means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#words-in-the-right-order">Words in the right order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complete-recipes-for-simple-sentences">More complete recipes for simple sentences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-syntax">Representing syntax</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-and-language-technology">Syntax and language technology</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

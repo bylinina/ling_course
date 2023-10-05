@@ -253,7 +253,8 @@ Recent work shows that even the most advanced of current image-and-text models a
 
 Oh, by the way, from this example with mugs and grass one might conclude that it's the order of words that matters for the resulting meaning. Yes and no! Here's another sentence:
 
-> <big>They see a cat with a telescope.</big>
+<center><big>They see a cat with the telescope.</big></center>
+<br>
 
 The sentence has two meanings -- it can be used to describe two very different kinds of situations, one where telescope is used as an instrument to see a cat; the other where a cat is carrying a telescope. What is the source of these two meanings? It's not word order, it's not ambiguity of any particular word. It comes from the implicit way the words relate to each other. In the first reading, _telescope_ somehow 'relates' to _see_; in the second one, to _cat_.
 
