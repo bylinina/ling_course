@@ -28,17 +28,32 @@ Here is the current week-by-week schedule:
 | **Weeks 2-3** |  **Transmitting and capturing language** <br>Sound, writing, gesture. <br>Phonetics, writing systems, sign languages ( + whistled languages, drum languages?) |
 | **Week 4** |  **Grammar I** <br>Morphology: words and their building blocks. |
 | **Week 5** |  **Grammar II** <br>Syntax and ways of representing it. <br>Grammatical well-formedness and constraints on word combinations. |
-| **Week 6** | **Meaning** <br>Semantics, Pragmatics and Discourse phenomena. <br>What meanings are and how they interact with grammar and different types of context. |
-| **Week 7** |  **Beyond human and natural languages** <br>Super-linguistics. Artificial/invented languages and their social and scientific role. <br> **Outro** <br>Recap of the course content, Q&A, exam preparation |
+| **Week 6** | **Meaning** <br>Semantics: What meanings are and how they interact with grammar and different types of context. |
+| **Week 7** |  **Outro** <br>Wrap-up and outlook. <br>Recap of the course content, Q&A, exam preparation <br>Quick overview of things we did not cover.|
 
 Let's go!
 
 
 `````{admonition} Acknowledgements
 :class: note, dropdown
-I want to thank everybody who helped me shape this course [names will be added later!]. Special thanks go to the Telegram group 'ling for langtech playground'!
+I want to thank everybody who helped me shape this course: my colleages at GroNLP; special thanks to the Telegram group 'ling for langtech playground', with a spotlight mention of David Dalé, Gabriele Sarti, Alexey Tikhonov, Natalia Perkova and Dmitry Jemerov!
 `````
 
+`````{admonition} Use and citation
+:class: warning
+
+Feel free to use my notes for your courses or whatever you feel like using them for. Happy to help! If you cite these notes, I'll be very glad, I'm vain this way.
+
+````
+@misc{Bylinina2023,
+  author        = {Lisa Bylinina},
+  title         = {Lecture notes: Linguistics for Language Technology},
+  year          = {2023},
+  howpublished  = {\url{https://bylinina.github.io/ling_course/}},
+  place         = {Groningen, Netherlands}
+}
+````
+`````
 
 <!--
 `````{admonition} Presentation choice!
