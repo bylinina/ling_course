@@ -314,8 +314,11 @@ What do counterparts of _I_, _me_, _you_ look like in Straits Salish look like?
 `````{admonition} Solution
 :class: danger, dropdown
 
-I hid the solutions for now. Contact me if you want to get them.
 <!---
+
+I hid the solutions for now. Contact me if you want to get them.
+
+--->
 
 Comparing sentences 1 and 7, 2 and 8, 5 and 6, you might notice that word order in Straits Salish is not like in English: the verb comes first, after that comes the subject or the object, and if the subject or object is the 1st or 2nd person, it's not expressed as a separate word, but combines with the verb as a suffix: 1P is _-sən_, 2P is _-sx<sup>w</sup>_. If the subject or object is not 1P/2P, it is preceding by _cə_. So, for instance, in sentence 10 _ɫəɫik<sup>w</sup>_ is 'hurries' and _sɫeniy'_ is 'woman'.
 
@@ -345,8 +348,6 @@ Now we can solve the problems.
 14. I am a man: swəy'qəʔ-sən (man-1P)
 15. The one who hurries sleeps: ʔətat cə ɫəɫik<sup>w</sup> (sleep ART hurry)
 16. The lad sees you: leŋtŋ-sx<sup>w</sup> ʔə cə swiʔqoʔəɫ (see.PASS-you PREP ART lad)
-
---->
 
 `````
 
