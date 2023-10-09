@@ -1,7 +1,6 @@
 # Linguistic puzzles
 
-This page contains linguistic puzzles grouped by topic. I am not the author of these puzzles! I use them in my course course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data.
-
+This page contains linguistic puzzles grouped by topic. I am not the author of these puzzles! I use them in my course course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data. These puzzles are one of several activities offered during seminars / practical sessions.
 
 
 ## Puzzle 1: Stress in Muscogee
@@ -257,3 +256,97 @@ Now we can fill in the gaps in the tables.
 --->
 
 `````
+
+## Puzzle 3: Simple sentences in Straits Salish
+
+This puzzle is meant to give hands-on experience in analyzing the structure of simple sentences, and in this it connects mostly to the topic of Week 6: Syntax. The puzzle is based on data from [Straits Salish](https://en.wikipedia.org/wiki/North_Straits_Salish_language) -- a language with a very different syntax from the familiar languages of the European standard. 
+
+`````{margin}
+Puzzle by Peter Arkadiev.
+`````
+The table below contains sentences in Straits Salish and their English translations.
+
+|      |          |        |
+|:----------:|:----------:|:----------:|
+| 1. |   t'iləm-sx<sup>w</sup> | You sing.  |
+| 2. | čey cə swiʔqoʔəɫ | The lad works. |
+| 3. | leŋt-sx<sup>w</sup> cə qen'qən' | You see the thief. |
+| 4. | leŋtŋ-sən ʔə cə qen'qən' | The thief sees me. |
+| 5. | ʔətat-sən | I sleep. |
+| 6. | qen'qən' cə ʔətat | The one who sleeps is a thief. |
+| 7. | t'iləm cə swəy'qəʔ | The man sings. |
+| 8. | χčətŋ-sx<sup>w</sup> ʔə cə čey | The one who works recognizes you. |
+| 9. | t'əm't-sən cə ʔətat | I hit the one who sleeps. |
+| 10. | ɫəɫik<sup>w</sup> cə sɫeniy' | The woman hurries. |
+
+### Problem 1
+
+```{toggle}
+Translate into English:
+
+11. qen'qən'-sx<sup>w</sup>
+12. t'əm'tŋ-sən ʔə cə sɫeniy'
+13. χčət-sx<sup>w</sup> cə t'iləm
+```
+
+
+### Problem 2
+
+```{toggle}
+Translate into Straits Salish:
+
+14. I am a man.
+15. The one who hurries sleeps.
+16. The lad sees you.
+```
+
+`````{admonition} Hint 1
+:class: tip, dropdown
+Pay attention to word order in Straits Salish.
+`````
+
+`````{admonition} Hint 2
+:class: tip, dropdown
+What do counterparts of _I_, _me_, _you_ look like in Straits Salish look like?
+`````
+
+
+`````{admonition} Solution
+:class: danger, dropdown
+
+I hid the solutions for now. Contact me if you want to get them.
+<!---
+
+Comparing sentences 1 and 7, 2 and 8, 5 and 6, you might notice that word order in Straits Salish is not like in English: the verb comes first, after that comes the subject or the object, and if the subject or object is the 1st or 2nd person, it's not expressed as a separate word, but combines with the verb as a suffix: 1P is _-sən_, 2P is _-sx<sup>w</sup>_. If the subject or object is not 1P/2P, it is preceding by _cə_. So, for instance, in sentence 10 _ɫəɫik<sup>w</sup>_ is 'hurries' and _sɫeniy'_ is 'woman'.
+
+Comparing sentences 3, 4 and 6, as well as 5 and 6 and 2 and 8, you can see that Straits Salish does not have a formal distinction between verbs and nouns: all open-class words can appear in the verbal position and in the nominal position without any derivational morphology. In sentence 5 the word _ʔətat_ 'sleep' is the verb, appears in the initial position in the sentence and takes the 1P suffix _-sən_. In sentences 6 and 9 the same word appears in the second position after _cə_ as subject and object, respectively. In those cases we translate it involving a construction 'the one who..'.
+
+Comparing sentences 3 and 9 with sentences 4 and 8 (as well as sentence 9 with sentence 12 and sentence 8 with sentence 13), one can notice that when 1P/2P is the object in the English translation and the full noun is the subject, in Straits Salish the 1P/2P suffix still attaches to the verb as in cases when it corresponds to the subject in English (compare _leŋtŋ-**sən**_ 'sees **me**' and _t'əm't-**sən**_ '**I** hit'), the verb gets suffix _-ŋ-_ (compare _**leŋtŋ**-sən_ 'sees me' and _**leŋt**-sx<sup>w</sup>_ 'you see') and the full noun that corresponds to the subject in the English translation is preceded by preposition _ʔə_. In other words, sentences with 1P/2P corresponding to the object in English are translated into Straits Salish as a passive construction, quite like English 'I was seen by the woman' (vs. 'The woman sees me'): the object becomes the subject, the old subject is preceded by a preposition, the verb also changes to the form used in passive constructions. 
+
+Here is how sentence structure works in Straits Salish:
+
+- Intransitive (1-participant) verb + 1P/2P suffix (subject) (1, 5);
+- Intransitive verb + _cə_ + subject (2, 6, 7, 10);
+- Transitive (2-participant) verb + 1P/2P suffix (subject) + _cə_ + object (3, 9);
+- Transitive verb + _ŋ_ + 1P/2P suffix (object) + _ʔə_ + _cə_ + subject (4, 8).
+
+Now we can solve the problems. 
+
+**Problem 1 solution**
+
+11. qen'qən'-sx<sup>w</sup>: 'You are a thief' (thief-2P)
+12. t'əm'tŋ-sən ʔə cə sɫeniy': The woman hits me (hit.PASS-1P PREP ART woman)
+13. χčət-sx<sup>w</sup> cə t'iləm: You recognize the one who sings (recognize-2P ART sing)
+
+
+
+**Problem 2 solution**
+
+14. I am a man: swəy'qəʔ-sən (man-1P)
+15. The one who hurries sleeps: ʔətat cə ɫəɫik<sup>w</sup> (sleep ART hurry)
+16. The lad sees you: leŋtŋ-sx<sup>w</sup> ʔə cə swiʔqoʔəɫ (see.PASS-you PREP ART lad)
+
+--->
+
+`````
+
