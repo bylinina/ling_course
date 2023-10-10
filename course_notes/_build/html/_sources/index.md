@@ -13,12 +13,6 @@ So, the course tries to convey two things at the same time:
 1. Some basics of linguistics: fundamental notions, tools, distinctions, facts;
 2. The relevance of these basics for language technology: how the basics of linguistics can help in NLP practice, providing the language needed to look at NLP systems and data analytically.
 
-<!---               
-```{note}
-Here is a note
-```
--->
-
 Here is the current week-by-week schedule:
 
 
@@ -46,7 +40,7 @@ Feel free to use my notes for your courses or whatever you feel like using them 
 
 ````
 @misc{Bylinina2023,
-  author        = {Lisa Bylinina},
+  author        = {Bylinina, Lisa},
   title         = {Lecture notes: Linguistics for Language Technology},
   year          = {2023},
   howpublished  = {\url{https://bylinina.github.io/ling_course/}},
@@ -55,16 +49,6 @@ Feel free to use my notes for your courses or whatever you feel like using them 
 ````
 `````
 
-<!--
-`````{admonition} Presentation choice!
-:class: note, dropdown
-
-1. Jeremy Kuhn -- for the second lecture
-2. Jessica Coon on the language of Arrival -- towards the end
-3. Atoms of language
-4. ...
-`````
---!>
 
 
 
