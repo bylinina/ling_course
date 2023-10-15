@@ -226,6 +226,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -234,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/week6.md" target="_blank"
+      <li><a href="_sources/week6.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -244,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -303,7 +334,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -319,6 +352,26 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-notions-and-intuitions">Basic notions and intuitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-meanings">Sentence meanings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word-meanings">Word meanings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meaning-relations">Meaning relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-composition">Semantic composition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantics-and-language-technology">Semantics and language technology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordnet-organizing-lexical-information">WordNet: Organizing lexical information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-meaning-semantic-parsing">Sentence meaning: Semantic Parsing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-meaning-natural-language-inference">Sentence meaning: Natural Language Inference</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -330,7 +383,447 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="week-6-semantics">
 <h1>Week 6. Semantics<a class="headerlink" href="#week-6-semantics" title="Permalink to this heading">#</a></h1>
-<p><big>To be unlocked October 11th.</big></p>
+<div class="note admonition">
+<p class="admonition-title">TL;DR [<a class="reference external" href="https://docs.google.com/presentation/d/1wY97ChX2l88aAPluSsF2_iNetBmTsAtvmkKVsRqck_U/edit?usp=sharing">slides</a>]</p>
+<ul class="simple">
+<li><p>Basic semantic intuitions: Truth conditions; Semantic inference</p></li>
+<li><p>Sentence semantics vs. lexical semantics</p>
+<ul>
+<li><p>Types of word meanings</p></li>
+<li><p>Semantic composition: building meanings from meanings of parts</p></li>
+<li><p>Structural ambiguity revisited</p></li>
+</ul>
+</li>
+<li><p>Semantics and language technology</p>
+<ul>
+<li><p>Lexical semantics resources</p></li>
+<li><p>Semantic parsing and natural language inference</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="basic-notions-and-intuitions">
+<h2>Basic notions and intuitions<a class="headerlink" href="#basic-notions-and-intuitions" title="Permalink to this heading">#</a></h2>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The narrative structure of this week’s notes roughly follows that of the introduction section of the almost-finished survey Abzianidze, Bylinina &amp; Paperno. 2023. Semantics and Deep Learning.</p>
+</aside>
+<p>This week, we will talk about meanings. Previously, we discussed morphemes and words as things that have meanings – and we did it kind of pretending that we know what meaning is. Today we will try to make this notion more precise, as part of this short intro to semantics.</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notion</p>
+<p><strong>Semantics</strong> is a discipline that studies meaning of different linguistic expressions – morphemes, words, phrases, sentences.</p>
+<p>As it often happens with these terms,  ‘<strong>semantics</strong>’ is used to refer not only to the discipline itself, but its object of study as well. You can say something like ‘the semantics of this phrase’ in a way that is roughly synonymous to ‘the meaning of this phrase’.</p>
+</div>
+<section id="sentence-meanings">
+<h3>Sentence meanings<a class="headerlink" href="#sentence-meanings" title="Permalink to this heading">#</a></h3>
+<p>Linguistic units of different sizes convey meanings, and we will talk about how meanings of bigger units can be seen as combinations of meanings of smaller ones. But for now, let’s start with <strong>sentences</strong> and what they mean. Instead of asking this directly – <em>What does sentence X mean?</em> – we can ask a more instrumental question, something that is easier to approach in practice. For instance, <em>What do you know when you know the meaning of sentence X?</em> – or maybe even <em>How do we find out whether someone knows the meaning of sentence X?</em></p>
+<p>Take the sentence <em>A cat is sitting on a chair</em>. We know what this simple sentence means, and this knowledge shows in a number of ways – for one, we are able to distinguish situations which can be truthfully described by this sentence from situations in which this sentence is false. The sentence <em>A cat is sitting on a chair</em> is true in the left-hand situation, but not in the right-hand one – as is evident to every speaker of English:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Images of cats generated using Midjourney – ignore (or appreciate) unrealistic cat anatomy!</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cat_tc.png"><img alt="cat situations" class="bg-primary mb-1 align-center" src="_images/cat_tc.png" style="width: 400px;" /></a>
+<p>As trivial as this observation may seem, it’s the intuitive basis for the currently most widespread and influential approach to linguistic meanings, <strong>truth-conditional semantics</strong>. So, one core thing we know when we know what a sentence means is its <strong>truth conditions</strong> – what the world has to look like for the sentence to be true.</p>
+<p>It’s important to distinguish <strong>truth</strong> from <strong>truth conditions</strong>. The sentence <em>Paris is the capital of France</em> is true in the real world, we know that. But we also know what makes it true and how to check if it’s true (there’s a city called Paris, it’s in France, French government sits there etc. etc.). For some sentences we don’t know if they are true or false in the real world, but we are able to distinguish situations in which they are from those in which they are not. Given a sentence and a situation (or state-of-affairs), we are able to conclude whether the sentence is true in it. This is the core of sentence interpretation. We can make it precise and think of sentence interpretation as a function, let’s call it <em>I</em>. Quite like functions in programming, this function takes input and produces output. We organize function <em>I</em> in such a way that it takes two arguments as input: a sentence and a situation; as output, it returns <strong>True</strong> if the sentence is true in this situation, and <strong>False</strong> otherwise:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/proposition.png"><img alt="ways to see sentence interpretation" class="bg-primary mb-1 align-center" src="_images/proposition.png" style="width: 400px;" /></a>
+<br>
+<p>This information can be organized in other ways: for instance, we can think of related functions <em>I’</em> and <em>I’’</em>. Say, <em>I’</em> takes one argument, a sentence, and returns a set: different situations, each paired with <strong>True</strong> if the sentence is true in this situations and false otherwise. Or we can have <em>I’’</em>, where the input is again the sentence and the output is the set of only those situations in which the sentence is true.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/proposition2.png"><img alt="ways to see sentence interpretation" class="bg-primary mb-1 align-center" src="_images/proposition2.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/proposition3.png"><img alt="ways to see sentence interpretation" class="bg-primary mb-1 align-center" src="_images/proposition3.png" style="width: 400px;" /></a>
+<br>
+<p>All these ways of organizing relations between sentences and situations against these sentences can be evaluated for truth are actually used in linguistic literature, so it’s worth meditating on these a bit.</p>
+<p>Let’s look at another example. Here is one sentence the truth value of which in the real world the readers of these notes are very unlikely to know:</p>
+<center><big><b>Acciuga is a dog.</b></big></center>
+<br>
+<p>Is this true? Who is Acciuga, anyway? Maybe she’s a dog, maybe she is a penguin, maybe she is a mammal? A spaniel? A cat? What’s the situation with Acciuga? Let’s draw this as a space of possible situations / states of affairs, something like this:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/possible_situations.jpg"><img alt="possible situations" class="bg-primary mb-1 align-center" src="_images/possible_situations.jpg" style="width: 500px;" /></a>
+<br>
+<p>If we think of all these possible situations as a set, we can see systematicity in its organization. For instance, the set of all possible situations in which Acciuga is a dog is a proper subset of all possible situations in which Acciuga is a mammal – all dogs are mammals, but mammals can be dogs but also many other things. The set of Acciuga-is-a-cat situations is disjoint with Acciuga-is-a-dog situations, and so on and so forth.</p>
+<p>In line with what we did with cats above, we can represent sentence interpretation function <em>I</em> with respect to this structure of possible situations in the following way:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/possible_situations_mapping.jpg"><img alt="possible situations and sentence interpretation" class="bg-primary mb-1 align-center" src="_images/possible_situations_mapping.jpg" style="width: 400px;" /></a>
+<br>
+<p>Here, when we are interested in a sentence about Acciuga, we pick a possible situation and examine it against the aspects of situation that are important for the truth of the sentence of interest – and then we conclude whether this sentence is true in this situation. This is how sentence interpretation works – or, rather, how we can think about it formally.</p>
+<p>In the actual world, Acciuga is a dog, by the way. So we are somewhere in the blue circle of possible situations – which is also inside the pink circle. I’m not sure what kind of dog Acciuga is, so I don’t know if we are in the little yellow circle. But definitely not in the Acciuga-is-a-cat region.</p>
+<p>The recipe for sentence interpretation above is sometimes called <strong>direct interpretation</strong> – as opposed to <strong>indirect interpretation</strong>. Under indirect interpretation, an additional step is involved: the sentence of natural language is translated into some formal language, as here below, where the formal language is predicate logic. Then the predicate logic formula can be evaluated for truth or falsity against a possible situation.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/possible_situations_mapping_indirect.jpg"><img alt="indirect interpretation" class="bg-primary mb-1 align-center" src="_images/possible_situations_mapping_indirect.jpg" style="width: 600px;" /></a>
+<br>
+<p>Why add another step? Because once we have a formula in a well-behaved logic, things with interpretation become easier, the world of logic is much less messy than that of natural language. If two-step interpretation is adopted, the main worry of a semanticist is the step of translation from natural language to logic, and that is basically what the NLP task of semantic parsing is concerned with. I kind of like direct interpretation though, to be honest.</p>
+<div class="tip admonition">
+<p class="admonition-title">Discussion point</p>
+<p>The idea of truth conditions as the core of sentence meaning seems easy and actionable, so overall nice. But it’s clear that it is not applicable to all sentences across the board. What about questions? A question cannot be true or false – does the idea of truth conditions apply to questions at all? What about imperatives? Can we think about a way to extend the idea of truth conditions to commands?</p>
+</div>
+<p>A note is due on the truth values here. So far we talked about just two truth values: <strong>True</strong> and <strong>False</strong>. There are cases when these two do not seem enough. Consider the following sentence:</p>
+<center><big><b>The king of France is bald.</b></big></center>
+<br>
+<p>Is this sentence true in the actual world? What truth value would an interpretation function return if the sentence is assessed against the actual state of affairs? Certainly not <strong>True</strong> – there is no king of France. But <strong>False</strong> maybe is not a good choice either – there’s no king of France for us to go check for baldness and find that he’s not bald. This sentence has a <strong>presupposition</strong> that there is a king of France: his existence is sort of taken for granted in this sentence, and then it states something about this person. But the presupposition is actually not true, so basing statements on it does not make any sense. For these kinds of cases a third truth value is often introduced: <strong>Undefined</strong>.</p>
+<p>So, we established that one thing we know when we know sentence meaning is <strong>truth conditions</strong>. There is one more. Knowing what a sentence means allows us to draw conclusions from this sentence. We know what we can conclude from it and which conclusions are not justified. Here is one justified <strong>inference</strong>:</p>
+<center><big><b>Acciuga is a dog. <br>
+⇒ Acciuga is a mammal.
+</b></big></center>
+<br>
+<p>Note that this does not state the <strong>truth</strong> of a sentence <em>Acciuga is a mammal</em>. This states the relation between two sentences: from <em>Acciuga is a dog</em> we can infer <em>Acciuga is a mammal</em>. Here is one invalid inference:</p>
+<center><big><b>Acciuga is a mammal. <br>
+⇏ Acciuga is a dog.
+</b></big></center>
+<br>
+<p>The truth of <em>Acciuga is a mammal</em> does not guarantee the truth of <em>Acciuga is a dog</em> – what if she is a cat?</p>
+<p>This knowledge about what is a valid conclusion from a sentence is another fundamental semantic intuition, along with knowledge of truth conditions. These two types of intuition differ in a fundamental way: truth conditions connect a sentence to some external, non-linguistic reality (situations, states of affairs, or possible worlds, in different terminologies and systems). Semantic inference connects two linguistic objects between each other, it’s a relation between sentences. It’s an important distinction, but these two semantic intuitions are also related: we can look at semantic inference through the lens of possible situations. The validity of the inference <em>Acciuga is a dog</em>
+⇒ <em>Acciuga is a mammal</em> is reflected by the fact that Acciuga-is-a-dog situations are a subset of the Acciuga-is-a-mammal situations. Inferences can be drawn from subsets of situations to supersets. But not the other way around!</p>
+</section>
+<section id="word-meanings">
+<h3>Word meanings<a class="headerlink" href="#word-meanings" title="Permalink to this heading">#</a></h3>
+<p>We talked about the meaning of sentences in terms of their truth or falsity. What about words? Let’s use the mammal example again and zoom in to one particular situation and look around. There are different things here – animals, birds, all sorts of stuff. Let’s refer to these things in the most general way, <strong>entities</strong>. So, some of the entities are dogs, some of them are cats, penguins, spaniels.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/entities.jpg"><img alt="space of entities" class="bg-primary mb-1 align-center" src="_images/entities.jpg" style="width: 300px;" /></a>
+<br>
+<p>We can focus on each particular entity in this set and ask ourselves: is this a dog? Sometimes we would answer ‘yes’, sometimes ‘no’. Let’s build the semantics of nouns like <em>dog</em>, <em>cat</em>, <em>spaniel</em> etc. over exactly this procedure. Interpretation of nouns can be thought of as a function (very similar to <em>I</em> from above!) that, given a noun and an entity, returns <strong>True</strong> if the entity belongs to the class described by the noun, and <strong>False</strong> otherwise. Another related way of thinking about the same kind of thing is a function such that takes the noun and the set of entities as input and returns a subset of this set – only those entities to which this noun truthfully applies:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/entities_mapping.jpg"><img alt="noun meaning" class="bg-primary mb-1 align-center" src="_images/entities_mapping.jpg" style="width: 700px;" /></a>
+<br>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>The version on the left is parallel to <em>I’’</em> for sentences, while the version on the right is parallel to <em>I</em>. How would <em>I’</em> look when applied to nouns?</p>
+</div>
+<p>Recall an illustration from the Morphology chapter, where <em>cat</em> was discussed as a one-morpheme linguistic unit that associates meaning with sound? We can now maybe reassess the meaning side of that figure:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cat_set.jpg"><img alt="cat meaning reassessed" class="bg-primary mb-1 align-center" src="_images/cat_set.jpg" style="width: 300px;" /></a>
+<p>While common nouns like <em>cat</em> or <em>dog</em> are devices to describe classes of entities, proper names are there to pick one particular entity from the set. Formally, we can think about interpretation of proper names as a function that, again, takes the whole set of entities as its input, but what it returns is not a subset of this set, but one single entity:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>It was getting late, don’t judge my individuals pls!</p>
+</aside>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/proper_names.jpg"><img alt="proper name meaning" class="bg-primary mb-1 align-center" src="_images/proper_names.jpg" style="width: 400px;" /></a>
+<p>What about other classes of words? Adjectives, verbs? Adjective meaning is the same kind of meaning as that of common nouns: adjective like <em>wooden</em> picks out the set of wooden entities, quite like <em>dog</em> picks out the set of dogs. Intransitive verbs like <em>ran</em> work in the similar way: it picks out those entities who ran. Transitive verbs introduce a complication: if the event has two participants, what should the interpretation of a transitive verb output? One straightforward way to do it is make transitive verbs pick out not just a set of entities, but a set of <strong>pairs</strong>. In the case of <em>attack</em> interpretation would return a set of pairs, each pair consisting of the attacker and the one who is attacked by that attacker.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/adjectives_verbs.jpg"><img alt="adjectives and verbs" class="bg-primary mb-1 align-center" src="_images/adjectives_verbs.jpg" style="width: 400px;" /></a>
+<div class="attention admonition">
+<p class="admonition-title">A tiny question along the way</p>
+<p>Think about a verb that denotes a set of triples.</p>
+</div>
+<p>Here’s one more class of words to think about: pronouns like <em>she</em> or <em>he</em>. What do those words mean? On the one hand, they seem similar to proper names rather than common nouns: in a sentence like <em>John is worried he will be late</em> the pronoun <em>he</em> can be understood as related to <em>John</em>, that is, they refer to the same person. If these two expressions refer to the same person, it’s natural to think they both have the same kind of meaning: they denote an individual. Maybe pronouns are semantically just proper names?</p>
+<p>Well, not exactly. Unlike with proper names, the individual that pronouns pick out constantly varies. If we slightly change the sentence – <em>Bill is worried he will be late</em>, the pronoun picks out Bill, not John. So, the pronoun is kind of like a name, but a name whose actual value is assigned to it by the context. Probably a good way to think about the meaning of pronouns is in terms of a <strong>variable</strong>: it’s a placeholder, a temporary name, whose actual value can vary depending on the properties of context it appears in. That’s not how actual proper names work.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/pronouns.jpg"><img alt="pronouns" class="bg-primary mb-1 align-center" src="_images/pronouns.jpg" style="width: 400px;" /></a>
+<p>The task of figuring out which value the pronoun should take, given the choice of candidates from the context, is the task of coreference resolution – not always an easily solvable task!</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Extra info</p>
+<p>What about adverbs like <em>quickly</em>, <em>late</em> etc.? Intuitively, they characterize <strong>events</strong> in the way parallel to how adjectives characterize entities: some events are late while others aren’t in a way parallel to how some objects are wooden while others aren’t. We haven’t talked about events as separate kinds of things alongside with object-like entities – but we could. And maybe we should!</p>
+<p>Having two sorts of entities – individuals and events – would also allow us to formulate rather straightforward interpretation for semantic roles such as Agent and Patient, discussed last week. Agent, for instance, could be defined as a <strong>2-place relation</strong> between an event and an individual, very much like the verb <em>attack</em> is a 2-place relation between the attacker and the attacked. In the case of Agent, the interpretation function would spit out the set of all pairs of events and individuals such that the individual is the agent of that event. Fancy.</p>
+</div>
+</section>
+<section id="meaning-relations">
+<h3>Meaning relations<a class="headerlink" href="#meaning-relations" title="Permalink to this heading">#</a></h3>
+<p>Once we start talking about word meanings in set-theoretic terms, we can use Venn diagram-style visualisations of classic meaning relations. Let’s limit ourselves to words that denote sets of entities, more specifically, nouns and adjectives.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/meaning_relations.jpg"><img alt="meaning relations" class="bg-primary mb-1 align-center" src="_images/meaning_relations.jpg" style="width: 550px;" /></a>
+<ul class="simple">
+<li><p><strong>Synonyms</strong> – words that mean more or less the same thing – in our terms, pick out sets of entities that completely or almost coincide. Example: <em>chance</em> and <em>opportunity</em>.</p></li>
+<li><p><strong>Hyponyms</strong> and <strong>hypernyms</strong> stand in proper subset-superset relation with each other. <em>Dog</em> is a hypernym of <em>spaniel</em>, <em>spaniel</em> is a hyponym of <em>dog</em>.</p></li>
+<li><p><strong>Antonyms</strong> are two words with opposite meanings. In terms of sets of entities, it means that the corresponding sets do not overlap: there’s no entity that’s simultaneously hot and cold.</p></li>
+<li><p>Words that don’t bear any semantic relation to each other might denote sets that don’t overlap at all, such as <em>chair</em> and <em>capital</em>, or they might partially overlap, such as <em>man</em> and <em>teacher</em>: there are teachers that are men, there are men that are teachers, there are teachers that are not men and there are men that are not teachers.</p></li>
+<li><p>Lexical ambiguity is not really an example of a semantic relation between two words, it’s practically the opposite – one word that has two different sets of entities of its denotation.</p></li>
+</ul>
+<p>Wait, this doesn’t really make much sense – what we said above does not allow us to distinguish between antonyms and one type of semantic unrelatedness, and also how do we find the two sets in what an ambiguous word denotes to make sure they are different enough from each other in order to count the word as ambiguous? Fair enough, the simple set-theoretic description is not sufficient to make these distinctions. For example, antonyms are supposed to have meanings that are very far from each other – but working with just sets in a way that we do does not give rise to distances. Something else has to be added to the toolbox. We will not be doing this now, and these pictures above remain illustrations, not definitions.</p>
+</section>
+<section id="semantic-composition">
+<h3>Semantic composition<a class="headerlink" href="#semantic-composition" title="Permalink to this heading">#</a></h3>
+<p>Finally, let’s connect the meaning of larger linguistic expressions to that of smaller ones, words. The guiding idea of this connection is the idea of compositionality:</p>
+<div class="warning admonition">
+<p class="admonition-title">Important notion</p>
+<p>The meaning of an expression is <strong>compositional</strong> if it can be calculated based on the meaning of its smaller parts and the way they are put together.</p>
+</div>
+<p>Compositionality is a principle (language is fundamentally compositional), but also a goal – linguists try their best to put together semantic analyses that are as compositional as possible. For some cases it’s easier, for other cases it’s harder, but in some core cases it’s kind of obvious. Let’s take our running example <em>Acciuga is a dog</em>. We know the meaning of two main words here – <em>Acciuga</em> is an entity, <em>dog</em> is a set of entities. Now, these words are combined in this sentence with a <em>is-a</em> construction that turns these two word meanings into a sentence meaning – namely, if the entity (Acciuga) is a member of the set (set of all dogs), the sentence is true, otherwise false:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/function_application.jpg"><img alt="an object and a set" class="bg-primary mb-1 align-center" src="_images/function_application.jpg" style="width: 500px;" /></a>
+<p>This is semantic composition of two meanings, where one is an entity and the other is a set of entities. What if we need to combine two sets? Here is an example: a noun phrase consisting of an adjective and noun, say, <em>wooden mammal</em>. The meaning of this resulting phrase is a set of entities such that each of them is both wooden and a mammal (maybe the intersection should in fact be empty..) – so, the combination of these two meanings is set intersection:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/predicate_conjunction.jpg"><img alt="two sets" class="bg-primary mb-1 align-center" src="_images/predicate_conjunction.jpg" style="width: 500px;" /></a>
+<p>These examples show that syntax and semantics go hand in hand, if we take compositionality seriously: composition of meanings follows syntactic composition of the phrase. Semantic rules apply where syntax puts two words together. This explains the nature of <strong>structural ambiguity</strong> that we saw last week, recall the example <em>They see a cat with the telescope</em>: there are two possible structures this sentence can be associated with, which also correspond to two different meanings – because the meanings are built off of syntactic structure.</p>
+<div class="attention admonition">
+<p class="admonition-title">NB!</p>
+<p>Syntax and semantics go hand in hand, but they are not the same thing: a sentence can be syntactically well-formed but semantically deviant. The classic example of such sentence is Noam Chomsky’s <em>Colorless green ideas sleep furiously</em>, which is grammatical, but means something pretty weird.</p>
+<p>But maybe better examples of semantic deviance accompanied by syntactic well-formedness are sentences like <em>The student is numerous</em> or something like <em>More people have been to New York than John did</em>. Colorless green ideas sleeping furiously is just a very weird and unlikely kind of situation – but the very fact that there are so many pictures visualizing what this might look like kind of suggest that in some remote possible world this <strong>could</strong> be true. These othe two examples, however, push this weirdness to the limit.</p>
+</div>
+<p>We can see how this works step by step with a somewhat simpler example, a noun phrase <em>expensive vodka and whiskey</em>. This phrase is structurally ambiguous: under one analysis, <em>expensive vodka</em> is one constituent and then <em>whiskey</em> is another one, the two put together by conjunction <em>and</em>; under the other analysis, <em>vodka and whiskey</em> is one constituent and <em>expensive</em> attaches to it as a whole. These two structures produce two different meanings of the whole noun phrase, let’s see how. Let’s start with the structure of the situation we will be dealing with. There’s a set of things that are vodka, a set of things that are whiskey (these two sets don’t overlap), and then there is a set of expensive things – it partly overlaps both with vodka and whiskey.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/vodka_ambiguity.jpg"><img alt="structural ambiguity" class="bg-primary mb-1 align-center" src="_images/vodka_ambiguity.jpg" style="width: 500px;" /></a>
+<br>
+<p>In the first structure, <em>expensive vodka</em> is first composed, with the interpretation that’s exactly parallel to that of <em>wooden mammal</em> above: the result is the intersection of all expensive things and all vodka things. Then this set is combined with the set of all whiskey thigns. In the second structure, first the sets of vodka things and whiskey things is put together and then the result of that is intersected with expensive things. The results are different in that in the first but not in the second case the cheap whiskey is part of the meaning of the resulting phrase – a direct effect of syntax on semantics.</p>
+<p>So, semantics works with syntactic information – if we think what it means for the architecture of the system that maps sentences to their meanings, we must conclude that the input to this system is not sentences as sequences of words, but sentences with syntactic structure assigned to it. We can now re-draw diagrams of direct and indirect interpretation so that they reflect this point:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/direct_indirect.jpg"><img alt="direct and indirect interpretation revisited" class="bg-primary mb-1 align-center" src="_images/direct_indirect.jpg" style="width: 750px;" /></a>
+<br>
+<p>I guess if these wild diagrams make sense to you, the goal of my intro to semantics is achieved.</p>
+</section>
+</section>
+<section id="semantics-and-language-technology">
+<h2>Semantics and language technology<a class="headerlink" href="#semantics-and-language-technology" title="Permalink to this heading">#</a></h2>
+<p>The theoretical part of today’s lecture spelled out how sentences and smaller units – words and phrases – relate to non-linguistic stuff (something we called ‘possible situations’ and ‘entities’ that populate these situations) and to each other, and how meanings of bigger units are built from meanings of smaller parts. What does it have to do with language technology? Everything! One might say that this is the core of what we want computers to do when dealing with language – understand it. What we mean by ‘understand’, it has to include at least some of the above. The field of Natural Language Understanding (NLU) includes, generally speaking, all tasks that are best defined with reference to the meaning of texts and smaller linguistic units. Some of such tasks are:</p>
+<ul class="simple">
+<li><p>text summarization;</p></li>
+<li><p>question answering;</p></li>
+<li><p>information extraction;</p></li>
+<li><p>topic modelling;</p></li>
+<li><p>sentiment analysis.</p></li>
+</ul>
+<p>In addition to those (this list is far from complete!), there are tasks and resources that target the particular ingredients of meaning that we discussed above even more directly. I will briefly introduce just three of those, one having to do with lexical semantcs and two having to do with sentence semantisc.</p>
+<section id="wordnet-organizing-lexical-information">
+<h3>WordNet: Organizing lexical information<a class="headerlink" href="#wordnet-organizing-lexical-information" title="Permalink to this heading">#</a></h3>
+<p>Not many downstream tasks have to do with word meanings directly and exclusively: word meanings are building blocks for meanings of sentences and larger texts, and those are, in turn, the typical units of tasks in NLU. But lexical information is important for those tasks too.</p>
+<p>One classic and still very prominent and used resource that organizes lexicon according to semantic relation of words to each other is <a class="reference external" href="https://wordnet.princeton.edu/">WordNet</a>. Here is what they say:</p>
+<blockquote>
+<div><p>Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations.</p>
+</div></blockquote>
+<p>Let’s look at some of the things one can do with WordNet. First, we can look up a word and check with synsets it belongs to. If the word has just one meaning, it will end up in one synset. If it’s ambiguous, it will end up in more than one. For example, the word <em>espresso</em> has one meaning, but <em>bank</em> is ambiguous (maybe more ambiguous according to WordNet than one would’ve thought, so we crop the list at 5):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">wordnet</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Espresso: &#39;</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;espresso&#39;</span><span class="p">)]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bank: &#39;</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;bank&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Espresso: Synset(&#39;espresso.n.01&#39;)
+Bank: Synset(&#39;bank.n.01&#39;), Synset(&#39;depository_financial_institution.n.01&#39;), Synset(&#39;bank.n.03&#39;), Synset(&#39;bank.n.04&#39;), Synset(&#39;bank.n.05&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check out the definitions of these first two synsets for <em>bank</em> and words that belong to them, to see what these synsets are about:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bank1</span> <span class="o">=</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;bank.n.01&#39;</span><span class="p">)</span>
+<span class="n">bank2</span> <span class="o">=</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;depository_financial_institution.n.01&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Definition:&#39;</span><span class="p">,</span> <span class="n">bank1</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Words in this synonym set:&#39;</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bank1</span><span class="o">.</span><span class="n">lemmas</span><span class="p">()]))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Definition:&#39;</span><span class="p">,</span> <span class="n">bank2</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Words in this synonym set:&#39;</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bank2</span><span class="o">.</span><span class="n">lemmas</span><span class="p">()]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Definition: sloping land (especially the slope beside a body of water)
+Words in this synonym set: bank
+
+Definition: a financial institution that accepts deposits and channels the money into lending activities
+Words in this synonym set: depository_financial_institution, bank, banking_concern, banking_company
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oh, I see now. Ok. Let’s now list hyponyms (not all of them, just the first 3) and hypernyms of each of these two different banks – recall the discussion about what hyponyms and hypernyms are above!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hypernyms:&#39;</span><span class="p">,</span> <span class="n">bank1</span><span class="o">.</span><span class="n">hypernyms</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hyponyms:&#39;</span><span class="p">,</span> <span class="n">bank1</span><span class="o">.</span><span class="n">hyponyms</span><span class="p">()[:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hypernyms: [Synset(&#39;slope.n.01&#39;)]
+Hyponyms: [Synset(&#39;riverbank.n.01&#39;), Synset(&#39;waterside.n.01&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hypernyms:&#39;</span><span class="p">,</span> <span class="n">bank2</span><span class="o">.</span><span class="n">hypernyms</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hyponyms:&#39;</span><span class="p">,</span> <span class="n">bank2</span><span class="o">.</span><span class="n">hyponyms</span><span class="p">()[:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hypernyms: [Synset(&#39;financial_institution.n.01&#39;)]
+Hyponyms: [Synset(&#39;acquirer.n.02&#39;), Synset(&#39;agent_bank.n.02&#39;), Synset(&#39;commercial_bank.n.01&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>What else? We can check what the lowest common hypernym is for a pair of synsets – it can tell us a lot about how similar or different the meanings of two words are. The two meanings of <em>bank</em> are pretty far from each other – the closest common category they belong to is <em>entity</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bank1</span><span class="o">.</span><span class="n">lowest_common_hypernyms</span><span class="p">(</span><span class="n">bank2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Synset(&#39;entity.n.01&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In fact, WordNet defines a metric of meaning similarity based specifically on the number of steps on the meaning relation graph between two words (synsets, to be more specific). It’s a symmetric measure with values from 0 (super-far) to 1 (exactly the same):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Similarity of bank1 to itself:&#39;</span><span class="p">,</span> <span class="n">bank1</span><span class="o">.</span><span class="n">path_similarity</span><span class="p">(</span><span class="n">bank1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Similarity between bank1 and bank2:&#39;</span><span class="p">,</span> <span class="n">bank1</span><span class="o">.</span><span class="n">path_similarity</span><span class="p">(</span><span class="n">bank2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Similarity between bank2 and bank1:&#39;</span><span class="p">,</span> <span class="n">bank2</span><span class="o">.</span><span class="n">path_similarity</span><span class="p">(</span><span class="n">bank1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity of bank1 to itself: 1.0
+Similarity between bank1 and bank2: 0.07692307692307693
+Similarity between bank2 and bank1: 0.07692307692307693
+</pre></div>
+</div>
+</div>
+</div>
+<p>WordNet can give you synonyms of a word per synset it’s found in:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">syn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wordnet</span><span class="o">.</span><span class="n">synonyms</span><span class="p">(</span><span class="s1">&#39;bank&#39;</span><span class="p">)[:</span><span class="mi">7</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">syn</span><span class="p">:</span>
+        <span class="n">synset</span> <span class="o">=</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;bank&#39;</span><span class="p">)[</span><span class="n">ix</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">synset</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="n">synset</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Synonyms: &#39;</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">syn</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Synset(&#39;depository_financial_institution.n.01&#39;): a financial institution that accepts deposits and channels the money into lending activities
+	Synonyms: banking_company, banking_concern, depository_financial_institution
+Synset(&#39;bank.n.07&#39;): a slope in the turn of a road or track; the outside is higher than the inside in order to reduce the effects of centrifugal force
+	Synonyms: camber, cant
+</pre></div>
+</div>
+</div>
+</div>
+<p>Same for antonyms (except that antonyms in WordNet work on the level of lemmas rather than the level of synsets):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">synset</span> <span class="ow">in</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;bank&#39;</span><span class="p">):</span>
+    <span class="n">antonyms</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">antonyms</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">synset</span><span class="o">.</span><span class="n">lemmas</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">antonyms</span><span class="p">())]</span>
+    <span class="k">if</span> <span class="n">antonyms</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">synset</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">synset</span><span class="o">.</span><span class="n">lemmas</span><span class="p">()])</span> <span class="o">+</span> <span class="s1">&#39;): &#39;</span><span class="o">+</span> <span class="n">synset</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">antonym_set</span> <span class="ow">in</span> <span class="n">antonyms</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Antonyms:&#39;</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">antonym_set</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Synset(&#39;deposit.v.02&#39;)(deposit, bank): put into a bank account
+	Antonyms: withdraw
+Synset(&#39;trust.v.01&#39;)(trust, swear, rely, bank): have confidence or faith in
+	Antonyms: mistrust, distrust
+</pre></div>
+</div>
+</div>
+</div>
+<p>I think we can agree that WordNet is a pretty useful resource! It’s not the only resource of this kind, see also, for example, <a class="reference external" href="https://conceptnet.io/">ConceptNet</a>.</p>
+<p>Resources like these are linked to tasks defined over word meanings. One such task is Word Sense Disambiguation (WSD): given an ambuguous word in context, a WSD model outputs the meaning the word has in this particular context. In order to precisely formulate this task, a list of possible word meanings has to be defined for the word in question. One of the ways to come up with such list is to use WordNet synsets that the word participates in. Then the WSD model can do something like the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.wsd</span> <span class="kn">import</span> <span class="n">lesk</span>
+
+<span class="n">sense1</span> <span class="o">=</span> <span class="n">lesk</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;We sat on the slope of the bank on the wet land near the water.&quot;</span><span class="p">),</span> <span class="s1">&#39;bank&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sense1</span><span class="p">,</span> <span class="n">sense1</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+
+<span class="n">sense2</span> <span class="o">=</span> <span class="n">lesk</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;The bank accepted the financial deposit into our account.&quot;</span><span class="p">),</span> <span class="s1">&#39;bank&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sense2</span><span class="p">,</span> <span class="n">sense2</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Synset(&#39;bank.n.01&#39;) sloping land (especially the slope beside a body of water)
+Synset(&#39;depository_financial_institution.n.01&#39;) a financial institution that accepts deposits and channels the money into lending activities
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sentence-meaning-semantic-parsing">
+<h3>Sentence meaning: Semantic Parsing<a class="headerlink" href="#sentence-meaning-semantic-parsing" title="Permalink to this heading">#</a></h3>
+<p>One task defined mostly over sentences rather than words is <strong>semantic parsing</strong>. Remember how for indirect interpretation an intermediate logical representation is introduced: natural language is translated into logic, and formulas of logic are then interpreted according to whatever interpretation system is designed for this type of logic. In a sense, this translation step can itself be seen as the semantics of natural language – because what happens after that is the semantic of logic. This is a subtle step and there are different opinions on this set-up and possible alternatives, but one thing is clear: translation of natural language into logic helps create well-defined unambiguous representations that are very useful for practical applications.</p>
+<p>One rich resource containing sentences (and their syntactic analyses) in several languages, paired with semantic representations, is developed here in Groningen: <a class="reference external" href="https://pmb.let.rug.nl/">Parallel Meaning Bank (PMB)</a>. Semantic and syntactic representations in PMB are enriched with lexical information – more specifically, WordNet synset IDs are assigned to words, where applicable. Today’s homework will involve studying PMB representations and doing lexical semantic annotation, so I will not say more here.</p>
+</section>
+<section id="sentence-meaning-natural-language-inference">
+<h3>Sentence meaning: Natural Language Inference<a class="headerlink" href="#sentence-meaning-natural-language-inference" title="Permalink to this heading">#</a></h3>
+<p>We talked about two fundamental semantic intuitions about sentences:</p>
+<ul class="simple">
+<li><p>How sentences relate to possible situations / states of affairs where they can be true or false (truth conditions);</p></li>
+<li><p>How some conclusions, or inferences, can be drawn from a sentence, while others can’t be (semantic inference).</p></li>
+</ul>
+<p>When we think about the first intuition and a lot of recent NLP systems trained exclusively on text, we might wonder if natural language understanding is even in principle achievable by such models: if all these models see during training is text, they have no way of connecting language to these language-external objects – situations, objects, events, dogs, penguins. This is indeed an argument that has been made before, in a very influential paper that true natural language understanding for such models is impossible:</p>
+<blockquote>
+<div><p>Bender &amp; Koller. 2020. <a class="reference external" href="https://aclanthology.org/2020.acl-main.463">Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data</a>. ACL.</p>
+</div></blockquote>
+<p>This paper has a point, but things are probably more complicated than that. First, a lot of recent models are not trained on text exclusively but receive a lot of additional information of different kinds, and we don’t really know what the role of all this additional information is to brining models closer to what we would be more willing to call ‘understanding’. Second, there is also semantic inference! And given that this core semantic notion is defined over texts (pairs of sentences exclusively), it can well be the door for semantic information. How much of it? What kind? How far can inference get us? We don’t really know, but we (quite a lot of people, actually) are looking into it.</p>
+<p>For those interested in this debate, I suggest this very nice and clear Medium post by Christopher Potts on this topic (a sort of a reply to the Bender &amp; Koller paper above):</p>
+<blockquote>
+<div><p>Potts. 2020. <a class="reference external" href="https://chrisgpotts.medium.com/is-it-possible-for-language-models-to-achieve-language-understanding-81df45082ee2">Is it possible for language models to achieve language understanding?</a>. Medium post.</p>
+</div></blockquote>
+<p>An NLP task that models the semantic inference intuition that I’ve been referring to is the task of Natural Language Inference (NLI). Here is how it’s formalized: an NLI model takes a pair of sentences and predicts the semantic relation between them. It’s a classification task, so the output is one of, usually, three labels:</p>
+<ul class="simple">
+<li><p>Entailment (the second sentence follows from the first one);</p></li>
+<li><p>Neutral (given the first sentence, nothing can be said about the truth of the second one);</p></li>
+<li><p>Contradiction (the second sentence can’t be true if the first one is).</p></li>
+</ul>
+<p>There is a lot of NLI models out there – the task of NLI has been attracting a lot of interest recently. Let’s pick one and see what it does.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+
+<span class="n">nli</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-classification&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;sileod/deberta-v3-base-tasksource-nli&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we loaded the model, we can give it two sentences as one string, where the sentences are separated from each other by a service token [SEP] specific to this particular type of model I picked. The model will output the prediction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nli</span><span class="p">(</span><span class="s2">&quot;Acciuga is a dog. [SEP] Acciuga is a mammal.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;entailment&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This seems right! Note that this is not world knowledge about Acciuga – who exactly Acciuga is in the actual world doesn’t matter for this prediction. What matters that <strong>if</strong> she’s a dog, she’s also a mammal. That’s the core of the inference as a relation between pairs of sentences.</p>
+<p>The model also does well on two other pairs of sentences that were our examples in the theoretical part of today’s lecture:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nli</span><span class="p">(</span><span class="s2">&quot;Acciuga is a mammal. [SEP] Acciuga is a dog.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;neutral&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nli</span><span class="p">(</span><span class="s2">&quot;Acciuga is a cat. [SEP] Acciuga is a dog.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;contradiction&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is nice, but it’s important to note that NLI models are far from perfect, and the general task of NLI is far from solved. Even the best NLI models systematically produce predictions that are hard to reconcile with our semantic intuitions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nli</span><span class="p">(</span><span class="s2">&quot;Acciuga is a dog. [SEP] Charlie is a dog.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;contradiction&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The fact that Acciuga is a dog doesn’t preclude other individuals (for instance, Charlie) to be dogs as well – but the model predicts it’s a contradiction. Predictions like these are consequences of datasets, training procedures and evaluation benchmarks that characterize performance of NLI models. There’s a lot of work to be done.</p>
+<p>A lot more could be discussed here, but this will have to do for now. I hope this plants seeds that have the potential to grow into more serious interest for some of you (I didn’t navigate this metaphor well, did I).</p>
+<div class="note admonition">
+<p class="admonition-title">Homework 6</p>
+<p>This week’s assignment is Parallel Meaning Bank annotation, annotation tasks are distributed among students individually.</p>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -342,16 +835,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "ling_course"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ling_course",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ling_course'</script>
 
                 </article>
               
@@ -387,6 +880,32 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-notions-and-intuitions">Basic notions and intuitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-meanings">Sentence meanings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word-meanings">Word meanings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meaning-relations">Meaning relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-composition">Semantic composition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantics-and-language-technology">Semantics and language technology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordnet-organizing-lexical-information">WordNet: Organizing lexical information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-meaning-semantic-parsing">Sentence meaning: Semantic Parsing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-meaning-natural-language-inference">Sentence meaning: Natural Language Inference</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -1,13 +1,13 @@
-# Linguistic puzzles
+# Appendix: Linguistic puzzles
 
-This page contains linguistic puzzles grouped by topic. I am not the author of these puzzles! I use them in my course course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data. These puzzles are one of several activities offered during seminars / practical sessions.
+This page contains three linguistic puzzles grouped by topic: phonetics/phonology, morphology, syntax. I am not the author of these puzzles! I use them in my course as a tool for practicing linguistic analysis: inferring underlying rules and structures from linguistic data. These puzzles are one of several activities offered during seminars / practical sessions. The puzzles appeared online in collections of linguistic puzzles (in Russian) and I translated them into English and leave them here as examples of student activity for different topics. If you are a teacher reading this and want to use these puzzles, make sure to attribute them correctly (not to me!); and if you think I should take them down, let me know and I will!
 
 
 ## Puzzle 1: Stress in Muscogee
 
 
 `````{margin}
-Puzzle by Aleksey Pegushev.
+Puzzle by Aleksey Pegushev ([source](https://elementy.ru/problems/1885/Krik_dushi))
 `````
 
 This puzzle is linked to the topic of weeks 2 and 3 'Transmitting and capturing language'. Here, you will be given (limited) linguistic data, and your task is to uncover a rule that explains these data. Moreover, the data is unlocked in three portions, each new portion of data challenging your previous generalization. The language this puzzle focusses on is the [Muscogee language](https://en.wikipedia.org/wiki/Muscogee_language), a language that has roughly 5000 speakers and belongs to the Muskogean language family in North America. Presumably, this is a language you don't know much or anything about. That's the whole point! Existing Large Language Models also don't have any knowledge about Muscogee and actually weren't able to solve this puzzle last time I checked. Enjoy! 
@@ -161,7 +161,7 @@ In the third group, long vowels appear. Syllables with long vowels behave exactl
 This puzzle is related to the topic of Week 4: Morphology. It allows you to dive deeper into morphological analysis of a set of forms that combine a verbal stem and different verbal affixes -- and as a result, given the data, you come up with a rule behind these combinations. This is a direct extension of what we talked about in class.
 
 `````{margin}
-Puzzle by Anton Somin.
+Puzzle by Anton Somin ([source](https://elementy.ru/problems/1324/Kolenopreklonennyy_verblyud))
 `````
 
 The table below contains verbs in Arabic in different forms, all of them 2nd person singular: 
@@ -262,7 +262,7 @@ Now we can fill in the gaps in the tables.
 This puzzle is meant to give hands-on experience in analyzing the structure of simple sentences, and in this it connects mostly to the topic of Week 6: Syntax. The puzzle is based on data from [Straits Salish](https://en.wikipedia.org/wiki/North_Straits_Salish_language) -- a language with a very different syntax from the familiar languages of the European standard. 
 
 `````{margin}
-Puzzle by Peter Arkadiev.
+Puzzle by Peter Arkadiev ([source](https://elementy.ru/problems/1404/Ya_vizhus_vorom))
 `````
 The table below contains sentences in Straits Salish and their English translations.
 
